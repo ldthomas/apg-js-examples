@@ -1,0 +1,54 @@
+{
+  "name": "apg-js-examples",
+  "version": "4.0.0",
+  "description": "Examples of using the suite of apg-js applications and libraries.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cat ./dist/desc.txt",
+    "apg": "bin/apg.sh",
+    "apg-conv": "bin/apg-conv.sh",
+    "apg-conv-api": "src/apg-conv-api/main.sh",
+    "apg-lib": "src/apg-lib/main.sh",
+    "apg-api": "src/apg-api/main.sh",
+    "apg-exp": "src/apg-exp/main.sh",
+    "ast": "src/ast/main.sh",
+    "back-reference": "src/back-reference/main.sh",
+    "execute-rule": "src/execute-rule/main.sh",
+    "ini-file": "src/ini-file/main.sh",
+    "look-ahead": "src/look-ahead/main.sh",
+    "look-behind": "src/look-behind/main.sh",
+    "substrings": "src/substrings/main.sh",
+    "trace": "src/trace/main.sh",
+    "udt": "src/udt/main.sh"
+  },
+  "files": [
+    "src",
+    "bin",
+    "dist",
+    "index.md",
+    "README.md"
+  ],
+  "dependencies": {
+    "apg-js": "^4.0.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ldthomas/apg-js-examples"
+  },
+  "keywords": [
+    "APG",
+    "ABNF",
+    "SABNF",
+    "parser",
+    "generator",
+    "pattern-matching",
+    "RegExp",
+    "regex"
+  ],
+  "author": "Lowell D. Thomas <ldt@sabnf.com> (https://sabnf.com/)",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/ldthomas/apg-js-examples/issues"
+  },
+  "homepage": "https://github.com/ldthomas/apg-js-examples#readme"
+}

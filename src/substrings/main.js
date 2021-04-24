@@ -1,0 +1,46 @@
+/*  *************************************************************************************
+ *   copyright: Copyright (c) 2021 Lowell D. Thomas, all rights reserved
+ *     license: BSD-2-Clause (https://opensource.org/licenses/BSD-2-Clause)
+ *     website: https://sabnf.com/
+ *   ***********************************************************************************/
+// Demonstrations of parsing sub-strings of the input string.
+module.exports = function (args) {
+    "use strict";
+
+    /* display the program arguments */
+    console.log("look-behind args");
+    console.dir(args);
+
+    /* the help screen */
+    let desc = "";
+    desc += 'The "substrings" example demonstrates the ability of the parser\n';
+    desc += "to parse only a substring of the full input string.\n";
+    desc +=
+        'Examine or run a debugger on this module, "apg-js-examples/src/substrings/main.js" to study the example.\n';
+    let help = "";
+    help += "Usage: npm run substrings [-- arg]\n";
+    help += "  arg: help       (or no arg) to display this help screen.\n";
+    help += "       lookaround demonstrates setting the substring to allow look around operations\n";
+    help += "       simple     demonstrates simply parsing a phrase that is in the middle of a string\n";
+    if (!args[0]) {
+        /* display the help screen and exit */
+        console.log(desc);
+        console.log(help);
+        return;
+    }
+    switch (args[0]) {
+        case "help":
+            console.log(help);
+            return;
+        case "lookaround":
+            require("./lookaround.js");
+            break;
+        case "simple":
+            require("./simple.js");
+            break;
+        default:
+            console.log(`unrecognized argument: ${args[0]}`);
+            console.log(help);
+            return;
+    }
+};
