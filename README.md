@@ -2,13 +2,16 @@
 
 ## Installation
 
-Use the normal installation procedure,
+Use the normal installation procedure. For example, to install locally in the current directory,
 
 ```
-npm install apg-js-examples
+npm init
+npm install apg-js-examples --save
+cd node_modules
+npm run
 ```
 
-apg-js will be installed in `./node_modules`
+Note that `npm run` will display a list of all the example scripts.
 
 ## Description
 
