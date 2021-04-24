@@ -7,7 +7,7 @@ Use the normal installation procedure. For example, to install locally in the cu
 ```
 npm init
 npm install apg-js-examples --save
-cd node_modules
+cd node_modules/apg-js-examples
 npm run
 ```
 
