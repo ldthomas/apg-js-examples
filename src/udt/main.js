@@ -20,10 +20,10 @@ module.exports = function (args) {
     desc += '"apg-js-examples/src/udt/main.js", to study the example.\n';
     let help = "";
     help += "Usage: npm run udt [-- arg]\n";
-    help += "  arg: help (or no arg) to display this help screen.\n";
-    help += "       minimal \n";
-    help += "       stats \n";
-    help += "       trace \n";
+    help += "  arg: help    (or no arg) to display this help screen.\n";
+    help += "       minimal minimal procedures for setting up a parser for a grammar with UDTs\n";
+    help += "       stats   minimal with statistics generated\n";
+    help += "       trace   minimal with trace generated\n";
     if (!args[0]) {
         /* display the help screen and exit */
         console.log(desc);
