@@ -48,3 +48,15 @@ Each of the four libraries, apg-conv-api, apg-lib, apg-api and apg-exp,
 has been bundled for browser use. Consequently, the examples for
 each of these libraries contains an example of browser usage.
 The browser-based example file names will have a "web-" prefix.
+
+### Code Documentation
+
+The code documentation is in [docco](http://ashkenas.com/docco/) format and can be generated with:
+
+```
+npm install -g docco@0.8.1
+./bin/docco-gen.sh
+```
+
+(Higher versions of docco may work, but some lower versions definitely do not.)
+The documentation is then at `./docs/index.html` or see it [here](https://sabnf.com/docs/apg-js-examples/) at the [APG](https://sabnf.com/) website.
