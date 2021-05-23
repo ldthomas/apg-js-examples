@@ -1,8 +1,8 @@
+/* eslint-disable new-cap */
 /*  *************************************************************************************
  *   copyright: Copyright (c) 2021 Lowell D. Thomas, all rights reserved
  *     license: BSD-2-Clause (https://opensource.org/licenses/BSD-2-Clause)
- *     website: https://sabnf.com/
- *   ***********************************************************************************/
+ *   ********************************************************************************* */
 // This example demonstrates how to call a `UDT` from a rule name callback function.
 // This is something you will probably never need to do and you might want to just skip over this example.
 // Using this feature changes the grammar that the parser will recognize in unpredictable ways,
@@ -26,83 +26,78 @@
 // All three demonstrations are done and the traces of them displayed on a single web page for comparison
 // of how the parser actually performed. For the basics of setting up and executing the parser
 // see `setup.js`.
-(function () {
-    "use strict";
-    let fs = require("fs");
-    let nodeUtil = require("util");
-    let inspectOptions = {
-        showHidden: true,
-        depth: null,
-    };
-    try {
-        let result;
-        let data;
-        let inputString;
-        let inputCharacterCodes;
-        let startRule;
-        let html, pageName;
-        let apgLib = require("apg-js").apgLib;
-        let grammar = new (require("./colors.js"))();
-        let callbacks = require("./colors-callbacks.js");
-        let writeHtml = require("../writeHtml.js");
-        let fileName = "colors-app";
-        let parser = new apgLib.parser();
+(function colorsApp() {
+  const nodeUtil = require('util');
+  const inspectOptions = {
+    showHidden: true,
+    depth: null,
+  };
+  try {
+    let result;
+    let inputString;
+    let inputCharacterCodes;
+    let html;
+    const { apgLib } = require('apg-js');
+    const grammar = new (require('./colors'))();
+    const callbacks = require('./colors-callbacks');
+    const writeHtml = require('../writeHtml');
+    const fileName = 'colors-app';
+    const parser = new apgLib.parser();
 
-        /* set up the parser */
-        parser.trace = new apgLib.trace();
-        inputString = "red,white,blue";
-        inputCharacterCodes = apgLib.utils.stringToChars(inputString);
-        startRule = 0;
+    /* set up the parser */
+    parser.trace = new apgLib.trace();
+    inputString = 'red,white,blue';
+    inputCharacterCodes = apgLib.utils.stringToChars(inputString);
+    const startRule = 0;
 
-        /* define the callback fuctions for demo one */
-        parser.callbacks["start"] = callbacks.startCallback;
-        parser.callbacks["u_blue"] = callbacks.u_blueCallback;
-        parser.callbacks["u_red"] = callbacks.u_redCallback;
-        parser.callbacks["u_white"] = callbacks.u_whiteCallback;
-        parser.callbacks["u_yellow"] = callbacks.u_yellowCallback;
-        // In this case, the `color` callback function just monitors the parser's flow without altering it.
-        // The input string is parsed and the trace saved for later display on a web page.
-        // (See `colors-callbacks.js` for the callback functions.)
-        data = [];
-        parser.callbacks["color"] = callbacks.monitorCallback;
-        result = parser.parse(grammar, startRule, inputCharacterCodes, data);
-        console.log();
-        console.log("the monitor callback results");
-        console.dir(result, inspectOptions);
-        html = parser.trace.toHtml(null, "monitor callback");
-        // In this case, the `color` callback function actually modifies the parsing process
-        // by returning a non-`ACTIVE` state. The action in this case is to always fail,
-        // which is simply to demonstrate how modification from a syntax callback function can be done.
-        parser.callbacks["color"] = callbacks.modifyCallback;
-        result = parser.parse(grammar, startRule, inputCharacterCodes, data);
-        console.log();
-        console.log("the modify callback results");
-        console.dir(result, inspectOptions);
-        html += parser.trace.toHtml(null, "modify callback");
-        // In this case the `color` callback function modifies the parsing process by calling a `UDT` function to do its work.
-        // In addition to accepting the colors red, white and blue, it uses a `UDT` to accept yellow as well.
-        inputString = "red,white,blue,yellow";
-        inputCharacterCodes = apgLib.utils.stringToChars(inputString);
-        parser.callbacks["color"] = callbacks.callUdtCallback;
-        result = parser.parse(grammar, startRule, inputCharacterCodes, data);
-        console.log();
-        console.log("the evaluateUdt() callback results");
-        console.dir(result, inspectOptions);
-        html += parser.trace.toHtml("ascii", "evaluateUdt() callback");
-        html = apgLib.utils.htmlToPage(html, "colors app");
-        writeHtml(html, fileName);
-    } catch (e) {
-        let msg = "\nEXCEPTION THROWN: ";
-        +"\n";
-        if (e instanceof Error) {
-            msg += e.name + ": " + e.message;
-        } else if (typeof e === "string") {
-            msg += e;
-        } else {
-            msg += nodeUtil.inspect(e, inspectOptions);
-        }
-        process.exitCode = 1;
-        console.log(msg);
-        throw e;
+    /* define the callback fuctions for demo one */
+    parser.callbacks.start = callbacks.startCallback;
+    parser.callbacks.u_blue = callbacks.u_blueCallback;
+    parser.callbacks.u_red = callbacks.u_redCallback;
+    parser.callbacks.u_white = callbacks.u_whiteCallback;
+    parser.callbacks.u_yellow = callbacks.u_yellowCallback;
+    // In this case, the `color` callback function just monitors the parser's flow without altering it.
+    // The input string is parsed and the trace saved for later display on a web page.
+    // (See `colors-callbacks.js` for the callback functions.)
+    const data = [];
+    parser.callbacks.color = callbacks.monitorCallback;
+    result = parser.parse(grammar, startRule, inputCharacterCodes, data);
+    console.log();
+    console.log('the monitor callback results');
+    console.dir(result, inspectOptions);
+    html = parser.trace.toHtml(null, 'monitor callback');
+    // In this case, the `color` callback function actually modifies the parsing process
+    // by returning a non-`ACTIVE` state. The action in this case is to always fail,
+    // which is simply to demonstrate how modification from a syntax callback function can be done.
+    parser.callbacks.color = callbacks.modifyCallback;
+    result = parser.parse(grammar, startRule, inputCharacterCodes, data);
+    console.log();
+    console.log('the modify callback results');
+    console.dir(result, inspectOptions);
+    html += parser.trace.toHtml(null, 'modify callback');
+    // In this case the `color` callback function modifies the parsing process by calling a `UDT` function to do its work.
+    // In addition to accepting the colors red, white and blue, it uses a `UDT` to accept yellow as well.
+    inputString = 'red,white,blue,yellow';
+    inputCharacterCodes = apgLib.utils.stringToChars(inputString);
+    parser.callbacks.color = callbacks.callUdtCallback;
+    result = parser.parse(grammar, startRule, inputCharacterCodes, data);
+    console.log();
+    console.log('the evaluateUdt() callback results');
+    console.dir(result, inspectOptions);
+    html += parser.trace.toHtml('ascii', 'evaluateUdt() callback');
+    html = apgLib.utils.htmlToPage(html, 'colors app');
+    writeHtml(html, fileName);
+  } catch (e) {
+    let msg = '\nEXCEPTION THROWN: \n';
+    if (e instanceof Error) {
+      msg += `${e.name}: ${e.message}`;
+    } else if (typeof e === 'string') {
+      msg += e;
+    } else {
+      msg += nodeUtil.inspect(e, inspectOptions);
     }
+    process.exitCode = 1;
+    console.log(msg);
+    throw e;
+  }
 })();

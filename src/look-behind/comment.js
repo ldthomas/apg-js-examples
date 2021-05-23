@@ -1,8 +1,7 @@
 /*  *************************************************************************************
  *   copyright: Copyright (c) 2021 Lowell D. Thomas, all rights reserved
  *     license: BSD-2-Clause (https://opensource.org/licenses/BSD-2-Clause)
- *     website: https://sabnf.com/
- *   ***********************************************************************************/
+ *   ********************************************************************************* */
 // This is a demonstration of the caveat about using rules and UDTs in look behind phrases.
 // The caveat: when in look-behind mode, the parser is actually parsing right to left instead of the normal left to right.
 // For all operators except rules (RNM) and UDTs (UDT) this is handled automatically by the parser.
@@ -25,12 +24,11 @@
 // whether the parser is in look-behind mode or not,
 // but in general you may not want to assume that that flag has been honored or maybe more importantly
 // whether it has been honored <i>correctly</i>.
-(function () {
-    "use strict";
-    let input = " not a comment$";
-    let grammar = new (require("./comment-grammar.js"))();
-    let setup = require("./setup.js");
-    setup(input, grammar, "comment-fail");
-    input = " /* comment */$";
-    setup(input, grammar, "comment-success");
+(function comment() {
+  let input = ' not a comment$';
+  const grammar = new (require('./comment-grammar'))();
+  const setup = require('./setup');
+  setup(input, grammar, 'comment-fail');
+  input = ' /* comment */$';
+  setup(input, grammar, 'comment-success');
 })();

@@ -6,12 +6,11 @@
 // while in the other case `comment-text` is matched.
 // In a more realistic application the `AST` would be used to translate
 // or otherwise distiguish between the two types of text.
-(function () {
-    "use strict";
-    let input = "// this is a comment";
-    let grammar = new (require("./negative-grammar.js"))();
-    let setup = require("./setup.js");
-    setup(input, grammar, "negative-comment");
-    input = "this is not a comment";
-    setup(input, grammar, "negative-no-comment");
+(function negative() {
+  let input = '// this is a comment';
+  const grammar = new (require('./negative-grammar'))();
+  const setup = require('./setup');
+  setup(input, grammar, 'negative-comment');
+  input = 'this is not a comment';
+  setup(input, grammar, 'negative-no-comment');
 })();

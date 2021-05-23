@@ -1,8 +1,8 @@
+/* eslint-disable new-cap */
 /*  *************************************************************************************
  *   copyright: Copyright (c) 2021 Lowell D. Thomas, all rights reserved
  *     license: BSD-2-Clause (https://opensource.org/licenses/BSD-2-Clause)
- *     website: https://sabnf.com/
- *   ***********************************************************************************/
+ *   ********************************************************************************* */
 // This module addresses the problem of matching the fields in Microsoft's Comma Separated Value (CSV) format.
 // This problem is addressed in Jeffrey Friedl's book *Mastering Regular Expressions*, pg. 213
 // and you can compare this solution to his discussion there.
@@ -18,95 +18,100 @@
 // In this simple case, it is easiest to just use the built-in, JavaScript string replacement functions.
 // However, I will also show how it can be almost as easily done with `apg-exp`.
 // The only thing that makes `apg-exp` slightly more inconvenient is that it is not built into the JavaScript language.
-(function () {
-    try {
-        let apgJs = require("apg-js");
-        let apgExp = apgJs.apgExp;
-        let grammar1 = new (require("./grammars/csv-fields.js"))();
-        let grammar2 = new (require("./grammars/csv.js"))();
-        let exp, str, rstr, result, value;
-        str = 'Ten Thousand,10000, 2710 ,,"10,000","It\'s ""10 Grand"", baby",10K';
-        exp = new apgExp(grammar1, "g");
-        console.log();
-        console.log("the single-field grammar:");
-        console.log(exp.source);
-        console.log();
-        console.log("the input string:");
-        console.log(str);
-        // This first pass simply finds the raw fields. Neither the surrounding or embedded quotes are removed.
-        console.log("the raw fields:");
-        while (true) {
-            result = exp.exec(str);
-            if (result === null) {
-                break;
-            }
-            console.log("field: " + result[0]);
-        }
-        // This pass will use the SABNF grammar to distinguish between quoted and non-quoted fields.
-        // In this case, the grammar will eliminate the surrounding quotes as part of the parsing or pattern matching process.
-        // But replacing the interior pairs of quotes with a single quote requires a second, translation, step.
-        // I'll do it here both with the JavaScript string replacement function and the `apg-exp` replacement function.
-        console.log();
-        console.log("the input string:");
-        console.log(str);
-        console.log("the field values found separately:");
-        while (true) {
-            result = exp.exec(str);
-            if (result === null) {
-                break;
-            }
-            if (result.rules["quoted-text"]) {
-                if (result.rules["double-quote"]) {
-                    // Replace the double quote with a single quote using the built-in JavaScript `replace()` function.
-                    let phrase = result.rules["quoted-text"][0].phrase;
-                    rstr = phrase.replace(/""/g, '"');
-                    console.log("value: " + rstr + " : JavaScript replacement function");
-                    // Replace the double quote with a single quote using the `apg-exp replace()` function.
-                    // Note that in the SABNF syntax `%d34` represents a double quote, character code 34.
-                    // (Yes, the constructor should be outside of the loop, but I wanted it explicitly displayed here
-                    // for clarity.)
-                    let rrexp = new apgExp("rule = 2%d34\n", "g");
-                    rstr = rrexp.replace(phrase, '"');
-                    console.log("value: " + rstr + " : apg-exp replacement function");
-                } else {
-                    console.log("value: " + result.rules["quoted-text"][0].phrase);
-                }
-            }
-            if (result.rules["text"]) {
-                console.log("value: " + result.rules["text"][0].phrase);
-            }
-        }
-        // Now we will try to scoop them all up at once.
-        // The advantage here is that we get all of the raw comma-separated fields in a single array.
-        // In this case `result.rules['field']` is an array of phrase objects. i.e. `{phrase : string, index : number}`.
-        // The disadvantage is that we have to remove the surrounding quotes as well as replace the
-        // interior pairs of quotes in separate steps.
-        // It also points out a weakness in the `apg-exp result` format.
-        // Even though it is more complete than its JavaScript `RegExp` counterpart in that it has all
-        // of the matched phrases for each rule (`RegExp` grouping) instead of just the last one matched,
-        // there is no easy way to associate which `result.rules['quoted-text']` belongs to which
-        // `result.rules['field']`.
-        // (We could do this with a translation of the `exp.ast` object, but that is for another time and place.)
-        exp = new apgExp(grammar2);
-        exp.exclude(["any-but-quote", "any-but-comma"]);
-        console.log();
-        console.log("the 'all-at-once' grammar:");
-        console.log(exp.source);
-        console.log();
-        console.log("the input string:");
-        console.log(str);
-        console.log("the field values found all at once:");
-        result = exp.exec(str);
-        let rrexp = new apgExp("rule = 2%d34\n", "g");
-        let rexp = new apgExp("rule = (%^ %d34) / (%d34 %$)\n", "g");
-        result.rules["field"].forEach(function (field) {
-            /* replace pairs of quotes, if any */
-            value = rrexp.replace(field.phrase, '"');
-            /* remove surrounding quotes, if any */
-            value = rexp.replace(value, "");
-            console.log("value: " + value);
-        });
-    } catch (e) {
-        console.log("EXCEPTION: " + e.message);
+(function csv() {
+  try {
+    const grammar1 = new (require('./grammars/csv-fields'))();
+    const grammar2 = new (require('./grammars/csv'))();
+
+    const apgJs = require('apg-js');
+    const { apgExp } = apgJs;
+    let exp;
+    let rstr;
+    let result;
+    let value;
+    const str = 'Ten Thousand,10000, 2710 ,,"10,000","It\'s ""10 Grand"", baby",10K';
+    exp = new apgExp(grammar1, 'g');
+    console.log();
+    console.log('the single-field grammar:');
+    console.log(exp.source);
+    console.log();
+    console.log('the input string:');
+    console.log(str);
+    // This first pass simply finds the raw fields. Neither the surrounding or embedded quotes are removed.
+    console.log('the raw fields:');
+    const TRUE = true;
+    while (TRUE) {
+      result = exp.exec(str);
+      if (result === null) {
+        break;
+      }
+      console.log(`field: ${result[0]}`);
     }
+    // This pass will use the SABNF grammar to distinguish between quoted and non-quoted fields.
+    // In this case, the grammar will eliminate the surrounding quotes as part of the parsing or pattern matching process.
+    // But replacing the interior pairs of quotes with a single quote requires a second, translation, step.
+    // I'll do it here both with the JavaScript string replacement function and the `apg-exp` replacement function.
+    console.log();
+    console.log('the input string:');
+    console.log(str);
+    console.log('the field values found separately:');
+    while (TRUE) {
+      result = exp.exec(str);
+      if (result === null) {
+        break;
+      }
+      if (result.rules['quoted-text']) {
+        if (result.rules['double-quote']) {
+          // Replace the double quote with a single quote using the built-in JavaScript `replace()` function.
+          const { phrase } = result.rules['quoted-text'][0];
+          rstr = phrase.replace(/""/g, '"');
+          console.log(`value: ${rstr} : JavaScript replacement function`);
+          // Replace the double quote with a single quote using the `apg-exp replace()` function.
+          // Note that in the SABNF syntax `%d34` represents a double quote, character code 34.
+          // (Yes, the constructor should be outside of the loop, but I wanted it explicitly displayed here
+          // for clarity.)
+          const rrexp = new apgExp('rule = 2%d34\n', 'g');
+          rstr = rrexp.replace(phrase, '"');
+          console.log(`value: ${rstr} : apg-exp replacement function`);
+        } else {
+          console.log(`value: ${result.rules['quoted-text'][0].phrase}`);
+        }
+      }
+      if (result.rules.text) {
+        console.log(`value: ${result.rules.text[0].phrase}`);
+      }
+    }
+    // Now we will try to scoop them all up at once.
+    // The advantage here is that we get all of the raw comma-separated fields in a single array.
+    // In this case `result.rules['field']` is an array of phrase objects. i.e. `{phrase : string, index : number}`.
+    // The disadvantage is that we have to remove the surrounding quotes as well as replace the
+    // interior pairs of quotes in separate steps.
+    // It also points out a weakness in the `apg-exp result` format.
+    // Even though it is more complete than its JavaScript `RegExp` counterpart in that it has all
+    // of the matched phrases for each rule (`RegExp` grouping) instead of just the last one matched,
+    // there is no easy way to associate which `result.rules['quoted-text']` belongs to which
+    // `result.rules['field']`.
+    // (We could do this with a translation of the `exp.ast` object, but that is for another time and place.)
+    exp = new apgExp(grammar2);
+    exp.exclude(['any-but-quote', 'any-but-comma']);
+    console.log();
+    console.log("the 'all-at-once' grammar:");
+    console.log(exp.source);
+    console.log();
+    console.log('the input string:');
+    console.log(str);
+    console.log('the field values found all at once:');
+    result = exp.exec(str);
+    const rrexp = new apgExp('rule = 2%d34\n', 'g');
+    const rexp = new apgExp('rule = (%^ %d34) / (%d34 %$)\n', 'g');
+    result.rules.field.forEach((field) => {
+      /* replace pairs of quotes, if any */
+      value = rrexp.replace(field.phrase, '"');
+      /* remove surrounding quotes, if any */
+      value = rexp.replace(value, '');
+      console.log(`value: ${value}`);
+    });
+  } catch (e) {
+    console.log(`EXCEPTION: ${e.message}`);
+  }
 })();

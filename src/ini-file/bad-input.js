@@ -1,8 +1,7 @@
 /*  *************************************************************************************
  *   copyright: Copyright (c) 2021 Lowell D. Thomas, all rights reserved
  *     license: BSD-2-Clause (https://opensource.org/licenses/BSD-2-Clause)
- *     website: https://sabnf.com/
- *   ***********************************************************************************/
+ *   ********************************************************************************* */
 // This application will read an initialization file with anonymous keys, disjointed sections
 // and disjointed keys.
 // It will collect the key values in each section found and then display the found data
@@ -11,19 +10,19 @@
 // does not follow the defining SABNF grammar.
 // This demonstrates how "error productions" can be used to ignore and/or report bad data.
 // See, for example, `BadSectionLine`, `BadValueLine`, `BadBlankLine`.
-(function () {
-    let fs = require("fs");
-    let setup = require("./setup.js");
-    try {
-        let inputStr = fs.readFileSync("./src/ini-file/bad.txt", "utf8");
-        setup(inputStr, null, null);
-    } catch (e) {
-        console.log();
-        console.log("input error");
-        console.dir(e, {
-            showHidden: true,
-            depth: null,
-            colors: true,
-        });
-    }
+(function badInput() {
+  const fs = require('fs');
+  const setup = require('./setup');
+  try {
+    const inputStr = fs.readFileSync('./src/ini-file/bad.txt', 'utf8');
+    setup(inputStr, null, null);
+  } catch (e) {
+    console.log();
+    console.log('input error');
+    console.dir(e, {
+      showHidden: true,
+      depth: null,
+      colors: true,
+    });
+  }
 })();

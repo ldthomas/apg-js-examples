@@ -1,12 +1,12 @@
+/* eslint-disable new-cap */
 /*  *************************************************************************************
  *   copyright: Copyright (c) 2021 Lowell D. Thomas, all rights reserved
  *     license: BSD-2-Clause (https://opensource.org/licenses/BSD-2-Clause)
- *     website: https://sabnf.com/
- *   ***********************************************************************************/
+ *   ********************************************************************************* */
 // This module demonstrates some of the many options available for displaying the results.
 // Functions are available for displaying the source (grammar syntax), the `result` and the `last match` (the `apg-exp` object).
 // The `last result` is patterned after the JavaScript `RegExp` object as described
-//at [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+// at [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
 //
 // Let:
 // ```
@@ -61,69 +61,75 @@
 // </ul>
 // </li>
 // </ul>
-(function () {
-    try {
-        let apgJs = require("apg-js");
-        let apgExp = apgJs.apgExp;
-        let apgLib = apgJs.apgLib;
-        let writeHtml = require("../writeHtml.js");
-        let grammar = 'pattern = "abc"\n';
-        let exp, flags, result, str, html, txt, page;
-        html = "";
-        flags = "";
-        str = "<<<-abc->>>";
-        exp = new apgExp(grammar, flags);
-        result = exp.exec(str);
-        txt = exp.sourceToText();
+(function displaying() {
+  try {
+    const apgJs = require('apg-js');
+    const writeHtml = require('../writeHtml');
 
-        /* source */
-        console.log();
-        console.log("source:");
-        console.log(txt);
-        html += "<h3>source example</h3>";
-        html += exp.sourceToHtml();
-        page = exp.sourceToHtmlPage();
-        writeHtml(page, "display-source");
+    const { apgExp } = apgJs;
+    const { apgLib } = apgJs;
+    const grammar = 'pattern = "abc"\n';
+    let exp;
+    let flags;
+    let result;
+    let html;
+    let txt;
+    let page;
+    html = '';
+    flags = '';
+    const str = '<<<-abc->>>';
+    exp = new apgExp(grammar, flags);
+    result = exp.exec(str);
+    txt = exp.sourceToText();
 
-        /* results */
-        txt = result.toText();
-        console.log();
-        console.log(txt);
-        html += "<h3>results example</h3>";
-        html += result.toHtml();
-        page = result.toHtmlPage();
-        writeHtml(page, "display-results");
+    /* source */
+    console.log();
+    console.log('source:');
+    console.log(txt);
+    html += '<h3>source example</h3>';
+    html += exp.sourceToHtml();
+    page = exp.sourceToHtmlPage();
+    writeHtml(page, 'display-source');
 
-        /* last match */
-        txt = exp.toText();
-        console.log();
-        console.log(txt);
-        html += "<h3>last match example</h3>";
-        html += exp.toHtml();
-        page = exp.toHtmlPage();
-        writeHtml(page, "display-exp");
+    /* results */
+    txt = result.toText();
+    console.log();
+    console.log(txt);
+    html += '<h3>results example</h3>';
+    html += result.toHtml();
+    page = result.toHtmlPage();
+    writeHtml(page, 'display-results');
 
-        html = apgLib.utils.htmlToPage(html);
-        writeHtml(html, "display-all");
-        // With the unicode flag, `u`, `result` and `last match` each has four mode options, `ascii`, `decimal`, `hexidecimal` and
-        // `unicode`.
-        // These are demonstrated here for the `last match`.
-        flags = "u";
-        exp = new apgExp(grammar, flags);
-        result = exp.exec(str);
-        html = "<h3>last match ASCII</h3>";
-        html += exp.toHtml("ascii");
-        html += "<h3>last match decimal</h3>";
-        html += exp.toHtml("decimal");
-        html += "<h3>last match hexidecimal</h3>";
-        html += exp.toHtml("hexidecimal");
-        html += "<h3>last match Unicode</h3>";
-        html += exp.toHtml("Unicode");
-        html += "<h3>result Unicode</h3>";
-        html += result.toHtml("Unicode");
-        html = apgLib.utils.htmlToPage(html);
-        writeHtml(html, "display-modes");
-    } catch (e) {
-        console.log("EXCEPTION: " + e.message);
-    }
+    /* last match */
+    txt = exp.toText();
+    console.log();
+    console.log(txt);
+    html += '<h3>last match example</h3>';
+    html += exp.toHtml();
+    page = exp.toHtmlPage();
+    writeHtml(page, 'display-exp');
+
+    html = apgLib.utils.htmlToPage(html);
+    writeHtml(html, 'display-all');
+    // With the unicode flag, `u`, `result` and `last match` each has four mode options, `ascii`, `decimal`, `hexidecimal` and
+    // `unicode`.
+    // These are demonstrated here for the `last match`.
+    flags = 'u';
+    exp = new apgExp(grammar, flags);
+    result = exp.exec(str);
+    html = '<h3>last match ASCII</h3>';
+    html += exp.toHtml('ascii');
+    html += '<h3>last match decimal</h3>';
+    html += exp.toHtml('decimal');
+    html += '<h3>last match hexidecimal</h3>';
+    html += exp.toHtml('hexidecimal');
+    html += '<h3>last match Unicode</h3>';
+    html += exp.toHtml('Unicode');
+    html += '<h3>result Unicode</h3>';
+    html += result.toHtml('Unicode');
+    html = apgLib.utils.htmlToPage(html);
+    writeHtml(html, 'display-modes');
+  } catch (e) {
+    console.log(`EXCEPTION: ${e.message}`);
+  }
 })();

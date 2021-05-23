@@ -1,8 +1,7 @@
 /*  *************************************************************************************
  *   copyright: Copyright (c) 2021 Lowell D. Thomas, all rights reserved
  *     license: BSD-2-Clause (https://opensource.org/licenses/BSD-2-Clause)
- *     website: https://sabnf.com/
- *   ***********************************************************************************/
+ *   ********************************************************************************* */
 // Sometimes the academic question comes up as to exactly where in the Chomsky hierarchy of things, modern `regex` engines fall.
 // An interesting discussion thread of that question can be found
 // [here](http://cstheory.stackexchange.com/questions/1047/where-do-most-regex-implementations-fall-on-the-complexity-scale).
@@ -23,135 +22,142 @@
 // I'm not a mathematician and that may not be a Turing-complete problem, per se,
 // but I'm pretty sure that falls outside the range of "context-free + plus look around + plus back referencing."
 // True or not, here is how to do it with `apg-exp` and `UDT`'s.
-(function () {
-    let apgJs = require("apg-js");
-    let apgExp = apgJs.apgExp;
-    let apgLib = apgJs.apgLib;
-    let id = apgLib.ids;
-    let charsToString = apgLib.utils.charsToString;
-    // Define the `UDT` callback function.
-    // `data` is not used here. With a normal `apg` parser, the user has the option of passing
-    // in a data object for use by the user-written functions.
-    // But there is no facility for this in `apg-exp`.
-    let udtPhrase = function (sysData, chars, phraseIndex, data) {
-        let i, j, an, ai, bi, bend, ci, cend;
-        /* default to failure - any early return is a failure to find a match */
-        sysData.state = id.NOMATCH;
-        sysData.phraseLength = 0;
-        ai = phraseIndex;
-        an = 0;
-        for (i = ai; i < chars.length; i += 1) {
-            if (chars[i] === 65 || chars[i] === 97) {
-                an += 1;
-            } else {
-                break;
-            }
-        }
-        if (an === 0) {
-            return;
-        }
-        bi = ai + an;
-        bend = bi + an;
-        if (bend > chars.length) {
-            /* not enough characters left in the string for a match */
-            return;
-        }
-        for (i = ai, j = bi; j < bend; i += 1, j += 1) {
-            if (chars[j] === 66) {
-                if (chars[i] !== 65) {
-                    /* doesn't match upper case */
-                    return;
-                }
-            } else if (chars[j] === 98) {
-                if (chars[i] !== 97) {
-                    /* doesn't match lower case */
-                    return;
-                }
-            } else {
-                /* doesn't match - period */
-                return;
-            }
-        }
-        ci = bi + an;
-        cend = ci + an;
-        if (cend > chars.length) {
-            /* not enough characters left in the string for a match */
-            return;
-        }
-        for (i = ai, j = ci; j < cend; i += 1, j += 1) {
-            if (chars[j] === 67) {
-                if (chars[i] !== 65) {
-                    /* doesn't match upper case */
-                    return;
-                }
-            } else if (chars[j] === 99) {
-                if (chars[i] !== 97) {
-                    /* doesn't match lower case */
-                    return;
-                }
-            } else {
-                /* doesn't match - period */
-                return;
-            }
-        }
-        /* if we made it all the way to here, it's a match */
-        sysData.state = id.MATCH;
-        sysData.phraseLength = 3 * an;
-    };
-    try {
-        let grammar, exp, flags, result, str, html, page, htmlName;
-        /* simple grammar to just match the phrase */
-        grammar = "anbncn = u_phrase\n";
-        str = "aaAAaabbBBbbccCCcc";
-        exp = new apgExp(grammar);
-        // The user must write the `UDT` *and* tell the `apg-exp` object about it.
-        exp.defineUdt("u_phrase", udtPhrase);
-        console.log();
-        console.log("grammar:");
-        console.log(exp.source);
-        result = exp.exec(str);
-        console.log();
-        console.log("cases match:");
-        console.log("input string: " + str);
-        if (result) {
-            console.log(result.toText());
-        } else {
-            console.log("result: null");
-            throw new Error("cases should match for this input string");
-        }
-        str = "aaAAaabbBBbbcccCcc";
-        result = exp.exec(str);
-        console.log();
-        console.log("cases don't match:");
-        console.log("input string: " + str);
-        if (result) {
-            console.log(result.toText());
-            throw new Error("cases should not match for this input string");
-        } else {
-            console.log("result: null");
-        }
-        // Just to make the example a little more interesting, let's combine this with the
-        // matching parentheses grammar.
-        grammar = "R     = (open text R text close) / (open u_phrase close)\n";
-        grammar += 'open  = %d40               ; open paren "("\n';
-        grammar += 'close = %d41               ; close paren ")"\n';
-        grammar += 'text  = *(%d32-39/%d42-126); any characters but "()"\n';
-        exp = new apgExp(grammar);
-        exp.defineUdt("u_phrase", udtPhrase);
-        str = "find anbncn in within parentheses (down 1(down 2(down 3(aAabBbcCc)up 3)up 2)up 1)";
-        console.log();
-        console.log("grammar:");
-        console.log(exp.source);
-        console.log("within parentheses:");
-        console.log("input string: " + str);
-        result = exp.exec(str);
-        if (result) {
-            console.log(result.toText());
-        } else {
-            console.log("result: null");
-            throw new Error("cases should match for this input string");
-        }
-    } catch (e) {
-        console.log("EXCEPTION: " + e.message);
+(function udt() {
+  const { apgExp: ApgExp, apgLib } = require('apg-js');
+
+  // let apgJs = require("apg-js");
+  // let apgExp = apgJs.apgExp;
+  // let apgLib = apgJs.apgLib;
+  const id = apgLib.ids;
+  //   const { charsToString } = apgLib.utils;
+  // Define the `UDT` callback function.
+  // `data` is not used here. With a normal `apg` parser, the user has the option of passing
+  // in a data object for use by the user-written functions.
+  // But there is no facility for this in `apg-exp`.
+  const udtPhrase = function udtPhrase(sysData, chars, phraseIndex) {
+    let i;
+    let j;
+    let an;
+    /* default to failure - any early return is a failure to find a match */
+    sysData.state = id.NOMATCH;
+    sysData.phraseLength = 0;
+    const ai = phraseIndex;
+    an = 0;
+    for (i = ai; i < chars.length; i += 1) {
+      if (chars[i] === 65 || chars[i] === 97) {
+        an += 1;
+      } else {
+        break;
+      }
     }
+    if (an === 0) {
+      return;
+    }
+    const bi = ai + an;
+    const bend = bi + an;
+    if (bend > chars.length) {
+      /* not enough characters left in the string for a match */
+      return;
+    }
+    for (i = ai, j = bi; j < bend; i += 1, j += 1) {
+      if (chars[j] === 66) {
+        if (chars[i] !== 65) {
+          /* doesn't match upper case */
+          return;
+        }
+      } else if (chars[j] === 98) {
+        if (chars[i] !== 97) {
+          /* doesn't match lower case */
+          return;
+        }
+      } else {
+        /* doesn't match - period */
+        return;
+      }
+    }
+    const ci = bi + an;
+    const cend = ci + an;
+    if (cend > chars.length) {
+      /* not enough characters left in the string for a match */
+      return;
+    }
+    for (i = ai, j = ci; j < cend; i += 1, j += 1) {
+      if (chars[j] === 67) {
+        if (chars[i] !== 65) {
+          /* doesn't match upper case */
+          return;
+        }
+      } else if (chars[j] === 99) {
+        if (chars[i] !== 97) {
+          /* doesn't match lower case */
+          return;
+        }
+      } else {
+        /* doesn't match - period */
+        return;
+      }
+    }
+    /* if we made it all the way to here, it's a match */
+    sysData.state = id.MATCH;
+    sysData.phraseLength = 3 * an;
+  };
+  try {
+    let grammar;
+    let exp;
+    let result;
+    let str;
+    /* simple grammar to just match the phrase */
+    grammar = 'anbncn = u_phrase\n';
+    str = 'aaAAaabbBBbbccCCcc';
+    exp = new ApgExp(grammar);
+    // The user must write the `UDT` *and* tell the `apg-exp` object about it.
+    exp.defineUdt('u_phrase', udtPhrase);
+    console.log();
+    console.log('grammar:');
+    console.log(exp.source);
+    result = exp.exec(str);
+    console.log();
+    console.log('cases match:');
+    console.log(`input string: ${str}`);
+    if (result) {
+      console.log(result.toText());
+    } else {
+      console.log('result: null');
+      throw new Error('cases should match for this input string');
+    }
+    str = 'aaAAaabbBBbbcccCcc';
+    result = exp.exec(str);
+    console.log();
+    console.log("cases don't match:");
+    console.log(`input string: ${str}`);
+    if (result) {
+      console.log(result.toText());
+      throw new Error('cases should not match for this input string');
+    } else {
+      console.log('result: null');
+    }
+    // Just to make the example a little more interesting, let's combine this with the
+    // matching parentheses grammar.
+    grammar = 'R     = (open text R text close) / (open u_phrase close)\n';
+    grammar += 'open  = %d40               ; open paren "("\n';
+    grammar += 'close = %d41               ; close paren ")"\n';
+    grammar += 'text  = *(%d32-39/%d42-126); any characters but "()"\n';
+    exp = new ApgExp(grammar);
+    exp.defineUdt('u_phrase', udtPhrase);
+    str = 'find anbncn in within parentheses (down 1(down 2(down 3(aAabBbcCc)up 3)up 2)up 1)';
+    console.log();
+    console.log('grammar:');
+    console.log(exp.source);
+    console.log('within parentheses:');
+    console.log(`input string: ${str}`);
+    result = exp.exec(str);
+    if (result) {
+      console.log(result.toText());
+    } else {
+      console.log('result: null');
+      throw new Error('cases should match for this input string');
+    }
+  } catch (e) {
+    console.log(`EXCEPTION: ${e.message}`);
+  }
 })();

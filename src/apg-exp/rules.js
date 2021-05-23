@@ -1,8 +1,10 @@
+/* eslint-disable guard-for-in */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable new-cap */
 /*  *************************************************************************************
  *   copyright: Copyright (c) 2021 Lowell D. Thomas, all rights reserved
  *     license: BSD-2-Clause (https://opensource.org/licenses/BSD-2-Clause)
- *     website: https://sabnf.com/
- *   ***********************************************************************************/
+ *   ********************************************************************************* */
 // This module demonstrates how to deal with the phrases matched to the SABNF syntax rule names.
 // Rule names are similar to named groupings in `regex` expressions. They associate a name with a phrase.
 // `apg-exp` provides a little more information about the rule phrases than does the JavaScript `RegExp` object.
@@ -28,114 +30,120 @@
 // It simply consists of a single, optional section name line and one required key/pair line.
 // Because of the many line end characters, we will use HTML display of the results.
 // The line end characters leave many confusing gaps in the console output.
-(function () {
-    try {
-        let apgJs = require("apg-js");
-        let apgExp = apgJs.apgExp;
-        let apgLib = apgJs.apgLib;
-        let grammar, exp, flags, result, str, html, page, htmlName;
-        let writeHtml = require("../writeHtml.js");
-        grammar = new (require("./grammars/ini.js"))();
-        flags = "";
-        exp = new apgExp(grammar, flags);
-        console.log();
-        console.log("SABNF grammar:");
-        console.log(exp.sourceToText());
-        str = "";
-        str += "; comment\n";
-        str += "input = 1000\n";
-        result = exp.exec(str);
-        // A few things to note about the output.
-        // <ul>
-        // <li>
-        // The first rule name in the grammar, called the start rule (ini in this case,) is always the same as result[0].
-        // result[0] is simply an alias to match the familiar JavaScript RegExp result.
-        // Often, the matched phrase is all that you want and result[0] is a convenient handle to it.
-        // </li>
-        // <li>
-        // Not all rules match a phrase. In this case, there is no section name.
-        // </li>
-        // <li>
-        // Finally, some rules are matched to multiple phrases. In fact, the alpha and digit phrases are matched
-        // so often that they are a nuisance. We will demonstrate shortly how to get rid of the clutter.
-        // </li>
-        // </ul>
-        page = result.toHtmlPage();
-        htmlName = "ini-first-result";
-        writeHtml(page, htmlName);
-        // Let's say we want to see everything except the `alpha`, `digit` and `owsp` phrases.
-        // We can exclude those with a call to the `exp.exclude()` function.
-        exp.exclude(["alpha", "digit", "owsp"]);
-        result = exp.exec(str);
-        page = result.toHtmlPage();
-        htmlName = "ini-exclude-result";
-        writeHtml(page, htmlName);
-        // Or we can do it the other way around with the `exp.include()` function.
-        // Say that we only want to see the `section-name`, `key` and `value`.
-        exp.include(["section-name", "key", "value"]);
-        result = exp.exec(str);
-        page = result.toHtmlPage();
-        htmlName = "ini-include-result";
-        writeHtml(page, htmlName);
-        // Now that we've show the display of the rules (see display.js for more on display functions)
-        // let's take a look at how to handle them programmatically.
-        // Here is a general loop that will give specific access to all of the included rule phrases.
-        str = "";
-        str += "; comment\n";
-        str += "input = 1000\n";
-        exp = new apgExp(grammar, flags);
-        exp.exclude(["alpha", "digit"]);
-        result = exp.exec(str);
-        html = "";
-        html += exp.sourceToHtml();
-        html += "<h3>input string</h3>\n";
-        html += apgLib.utils.stringToAsciiHtml(str);
-        html += "<h3>result</h3>\n";
-        html += "<pre>\n";
-        // Enumerate all of the named rules.
-        for (let name in result.rules) {
-            if (result.rules[name]) {
-                // The named rule is defined. Therefore, it is an array of phrase objects.
-                // Each phrase and index is specifically identified and displayed in this loop.
-                for (let i = 0; i < result.rules[name].length; i += 1) {
-                    let phrase = result.rules[name][i].phrase;
-                    let index = result.rules[name][i].index;
-                    html += "result.rules[" + name + "][" + i + "].phrase(" + index + ") = '";
-                    html += apgLib.utils.stringToAsciiHtml(phrase);
-                    html += "'\n";
-                }
-            } else {
-                // Otherwise, no phrase was matched for this rule
-                html += "result.rules[" + name + "] = undefined\n";
-            }
+(function rules() {
+  try {
+    const apgJs = require('apg-js');
+    const writeHtml = require('../writeHtml');
+    const grammar = new (require('./grammars/ini'))();
+
+    const { apgExp } = apgJs;
+    const { apgLib } = apgJs;
+    let exp;
+    let result;
+    let str;
+    let html;
+    let page;
+    let htmlName;
+    const flags = '';
+    exp = new apgExp(grammar, flags);
+    console.log();
+    console.log('SABNF grammar:');
+    console.log(exp.sourceToText());
+    str = '';
+    str += '; comment\n';
+    str += 'input = 1000\n';
+    result = exp.exec(str);
+    // A few things to note about the output.
+    // <ul>
+    // <li>
+    // The first rule name in the grammar, called the start rule (ini in this case,) is always the same as result[0].
+    // result[0] is simply an alias to match the familiar JavaScript RegExp result.
+    // Often, the matched phrase is all that you want and result[0] is a convenient handle to it.
+    // </li>
+    // <li>
+    // Not all rules match a phrase. In this case, there is no section name.
+    // </li>
+    // <li>
+    // Finally, some rules are matched to multiple phrases. In fact, the alpha and digit phrases are matched
+    // so often that they are a nuisance. We will demonstrate shortly how to get rid of the clutter.
+    // </li>
+    // </ul>
+    page = result.toHtmlPage();
+    htmlName = 'ini-first-result';
+    writeHtml(page, htmlName);
+    // Let's say we want to see everything except the `alpha`, `digit` and `owsp` phrases.
+    // We can exclude those with a call to the `exp.exclude()` function.
+    exp.exclude(['alpha', 'digit', 'owsp']);
+    result = exp.exec(str);
+    page = result.toHtmlPage();
+    htmlName = 'ini-exclude-result';
+    writeHtml(page, htmlName);
+    // Or we can do it the other way around with the `exp.include()` function.
+    // Say that we only want to see the `section-name`, `key` and `value`.
+    exp.include(['section-name', 'key', 'value']);
+    result = exp.exec(str);
+    page = result.toHtmlPage();
+    htmlName = 'ini-include-result';
+    writeHtml(page, htmlName);
+    // Now that we've show the display of the rules (see display.js for more on display functions)
+    // let's take a look at how to handle them programmatically.
+    // Here is a general loop that will give specific access to all of the included rule phrases.
+    str = '';
+    str += '; comment\n';
+    str += 'input = 1000\n';
+    exp = new apgExp(grammar, flags);
+    exp.exclude(['alpha', 'digit']);
+    result = exp.exec(str);
+    html = '';
+    html += exp.sourceToHtml();
+    html += '<h3>input string</h3>\n';
+    html += apgLib.utils.stringToAsciiHtml(str);
+    html += '<h3>result</h3>\n';
+    html += '<pre>\n';
+    // Enumerate all of the named rules.
+    for (const name in result.rules) {
+      if (result.rules[name]) {
+        // The named rule is defined. Therefore, it is an array of phrase objects.
+        // Each phrase and index is specifically identified and displayed in this loop.
+        for (let i = 0; i < result.rules[name].length; i += 1) {
+          const { phrase } = result.rules[name][i];
+          const { index } = result.rules[name][i];
+          html += `result.rules[${name}][${i}].phrase(${index}) = '`;
+          html += apgLib.utils.stringToAsciiHtml(phrase);
+          html += "'\n";
         }
-        html += "</pre>\n";
-        html = apgLib.utils.htmlToPage(html);
-        htmlName = "ini-enumeration";
-        writeHtml(html, htmlName);
-        // Briefly, we will also show here the `last match` information retained in the `apg-exp` object.
-        html = exp.toHtml();
-        html = apgLib.utils.htmlToPage(html);
-        htmlName = "ini-last-match";
-        writeHtml(html, htmlName);
-        // Programmatically, we can access the `last match` data similarly. A partial display is given here.
-        html = "<h3>last match</h3>\n";
-        html += "exp.leftContext: ";
-        html += apgLib.utils.stringToAsciiHtml(exp.leftContext);
-        // Enumerate the last match to each rule
-        html += "<pre>\n";
-        for (let name in exp.rules) {
-            html += "exp.rules[" + name + "]: " + exp.rules[name];
-            html += "\n";
-            let lastMatchPhraseName = "${" + name + "}";
-            html += "exp[" + lastMatchPhraseName + "]: " + exp[lastMatchPhraseName];
-            html += "\n";
-        }
-        html += "</pre>\n";
-        html = apgLib.utils.htmlToPage(html);
-        htmlName = "ini-last-match-program";
-        writeHtml(html, htmlName);
-    } catch (e) {
-        console.log("EXCEPTION: " + e.message);
+      } else {
+        // Otherwise, no phrase was matched for this rule
+        html += `result.rules[${name}] = undefined\n`;
+      }
     }
+    html += '</pre>\n';
+    html = apgLib.utils.htmlToPage(html);
+    htmlName = 'ini-enumeration';
+    writeHtml(html, htmlName);
+    // Briefly, we will also show here the `last match` information retained in the `apg-exp` object.
+    html = exp.toHtml();
+    html = apgLib.utils.htmlToPage(html);
+    htmlName = 'ini-last-match';
+    writeHtml(html, htmlName);
+    // Programmatically, we can access the `last match` data similarly. A partial display is given here.
+    html = '<h3>last match</h3>\n';
+    html += 'exp.leftContext: ';
+    html += apgLib.utils.stringToAsciiHtml(exp.leftContext);
+    // Enumerate the last match to each rule
+    html += '<pre>\n';
+    for (const name in exp.rules) {
+      html += `exp.rules[${name}]: ${exp.rules[name]}`;
+      html += '\n';
+      const lastMatchPhraseName = `\${${name}}`;
+      html += `exp[${lastMatchPhraseName}]: ${exp[lastMatchPhraseName]}`;
+      html += '\n';
+    }
+    html += '</pre>\n';
+    html = apgLib.utils.htmlToPage(html);
+    htmlName = 'ini-last-match-program';
+    writeHtml(html, htmlName);
+  } catch (e) {
+    console.log(`EXCEPTION: ${e.message}`);
+  }
 })();

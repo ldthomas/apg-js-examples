@@ -1,5 +1,16 @@
 # apg-js-examples
 
+## Note on version 4.1.0
+
+All files have been updated for compliance with ESLint using the airbnb + prettier configurations.
+Use:
+
+```
+npm install --production apg-js-examples
+```
+
+to prevent installation of ESLint development and configuration modules.
+
 ## Installation
 
 **npm**
