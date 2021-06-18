@@ -11,7 +11,8 @@ docco -l classic index.md README.md LICENSE.md \
  ./src/ini-file/*.js \
  ./src/look-ahead/*.js \
  ./src/look-behind/*.js \
+ ./src/odata/*.js \
  ./src/substrings/*.js \
  ./src/trace/*.js \
  ./src/udt/*.js
-exit 0
+exit 0 

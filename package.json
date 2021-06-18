@@ -1,6 +1,6 @@
 {
   "name": "apg-js-examples",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "Examples of using the suite of apg-js applications and libraries.",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "ini-file": "src/ini-file/main.sh",
     "look-ahead": "src/look-ahead/main.sh",
     "look-behind": "src/look-behind/main.sh",
+    "odata": "src/odata/main.sh",
     "substrings": "src/substrings/main.sh",
     "trace": "src/trace/main.sh",
     "udt": "src/udt/main.sh"
@@ -29,7 +30,7 @@
     "README.md"
   ],
   "dependencies": {
-    "apg-js": "^4.0.x"
+    "apg-js": "^4.1.x"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,6241 @@
+{
+  "constraints": [
+    {
+      "rule": "keyPropertyAlias",
+      "ruleId": 12,
+      "match": [
+        "KeyAlias"
+      ]
+    },
+    {
+      "rule": "keyPathLiteral",
+      "ruleId": 14,
+      "match": [
+        "1",
+        "2001",
+        "A1245",
+        "O'Neil",
+        "O%27Neil",
+        "Smartphone%2FTablet"
+      ]
+    },
+    {
+      "rule": "parameterName",
+      "ruleId": 49,
+      "match": [
+        "categoryId",
+        "color",
+        "colors",
+        "customer",
+        "Customers",
+        "complex",
+        "Ingredients",
+        "Kind",
+        "Location",
+        "ManagerID",
+        "Number",
+        "Rank",
+        "Size",
+        "Word",
+        "Word1",
+        "Word2"
+      ]
+    },
+    {
+      "rule": "parameterAlias",
+      "ruleId": 50,
+      "match": [
+        "@a",
+        "@bar",
+        "@c",
+        "@cat",
+        "@categoryId",
+        "@color",
+        "@expression",
+        "@foo",
+        "@i",
+        "@key",
+        "@ManagerID",
+        "@m",
+        "@p1",
+        "@ref",
+        "@title",
+        "@word"
+      ]
+    },
+    {
+      "rule": "customName",
+      "ruleId": 109,
+      "match": [
+        "!deltatoken",
+        "!special",
+        "find"
+      ]
+    },
+    {
+      "rule": "complexAnnotationInQuery",
+      "ruleId": 111,
+      "match": [
+        "@Core.Messages",
+        "@Namespace.SomeTerm"
+      ]
+    },
+    {
+      "rule": "primitiveAnnotationInQuery",
+      "ruleId": 113,
+      "match": [
+        "@Measures.Currency"
+      ]
+    },
+    {
+      "rule": "primitiveColAnnotationInQuery",
+      "ruleId": 114,
+      "match": [
+        "@Core.MayImplement"
+      ]
+    },
+    {
+      "rule": "entityAnnotationInFragment",
+      "ruleId": 127,
+      "match": [
+        "@Namespace.EntityTerm"
+      ]
+    },
+    {
+      "rule": "lambdaVariableExpr",
+      "ruleId": 141,
+      "match": [
+        "lambda",
+        "m"
+      ]
+    },
+    {
+      "rule": "namespacePart",
+      "ruleId": 241,
+      "match": [
+        "Core",
+        "Measures",
+        "Model",
+        "Namespace",
+        "odata",
+        "SaM",
+        "Sales",
+        "Special"
+      ]
+    },
+    {
+      "rule": "entitySetName",
+      "ruleId": 242,
+      "match": [
+        "Categories",
+        "Countries",
+        "Customers",
+        "Employees",
+        "LeaveRequests",
+        "Orders",
+        "OrderItems",
+        "People",
+        "Products",
+        "Sales",
+        "SalesOrganizations",
+        "Suppliers"
+      ]
+    },
+    {
+      "rule": "singletonEntity",
+      "ruleId": 243,
+      "match": [
+        "BestProductEverCreated",
+        "MainSupplier",
+        "SingletonEntity"
+      ]
+    },
+    {
+      "rule": "entityTypeName",
+      "ruleId": 244,
+      "match": [
+        "Customer",
+        "Employee",
+        "Manager",
+        "BestSellingProduct",
+        "PreferredSupplier",
+        "VipCustomer"
+      ]
+    },
+    {
+      "rule": "complexTypeName",
+      "ruleId": 245,
+      "match": [
+        "Address",
+        "AddressWithLocation"
+      ]
+    },
+    {
+      "rule": "typeDefinitionName",
+      "ruleId": 246,
+      "match": [
+        "MonetaryAmount"
+      ]
+    },
+    {
+      "rule": "enumerationTypeName",
+      "ruleId": 247,
+      "match": [
+        "NameKind",
+        "Pattern"
+      ]
+    },
+    {
+      "rule": "enumerationMember",
+      "ruleId": 248,
+      "match": [
+        "Solid",
+        "Yellow"
+      ]
+    },
+    {
+      "rule": "termName",
+      "ruleId": 249,
+      "match": [
+        "AnotherTerm",
+        "Currency",
+        "EntityTerm",
+        "id",
+        "MayImplement",
+        "Messages",
+        "SomeTerm",
+        "type"
+      ]
+    },
+    {
+      "rule": "primitiveKeyProperty",
+      "ruleId": 257,
+      "match": [
+        "Code",
+        "Date",
+        "ID",
+        "ItemID",
+        "OrderID",
+        "Size"
+      ]
+    },
+    {
+      "rule": "primitiveNonKeyProperty",
+      "ruleId": 258,
+      "match": [
+        "AccountRepresentative",
+        "Age",
+        "Amount",
+        "BirthDate",
+        "City",
+        "code",
+        "CompanyName",
+        "ContactName",
+        "Completed",
+        "Cost",
+        "CountryCode",
+        "eyeColor",
+        "FirstName",
+        "LastName",
+        "LifeTime",
+        "Line",
+        "Location",
+        "message",
+        "Month",
+        "Name",
+        "Population",
+        "Price",
+        "Quantity",
+        "Rating",
+        "ReleaseDate",
+        "Revenue",
+        "SalesArea",
+        "severity",
+        "Shipped",
+        "Spokesperson",
+        "State",
+        "Status",
+        "Street",
+        "style",
+        "SumAmount",
+        "TaxRate",
+        "Title",
+        "X",
+        "ZipCode"
+      ]
+    },
+    {
+      "rule": "primitiveColProperty",
+      "ruleId": 259,
+      "match": [
+        "EmailAddresses",
+        "Names",
+        "Sizes"
+      ]
+    },
+    {
+      "rule": "complexProperty",
+      "ruleId": 260,
+      "match": [
+        "Address"
+      ]
+    },
+    {
+      "rule": "complexColProperty",
+      "ruleId": 261,
+      "match": [
+        "Addresses",
+        "_at_Core_dot_Messages"
+      ]
+    },
+    {
+      "rule": "streamProperty",
+      "ruleId": 262,
+      "match": [
+        "Thumbnail"
+      ]
+    },
+    {
+      "rule": "entityNavigationProperty",
+      "ruleId": 264,
+      "match": [
+        "Category",
+        "Continent",
+        "Country",
+        "Countries",
+        "CountrySet",
+        "Currency",
+        "Customer",
+        "Customers",
+        "Manager",
+        "Product",
+        "ProductGroup",
+        "Supplier",
+        "Time"
+      ]
+    },
+    {
+      "rule": "entityColNavigationProperty",
+      "ruleId": 265,
+      "match": [
+        "DirectReports",
+        "Items",
+        "Orders",
+        "Products",
+        "Sales"
+      ]
+    },
+    {
+      "rule": "action",
+      "ruleId": 266,
+      "match": [
+        "ActionName",
+        "Cluster",
+        "Discount",
+        "Rejection"
+      ]
+    },
+    {
+      "rule": "actionImport",
+      "ruleId": 267,
+      "match": [
+        "Activation"
+      ]
+    },
+    {
+      "rule": "entityFunction",
+      "ruleId": 269,
+      "match": [
+        "BestProduct",
+        "MostExpensive"
+      ]
+    },
+    {
+      "rule": "entityColFunction",
+      "ruleId": 270,
+      "match": [
+        "AllOrders",
+        "ProductsByColor",
+        "WithIngredients"
+      ]
+    },
+    {
+      "rule": "complexFunction",
+      "ruleId": 271,
+      "match": [
+        "MostPopularAddress"
+      ]
+    },
+    {
+      "rule": "complexColFunction",
+      "ruleId": 272,
+      "match": [
+        "MostPopularAddresses"
+      ]
+    },
+    {
+      "rule": "primitiveFunction",
+      "ruleId": 273,
+      "match": [
+        "Available",
+        "MostPopularCategory",
+        "MostPopularName",
+        "PhoneticallySimilar",
+        "GeoLocation"
+      ]
+    },
+    {
+      "rule": "primitiveColFunction",
+      "ruleId": 274,
+      "match": [
+        "MostPopularNames"
+      ]
+    },
+    {
+      "rule": "entityFunctionImport",
+      "ruleId": 275,
+      "match": [
+        "TheBestProduct"
+      ]
+    },
+    {
+      "rule": "entityColFunctionImport",
+      "ruleId": 276,
+      "match": [
+        "AllProductsByColor",
+        "AllProductsByCategoryId",
+        "EmployeesByManager",
+        "ProductsByCategoryId",
+        "ProductsByColor",
+        "ProductsByComplex",
+        "ProductsByCustomer",
+        "ProductsOrderedBy"
+      ]
+    },
+    {
+      "rule": "complexFunctionImport",
+      "ruleId": 277,
+      "match": [
+        "TheMostPopularAddress"
+      ]
+    },
+    {
+      "rule": "complexColFunctionImport",
+      "ruleId": 278,
+      "match": [
+        "TheMostPopularAddresses"
+      ]
+    },
+    {
+      "rule": "primitiveFunctionImport",
+      "ruleId": 279,
+      "match": [
+        "TheMostPopularName"
+      ]
+    },
+    {
+      "rule": "primitiveColFunctionImport",
+      "ruleId": 280,
+      "match": [
+        "TheMostPopularNames"
+      ]
+    },
+    {
+      "rule": "enumMemberValue",
+      "ruleId": 321,
+      "match": [
+        "32"
+      ]
+    }
+  ],
+  "valid": [
+    {
+      "ID": 0,
+      "name": "Just to test the dummy start rule",
+      "rule": "dummyStartRule",
+      "ruleId": 0,
+      "input": "http://services.odata.org/"
+    },
+    {
+      "ID": 1,
+      "name": "URI with IPv4 address, path and trailing slash",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://127.0.0.1:8080/MyService/"
+    },
+    {
+      "ID": 2,
+      "name": "URI with IPv6 address, path and trailing slash",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "https://[2001:db8:85a3:8d3:1319:8a2e:370:7348]:8080/MyService/"
+    },
+    {
+      "ID": 3,
+      "name": "URI with IPvFuture address, path and trailing slash",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "https://[v7.0]/MyService/"
+    },
+    {
+      "ID": 6,
+      "name": "Binary - empty",
+      "rule": "binary",
+      "ruleId": 284,
+      "input": "binary''"
+    },
+    {
+      "ID": 7,
+      "name": "Binary - f",
+      "rule": "binary",
+      "ruleId": 284,
+      "input": "binary'Zg=='"
+    },
+    {
+      "ID": 8,
+      "name": "Binary - f (pad character is optional)",
+      "rule": "binary",
+      "ruleId": 284,
+      "input": "binary'Zg'"
+    },
+    {
+      "ID": 9,
+      "name": "Binary - fo",
+      "rule": "binary",
+      "ruleId": 284,
+      "input": "binary'Zm8='"
+    },
+    {
+      "ID": 10,
+      "name": "Binary - fo (pad character is optional)",
+      "rule": "binary",
+      "ruleId": 284,
+      "input": "binary'Zm8='"
+    },
+    {
+      "ID": 11,
+      "name": "Binary - foo",
+      "rule": "binary",
+      "ruleId": 284,
+      "input": "binary'Zm9v'"
+    },
+    {
+      "ID": 12,
+      "name": "Binary - foob",
+      "rule": "binary",
+      "ruleId": 284,
+      "input": "binary'Zm9vYg=='"
+    },
+    {
+      "ID": 13,
+      "name": "Binary - fooba",
+      "rule": "binary",
+      "ruleId": 284,
+      "input": "binary'Zm9vYmE='"
+    },
+    {
+      "ID": 14,
+      "name": "Binary - foobar",
+      "rule": "binary",
+      "ruleId": 284,
+      "input": "binary'Zm9vYmFy'"
+    },
+    {
+      "ID": 15,
+      "name": "Boolean - true",
+      "rule": "booleanValue",
+      "ruleId": 289,
+      "input": "true"
+    },
+    {
+      "ID": 16,
+      "name": "Boolean - false",
+      "rule": "booleanValue",
+      "ruleId": 289,
+      "input": "false"
+    },
+    {
+      "ID": 17,
+      "name": "Boolean - literals are case-insensitive",
+      "rule": "booleanValue",
+      "ruleId": 289,
+      "input": "tRUe"
+    },
+    {
+      "ID": 18,
+      "name": "Date in URL or body",
+      "rule": "dateValue",
+      "ruleId": 302,
+      "input": "2012-09-03"
+    },
+    {
+      "ID": 19,
+      "name": "Date",
+      "rule": "dateValue",
+      "ruleId": 302,
+      "input": "2012-09-10"
+    },
+    {
+      "ID": 20,
+      "name": "Date",
+      "rule": "dateValue",
+      "ruleId": 302,
+      "input": "2012-09-20"
+    },
+    {
+      "ID": 21,
+      "name": "Date",
+      "rule": "dateValue",
+      "ruleId": 302,
+      "input": "2012-09-03"
+    },
+    {
+      "ID": 22,
+      "name": "Date: year zero",
+      "rule": "dateValue",
+      "ruleId": 302,
+      "input": "0000-01-01"
+    },
+    {
+      "ID": 23,
+      "name": "Date: negative",
+      "rule": "dateValue",
+      "ruleId": 302,
+      "input": "-10000-04-01"
+    },
+    {
+      "ID": 26,
+      "name": "DateTimeOffset: no seconds",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "2012-09-03T13:52Z"
+    },
+    {
+      "ID": 27,
+      "name": "DateTimeOffset: seconds",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "2012-09-03T22:09:02Z"
+    },
+    {
+      "ID": 28,
+      "name": "DateTimeOffset: leap second",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "1972-06-30T23:59:60Z"
+    },
+    {
+      "ID": 29,
+      "name": "DateTimeOffset: subseconds",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "2012-08-31T18:19:22.1Z"
+    },
+    {
+      "ID": 30,
+      "name": "DateTimeOffset: year zero",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "0000-01-01T00:00Z"
+    },
+    {
+      "ID": 31,
+      "name": "DateTimeOffset: negative",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "-10000-04-01T00:00Z"
+    },
+    {
+      "ID": 34,
+      "name": "DateTimeOffset: CEST",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "2012-09-03T14:53+02:00"
+    },
+    {
+      "ID": 35,
+      "name": "DateTimeOffset: UTC",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "2012-09-03T12:53Z"
+    },
+    {
+      "ID": 41,
+      "name": "DateTimeOffset: with percent-encoding",
+      "rule": "dateTimeOffsetValueInUrl",
+      "ruleId": 304,
+      "input": "2012-09-03T23%3A59+01%3A00"
+    },
+    {
+      "ID": 42,
+      "name": "Decimal",
+      "rule": "decimalValue",
+      "ruleId": 290,
+      "input": "3.14"
+    },
+    {
+      "ID": 43,
+      "name": "Decimal - exponential notation",
+      "rule": "decimalValue",
+      "ruleId": 290,
+      "input": "-1.234567e3"
+    },
+    {
+      "ID": 44,
+      "name": "Decimal - exponential notation",
+      "rule": "decimalValue",
+      "ruleId": 290,
+      "input": "1e-101"
+    },
+    {
+      "ID": 45,
+      "name": "Decimal - negative infinitiy",
+      "rule": "decimalValue",
+      "ruleId": 290,
+      "input": "-INF"
+    },
+    {
+      "ID": 46,
+      "name": "Decimal - positive infinitiy",
+      "rule": "decimalValue",
+      "ruleId": 290,
+      "input": "INF"
+    },
+    {
+      "ID": 47,
+      "name": "Decimal - not a number",
+      "rule": "decimalValue",
+      "ruleId": 290,
+      "input": "NaN"
+    },
+    {
+      "ID": 48,
+      "name": "Duration in body",
+      "rule": "durationValue",
+      "ruleId": 306,
+      "input": "P6DT23H59M59.9999S"
+    },
+    {
+      "ID": 51,
+      "name": "Duration in URL",
+      "rule": "duration",
+      "ruleId": 305,
+      "input": "duration'P6DT23H59M59.9999S'"
+    },
+    {
+      "ID": 52,
+      "name": "Duration in URL without prefix",
+      "rule": "duration",
+      "ruleId": 305,
+      "input": "'P6DT23H59M59.9999S'"
+    },
+    {
+      "ID": 53,
+      "name": "Decimal: integer",
+      "rule": "decimalValue",
+      "ruleId": 290,
+      "input": "-2"
+    },
+    {
+      "ID": 56,
+      "name": "Decimal in URL",
+      "rule": "decimalValue",
+      "ruleId": 290,
+      "input": "3.14"
+    },
+    {
+      "ID": 57,
+      "name": "Double",
+      "rule": "doubleValue",
+      "ruleId": 291,
+      "input": "3.14"
+    },
+    {
+      "ID": 58,
+      "name": "Double with exponent",
+      "rule": "doubleValue",
+      "ruleId": 291,
+      "input": "-0.314e1"
+    },
+    {
+      "ID": 60,
+      "name": "Negative infinity",
+      "rule": "doubleValue",
+      "ruleId": 291,
+      "input": "-INF"
+    },
+    {
+      "ID": 61,
+      "name": "Positive infinity",
+      "rule": "doubleValue",
+      "ruleId": 291,
+      "input": "INF"
+    },
+    {
+      "ID": 62,
+      "name": "Not a Number",
+      "rule": "doubleValue",
+      "ruleId": 291,
+      "input": "NaN"
+    },
+    {
+      "ID": 63,
+      "name": "Double in URL",
+      "rule": "doubleValue",
+      "ruleId": 291,
+      "input": "-0.314e1"
+    },
+    {
+      "ID": 64,
+      "name": "Single in URL",
+      "rule": "singleValue",
+      "ruleId": 292,
+      "input": "-0.314e1"
+    },
+    {
+      "ID": 65,
+      "name": "Byte",
+      "rule": "byteValue",
+      "ruleId": 295,
+      "input": "255"
+    },
+    {
+      "ID": 66,
+      "name": "SByte",
+      "rule": "sbyteValue",
+      "ruleId": 296,
+      "input": "-128"
+    },
+    {
+      "ID": 67,
+      "name": "Int16",
+      "rule": "int16Value",
+      "ruleId": 297,
+      "input": "+32000"
+    },
+    {
+      "ID": 68,
+      "name": "Int32",
+      "rule": "int32Value",
+      "ruleId": 298,
+      "input": "-2000000000"
+    },
+    {
+      "ID": 69,
+      "name": "Int64",
+      "rule": "int64Value",
+      "ruleId": 299,
+      "input": "1234567890123456789"
+    },
+    {
+      "ID": 70,
+      "name": "Null: unqualified",
+      "rule": "nullValue",
+      "ruleId": 283,
+      "input": "null"
+    },
+    {
+      "ID": 71,
+      "name": "String",
+      "rule": "string",
+      "ruleId": 300,
+      "input": "'ABCDEFGHIHJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~!$&('')*+,;=:@'"
+    },
+    {
+      "ID": 72,
+      "name": "String",
+      "rule": "string",
+      "ruleId": 300,
+      "input": "'O''Neil'"
+    },
+    {
+      "ID": 73,
+      "name": "String",
+      "rule": "string",
+      "ruleId": 300,
+      "input": "%27O'%27Neil'"
+    },
+    {
+      "ID": 76,
+      "name": "String",
+      "rule": "string",
+      "ruleId": 300,
+      "input": "'%26%28'"
+    },
+    {
+      "ID": 77,
+      "name": "primitive value in request body - enumeration member",
+      "rule": "primitiveValue",
+      "ruleId": 282,
+      "input": "Yellow"
+    },
+    {
+      "ID": 78,
+      "name": "primitive value in request body - geo point",
+      "rule": "primitiveValue",
+      "ruleId": 282,
+      "input": "SRID=0;Point(142.1 64.1)"
+    },
+    {
+      "ID": 79,
+      "name": "primitive value in request body - integer",
+      "rule": "primitiveValue",
+      "ruleId": 282,
+      "input": "0123456789"
+    },
+    {
+      "ID": 80,
+      "name": "primitive value in request body - guid",
+      "rule": "primitiveValue",
+      "ruleId": 282,
+      "input": "01234567-89ab-cdef-0123-456789abcdef"
+    },
+    {
+      "ID": 81,
+      "name": "primitive value in request body - binary",
+      "rule": "primitiveValue",
+      "ruleId": 282,
+      "input": "a123456789abcdefABA="
+    },
+    {
+      "ID": 83,
+      "name": "Resource Path - Entity Set",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories"
+    },
+    {
+      "ID": 84,
+      "name": "Resource Path - Entity",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories(11)"
+    },
+    {
+      "ID": 85,
+      "name": "Resource Path - Entity",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories(ID=1)"
+    },
+    {
+      "ID": 86,
+      "name": "Key",
+      "rule": "string",
+      "ruleId": 300,
+      "input": "'Hugo''s%20Tavern'"
+    },
+    {
+      "ID": 87,
+      "name": "Resource Path - Entity",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories(ID=1,Size=5)"
+    },
+    {
+      "ID": 88,
+      "name": "Correct Guid",
+      "rule": "guidValue",
+      "ruleId": 294,
+      "input": "01234567-89ab-cdef-0123-456789abcdef"
+    },
+    {
+      "ID": 91,
+      "name": "TimeOfDay",
+      "rule": "timeOfDayValue",
+      "ruleId": 307,
+      "input": "11:22:33"
+    },
+    {
+      "ID": 92,
+      "name": "TimeOfDay - percent-encoded colon",
+      "rule": "timeOfDayValueInUrl",
+      "ruleId": 308,
+      "input": "11%3A22%3a33"
+    },
+    {
+      "ID": 94,
+      "name": "TimeOfDay: no seconds",
+      "rule": "timeOfDayValue",
+      "ruleId": 307,
+      "input": "11:22"
+    },
+    {
+      "ID": 95,
+      "name": "TimeOfDay: fractional seconds",
+      "rule": "timeOfDayValue",
+      "ruleId": 307,
+      "input": "11:22:33.4444444"
+    },
+    {
+      "ID": 97,
+      "name": "Identifier",
+      "rule": "odataIdentifier",
+      "ruleId": 250,
+      "input": "TheQuickBrownFoxSays42"
+    },
+    {
+      "ID": 98,
+      "name": "Identifier with leading underscores",
+      "rule": "odataIdentifier",
+      "ruleId": 250,
+      "input": "__ID"
+    },
+    {
+      "ID": 101,
+      "name": "Entity Set",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Products"
+    },
+    {
+      "ID": 102,
+      "name": "Inline Parameter Syntax",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://host/service/EmployeesByManager(ManagerID=3)"
+    },
+    {
+      "ID": 103,
+      "name": "Inline Parameter Syntax",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://host/service/EmployeesByManager(ManagerID=@p1)?@p1=3"
+    },
+    {
+      "ID": 104,
+      "name": "Inline Parameter Syntax",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://host/service/EmployeesByManager?ManagerID=3"
+    },
+    {
+      "ID": 105,
+      "name": "Inline Parameter Syntax",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://host/service/EmployeesByManager?@ManagerID=3"
+    },
+    {
+      "ID": 106,
+      "name": "2 URL Components - service root URL",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://services.odata.org/OData/OData.svc/"
+    },
+    {
+      "ID": 107,
+      "name": "2 URL Components - service root directly at server root",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://My.Org:80/"
+    },
+    {
+      "ID": 108,
+      "name": "2 URL Components - resource path",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories(1)/Products"
+    },
+    {
+      "ID": 109,
+      "name": "2 URL Components - resource path",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories(1)/Products"
+    },
+    {
+      "ID": 110,
+      "name": "2 URL Components - key with key property alias",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories(KeyAlias=1)"
+    },
+    {
+      "ID": 111,
+      "name": "2 URL Components - key with parameter alias - short form",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(@key)?@key=1"
+    },
+    {
+      "ID": 112,
+      "name": "2 URL Components - key with parameter alias - long form",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(ID=@key)?@key=1"
+    },
+    {
+      "ID": 113,
+      "name": "2 URL Components - query options",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$top=2&$orderby=Name"
+    },
+    {
+      "ID": 114,
+      "name": "2 URL Components - resource path and query options",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Products?$top=2&$orderby=Name"
+    },
+    {
+      "ID": 115,
+      "name": "2 URL Components - single quotes",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers('O''Neil')"
+    },
+    {
+      "ID": 116,
+      "name": "2 URL Components - single quotes",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers(%27O%27%27Neil%27)"
+    },
+    {
+      "ID": 118,
+      "name": "2 URL Components - parentheses",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers%28%27O%27%27Neil%27%29"
+    },
+    {
+      "ID": 119,
+      "name": "2 URL Components - encoded forward slash",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://host/service/Categories('Smartphone%2FTablet')"
+    },
+    {
+      "ID": 121,
+      "name": "4.1 - Metadata URL",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://services.odata.org/OData/OData.svc/$metadata"
+    },
+    {
+      "ID": 122,
+      "name": "4.1 - Metadata URL - CSDL JSON",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://services.odata.org/OData/OData.svc/$metadata?$format=json"
+    },
+    {
+      "ID": 123,
+      "name": "4.1 - Metadata URL - CSDL XML",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://services.odata.org/OData/OData.svc/$metadata?$format=xml"
+    },
+    {
+      "ID": 124,
+      "name": "4.1 - Metadata URL - allowed",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://services.odata.org/OData/OData.svc/$metadata?$format=text/html"
+    },
+    {
+      "ID": 125,
+      "name": "4.1 - Metadata URL - allowed",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://services.odata.org/OData/OData.svc/$metadata?$format=text/html&!special"
+    },
+    {
+      "ID": 126,
+      "name": "4.2 - Batch URL",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://services.odata.org/OData/OData.svc/$batch"
+    },
+    {
+      "ID": 127,
+      "name": "4.2 - Batch URL - JSON batch response",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://services.odata.org/OData/OData.svc/$batch?$format=json"
+    },
+    {
+      "ID": 128,
+      "name": "4.2 - Batch URL - multipart batch response",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://services.odata.org/OData/OData.svc/$batch?$format=multipart/mixed"
+    },
+    {
+      "ID": 129,
+      "name": "4.2 - Batch URL - allowed",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://services.odata.org/OData/OData.svc/$batch?!special"
+    },
+    {
+      "ID": 130,
+      "name": "4.3 Addressing entities - entity set",
+      "rule": "entitySetName",
+      "ruleId": 242,
+      "input": "Products"
+    },
+    {
+      "ID": 131,
+      "name": "4.3 Addressing entities - entity set",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products"
+    },
+    {
+      "ID": 134,
+      "name": "4.3 Addressing entities - function call",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByCategoryId(categoryId=2)"
+    },
+    {
+      "ID": 135,
+      "name": "4.3 Addressing entities - function call with subsequent key segment",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByCategoryId(categoryId=2)(2)"
+    },
+    {
+      "ID": 136,
+      "name": "4.3 Addressing entities - function call with alias",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByCategoryId(categoryId=@cat)?@cat=2"
+    },
+    {
+      "ID": 137,
+      "name": "4.3 Addressing entities - function call with alias for expression",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByCategoryId(categoryId=@cat)?@cat=Model.MostPopularCategory(Rank=2)"
+    },
+    {
+      "ID": 138,
+      "name": "4.3 Addressing entities - function call with query parameter",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByCategoryId(categoryId=2)"
+    },
+    {
+      "ID": 139,
+      "name": "4.3 Addressing entities - function call with query parameter",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByCategoryId?@categoryId=2"
+    },
+    {
+      "ID": 140,
+      "name": "4.3 Addressing entities - function parameter",
+      "rule": "functionParameter",
+      "ruleId": 48,
+      "input": "color='red'"
+    },
+    {
+      "ID": 141,
+      "name": "4.3 Addressing entities - top-level function call",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByColor(color='red')"
+    },
+    {
+      "ID": 142,
+      "name": "4.3 Addressing entities - bound function call",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Model.ProductsByColor(color='red')"
+    },
+    {
+      "ID": 143,
+      "name": "4.3 Addressing entities - bound function call with implicit parameter aliases",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Model.ProductsByColor?@color='red'"
+    },
+    {
+      "ID": 144,
+      "name": "4.3 Addressing entities - single entity (short)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories(1)"
+    },
+    {
+      "ID": 145,
+      "name": "4.3 Addressing entities - single entity (short)",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers(1)"
+    },
+    {
+      "ID": 146,
+      "name": "4.3 Addressing entities - single entity (long)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories(ID=1)"
+    },
+    {
+      "ID": 147,
+      "name": "4.3 Addressing entities - single entity (string)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories('Tablet')"
+    },
+    {
+      "ID": 148,
+      "name": "4.3 Addressing entities - single entity (string)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories('7''''%20Tablet')"
+    },
+    {
+      "ID": 149,
+      "name": "4.3 Addressing entities - single entity (string)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories%28%27Tablet%27%29"
+    },
+    {
+      "ID": 150,
+      "name": "4.3 Addressing entities - single entity (string)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories('Tablet%2FSlate')"
+    },
+    {
+      "ID": 152,
+      "name": "4.3 Addressing entities - single entity (string)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories('Tablet%20%28small%29')"
+    },
+    {
+      "ID": 153,
+      "name": "4.3 Addressing entities - single entity (string)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories('Tablet%20(small)')"
+    },
+    {
+      "ID": 154,
+      "name": "4.3 Addressing entities - single entity (string)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories('Tablet%20)small(')"
+    },
+    {
+      "ID": 155,
+      "name": "4.3 Addressing entities - single entity (timestamp)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories(2018-02-13T23:59:59Z)"
+    },
+    {
+      "ID": 156,
+      "name": "4.3 Addressing entities - single entity (timestamp, percent-encoded colon)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories(2018-02-13T23%3A59%3A59Z)"
+    },
+    {
+      "ID": 157,
+      "name": "4.3 Addressing entities - single entity (time)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories(23:59:59)"
+    },
+    {
+      "ID": 158,
+      "name": "4.3 Addressing entities - single entity (time, percent-encoded colon)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories(23%3A59%3A59)"
+    },
+    {
+      "ID": 160,
+      "name": "4.3 Addressing entities - single entity (multi-part key)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "OrderItems(OrderID=1,ItemID='a')"
+    },
+    {
+      "ID": 162,
+      "name": "4.3 Addressing entities - bound operation on entity set",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Products/Model.MostExpensive()"
+    },
+    {
+      "ID": 163,
+      "name": "4.3 Addressing entities - follow navigation property",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Products(1)/Supplier"
+    },
+    {
+      "ID": 164,
+      "name": "4.3 Addressing entities - follow navigation property and call function",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Products/Model.AllOrders()"
+    },
+    {
+      "ID": 165,
+      "name": "4.3 Addressing entities - follow navigation property and call function, then count results",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Products/Model.AllOrders()/$count"
+    },
+    {
+      "ID": 166,
+      "name": "4.3 Addressing entities - follow navigation property and call function - no parens",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Products/Model.AllOrders"
+    },
+    {
+      "ID": 167,
+      "name": "4.3 Addressing entities - follow navigation property and call function - no namespace",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Products/AllOrders"
+    },
+    {
+      "ID": 168,
+      "name": "4.3 Addressing entities - follow navigation property and call function",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Products/Model.MostExpensive()"
+    },
+    {
+      "ID": 169,
+      "name": "4.3 Addressing entities - singleton entities",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "SingletonEntity"
+    },
+    {
+      "ID": 170,
+      "name": "4.3 Addressing entities - single navigation property in complex type",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Customers(1)/Address/Country"
+    },
+    {
+      "ID": 171,
+      "name": "4.3 Addressing entities - collection navigation property in complex type",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Customers(1)/Address/Products"
+    },
+    {
+      "ID": 172,
+      "name": "4.3.1 Canonical URL",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Products(1)"
+    },
+    {
+      "ID": 173,
+      "name": "4.3.4 $entity with OData URL",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "$entity?$id=http://host/path"
+    },
+    {
+      "ID": 174,
+      "name": "4.3.4 $entity with URN",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "$entity?$id=urn:some:id"
+    },
+    {
+      "ID": 175,
+      "name": "4.3.4 $entity with URN, id without $ prefix",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "$entity?id=urn:some:id"
+    },
+    {
+      "ID": 177,
+      "name": "4.3.4 $entity with OData URL, $select and $expand",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "$entity/Model.Customer?$id=http://myservice/Customers('ALFKI')&$select=CompanyName,ContactName&$expand=Orders"
+    },
+    {
+      "ID": 179,
+      "name": "4.3.6  Key-as-Segment - single entity (numeric single-part key)",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers/1"
+    },
+    {
+      "ID": 180,
+      "name": "4.3.6  Key-as-Segment - single entity (string single-part key)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Employees/A1245"
+    },
+    {
+      "ID": 181,
+      "name": "4.3.6  Key-as-Segment - single entity (string single-part key)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "People/O'Neil"
+    },
+    {
+      "ID": 182,
+      "name": "4.3.6  Key-as-Segment - single entity (string single-part key)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "People/O%27Neil"
+    },
+    {
+      "ID": 183,
+      "name": "4.3.6  Key-as-Segment - single entity (string single-part key)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories/Smartphone%2FTablet"
+    },
+    {
+      "ID": 184,
+      "name": "4.3.6  Key-as-Segment - single entity (multi-part key)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "OrderItems/2001/1"
+    },
+    {
+      "ID": 185,
+      "name": "4.3.6  Key-as-Segment - navigation (segment)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Orders/1/Items"
+    },
+    {
+      "ID": 186,
+      "name": "4.3.6  Key-as-Segment - navigation (segment)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Orders/1/Items/1"
+    },
+    {
+      "ID": 187,
+      "name": "4.4 Addressing Links between Entities",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Products/$ref"
+    },
+    {
+      "ID": 188,
+      "name": "4.4 Addressing Links between Entities",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Products/$ref?$id=Products(0)"
+    },
+    {
+      "ID": 189,
+      "name": "4.4 Addressing Links between Entities",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products(1)/Category/$ref"
+    },
+    {
+      "ID": 191,
+      "name": "4.4 Addressing Links between Entities",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Products(2)/$ref"
+    },
+    {
+      "ID": 193,
+      "name": "4.4 edge case: entity set as references",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories/$ref"
+    },
+    {
+      "ID": 194,
+      "name": "4.4 edge case: top-level entity as reference",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/$ref"
+    },
+    {
+      "ID": 195,
+      "name": "4.5.1 Call unbound action via action import",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Activation"
+    },
+    {
+      "ID": 196,
+      "name": "4.5.1 Call bound action",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "LeaveRequests(4)/Model.Rejection"
+    },
+    {
+      "ID": 198,
+      "name": "4.5.2 Call function import",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "TheBestProduct()"
+    },
+    {
+      "ID": 199,
+      "name": "4.5.2 Call function import - no parentheses",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "TheBestProduct"
+    },
+    {
+      "ID": 200,
+      "name": "4.5.2 Call function import - inline parameter",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "TheBestProduct(Size=3)"
+    },
+    {
+      "ID": 202,
+      "name": "4.5.2 Call complex function import",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "TheMostPopularAddress()"
+    },
+    {
+      "ID": 203,
+      "name": "4.5.2 Call complex collection function import",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "TheMostPopularAddresses()"
+    },
+    {
+      "ID": 204,
+      "name": "4.5.2 Call primitive function import",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "TheMostPopularName()"
+    },
+    {
+      "ID": 205,
+      "name": "4.5.2 Call primitive function import",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "TheMostPopularName()/$value"
+    },
+    {
+      "ID": 206,
+      "name": "4.5.2 Call primitive collection function import",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "TheMostPopularNames()"
+    },
+    {
+      "ID": 207,
+      "name": "4.5.2 Call bound complex function",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers/Model.MostPopularAddress()"
+    },
+    {
+      "ID": 208,
+      "name": "4.5.2 Call bound complex collection function",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers/Model.MostPopularAddresses()"
+    },
+    {
+      "ID": 209,
+      "name": "4.5.2 Call bound complex collection function",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers/Model.MostPopularAddresses()/$count"
+    },
+    {
+      "ID": 210,
+      "name": "4.5.2 Call bound complex collection function with cast",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers/Model.MostPopularAddresses()/Model.AddressWithLocation"
+    },
+    {
+      "ID": 211,
+      "name": "4.5.2 Call bound complex collection function with cast",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers/Model.MostPopularAddresses()/Model.AddressWithLocation/$count"
+    },
+    {
+      "ID": 212,
+      "name": "4.5.2 Call bound complex collection function with cast, no namespace",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers/MostPopularAddresses()/AddressWithLocation/$count"
+    },
+    {
+      "ID": 213,
+      "name": "4.5.2 Call bound complex collection function - multiple",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers/Model.MostPopularAddresses()/Model.MostPopularNames()"
+    },
+    {
+      "ID": 214,
+      "name": "4.5.2 Call bound complex collection function - multiple, no namespace",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers/MostPopularAddresses()/MostPopularNames()"
+    },
+    {
+      "ID": 215,
+      "name": "4.5.2 Call bound primitive function",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers/Model.MostPopularName()"
+    },
+    {
+      "ID": 216,
+      "name": "4.5.2 Call bound primitive function",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers/Model.MostPopularName()/$value"
+    },
+    {
+      "ID": 217,
+      "name": "4.5.2 Call bound primitive collection function",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers/Model.MostPopularNames()"
+    },
+    {
+      "ID": 218,
+      "name": "4.5.2 Call bound primitive collection function",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers/Model.MostPopularNames()/$count"
+    },
+    {
+      "ID": 219,
+      "name": "4.6 Addressing a Property - primitive",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/ID"
+    },
+    {
+      "ID": 220,
+      "name": "4.6 Addressing a Property - complex",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Address"
+    },
+    {
+      "ID": 221,
+      "name": "4.6 Addressing a Property - complex path",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Address/Street"
+    },
+    {
+      "ID": 222,
+      "name": "4.6 Addressing a Property - complex path with type cast",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Address/Model.AddressWithLocation/Location"
+    },
+    {
+      "ID": 223,
+      "name": "4.6 Addressing a Property - stream",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Thumbnail"
+    },
+    {
+      "ID": 224,
+      "name": "4.6 Addressing a Property - collection of primitive",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Suppliers(1)/EmailAddresses"
+    },
+    {
+      "ID": 225,
+      "name": "4.6 Addressing a Property - collection of complex",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Suppliers(1)/Addresses"
+    },
+    {
+      "ID": 226,
+      "name": "4.7 Addressing a Property Value",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/ID/$value"
+    },
+    {
+      "ID": 227,
+      "name": "4.7 Addressing a Property Value - with $format",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/ID/$value?$format=json"
+    },
+    {
+      "ID": 230,
+      "name": "4.7 Addressing a Property Value - property of complex",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Address/Street/$value"
+    },
+    {
+      "ID": 232,
+      "name": "4.8 Addressing entities - entity set with $count",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$count"
+    },
+    {
+      "ID": 233,
+      "name": "4.8 Addressing entities - entity set with $count",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$count?$filter=Price gt 5.00"
+    },
+    {
+      "ID": 235,
+      "name": "4.8 Addressing entities - entity set navigation with $count",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products(1)/Items/$count"
+    },
+    {
+      "ID": 236,
+      "name": "4.8 Addressing entities - collection property with $count",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products(1)/Addresses/$count"
+    },
+    {
+      "ID": 237,
+      "name": "4.8 Addressing entities - collection property with $count",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products(1)/Sizes/$count"
+    },
+    {
+      "ID": 238,
+      "name": "4.8 Addressing the Count - in $filter with navigation",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=Products/$count gt 0"
+    },
+    {
+      "ID": 239,
+      "name": "4.8 Addressing the Count - in $filter with complex collection",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=Addresses/$count gt 0"
+    },
+    {
+      "ID": 240,
+      "name": "4.8 Addressing the Count - in $filter with primitive collection",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=Sizes/$count gt 0"
+    },
+    {
+      "ID": 241,
+      "name": "4.8 Addressing the Count - in $filter with filtered collection",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=Products/$count($filter=Price gt 5.00) gt 2"
+    },
+    {
+      "ID": 242,
+      "name": "4.8 Addressing the Count - collection navigation property with $count in $orderby",
+      "rule": "orderby",
+      "ruleId": 75,
+      "input": "$orderby=Products/$count"
+    },
+    {
+      "ID": 243,
+      "name": "4.8 Addressing the Count - collection property with $count in $orderby",
+      "rule": "orderby",
+      "ruleId": 75,
+      "input": "$orderby=Addresses/$count"
+    },
+    {
+      "ID": 244,
+      "name": "4.8 Addressing the Count - collection property with $count in $orderby",
+      "rule": "orderby",
+      "ruleId": 75,
+      "input": "$orderby=Sizes/$count"
+    },
+    {
+      "ID": 245,
+      "name": "4.10 Addressing a Member of an Ordered Primitive Collection",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Suppliers(1)/EmailAddresses/1"
+    },
+    {
+      "ID": 246,
+      "name": "4.10 Addressing a Member of an Ordered Complex Collection",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "MainSupplier/Addresses/0"
+    },
+    {
+      "ID": 247,
+      "name": "4.10 Addressing a Member of an Ordered Complex Collection with type-cast",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Suppliers(1)/Addresses/Model.AddressWithLocation/-1"
+    },
+    {
+      "ID": 248,
+      "name": "4.11 Inheritance - set of subtypes",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/Model.BestSellingProduct"
+    },
+    {
+      "ID": 249,
+      "name": "4.11 Inheritance - set of subtypes, then key access",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/Model.BestSellingProduct(1)"
+    },
+    {
+      "ID": 250,
+      "name": "4.11 Inheritance - key access, then cast to subtype",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products(1)/Model.BestSellingProduct"
+    },
+    {
+      "ID": 252,
+      "name": "4.11 Inheritance - complex type",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products(1)/Address/Model.AddressWithLocation"
+    },
+    {
+      "ID": 253,
+      "name": "4.11 Inheritance - complex type with property",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products(1)/Address/Model.AddressWithLocation/Street"
+    },
+    {
+      "ID": 254,
+      "name": "4.11 Inheritance - complex type with property, no namespace",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products(1)/Address/AddressWithLocation/Street"
+    },
+    {
+      "ID": 255,
+      "name": "4.11 Inheritance - collection of complex type",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products(1)/Addresses/Model.AddressWithLocation"
+    },
+    {
+      "ID": 256,
+      "name": "4.11 Inheritance - expressions: complex type",
+      "rule": "propertyPathExpr",
+      "ruleId": 134,
+      "input": "Address/Model.AddressWithLocation"
+    },
+    {
+      "ID": 257,
+      "name": "4.11 Inheritance - expressions: complex type with path",
+      "rule": "propertyPathExpr",
+      "ruleId": 134,
+      "input": "Address/Model.AddressWithLocation/Street"
+    },
+    {
+      "ID": 258,
+      "name": "4.11 Inheritance - expressions: complex type with path, no namespace",
+      "rule": "propertyPathExpr",
+      "ruleId": 134,
+      "input": "Address/AddressWithLocation/Street"
+    },
+    {
+      "ID": 259,
+      "name": "4.11 Inheritance - expressions: collection of complex type",
+      "rule": "propertyPathExpr",
+      "ruleId": 134,
+      "input": "Addresses/Model.AddressWithLocation"
+    },
+    {
+      "ID": 260,
+      "name": "4.11 Inheritance - $expand",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories?$expand=Products/Model.BestSellingProduct"
+    },
+    {
+      "ID": 261,
+      "name": "4.11 Inheritance - $expand, no namespace",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories?$expand=Products/BestSellingProduct"
+    },
+    {
+      "ID": 262,
+      "name": "4.11 Inheritance - $expand",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products?$expand=Model.BestSellingProduct/Sales"
+    },
+    {
+      "ID": 263,
+      "name": "4.11 Inheritance - $expand, no namespace",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products?$expand=BestSellingProduct/Sales"
+    },
+    {
+      "ID": 264,
+      "name": "4.11 Inheritance - $expand",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories?$expand=Products/Model.BestSellingProduct($select=Name)"
+    },
+    {
+      "ID": 265,
+      "name": "4.11 Inheritance - $expand on complex resource",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "TheMostPopularAddresses()?$expand=Model.AddressWithLocation/Country"
+    },
+    {
+      "ID": 266,
+      "name": "4.12 Filter Path Segment",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$filter(@foo)?@foo=Age gt 3"
+    },
+    {
+      "ID": 267,
+      "name": "4.12 Filter Path Segment - expression",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$filter(Age gt 3)"
+    },
+    {
+      "ID": 268,
+      "name": "4.12 Filter Path Segment - multiple",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$filter(@foo)/$filter(@bar)?@foo=Age gt 3&@bar=Price lt 5"
+    },
+    {
+      "ID": 269,
+      "name": "4.12 Filter Path Segment - multiple",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$filter(Age gt 3)/$filter(Price lt 5)"
+    },
+    {
+      "ID": 270,
+      "name": "4.12 Filter Path Segment - with /$ref",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$filter(@foo)/$filter(@bar)/$ref?@foo=Age gt 3&@bar=Price lt 5"
+    },
+    {
+      "ID": 271,
+      "name": "4.12 Filter Path Segment - with /$count",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$filter(@foo)/$filter(@bar)/$count?@foo=Age gt 3&@bar=Price lt 5"
+    },
+    {
+      "ID": 272,
+      "name": "4.12 Filter Path Segment - with /$count and $filter query option",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$filter(@foo)/$filter(@bar)/$count?@foo=Age gt 3&@bar=Price lt 5&$filter=Price lt 6"
+    },
+    {
+      "ID": 273,
+      "name": "4.12 Filter Path Segment - multiple",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$filter(@foo)/Special.ProductsByColor(color='red')/$filter(@bar)?@foo=Age gt 3&@bar=Price lt 5"
+    },
+    {
+      "ID": 274,
+      "name": "4.12 Filter Path Segment - multiple, no namespace",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$filter(@foo)/ProductsByColor(color='red')/$filter(@bar)?@foo=Age gt 3&@bar=Price lt 5"
+    },
+    {
+      "ID": 275,
+      "name": "4.12 Filter Path Segment - with action",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$filter(@foo)/Special.Cluster?@foo=Age gt 3"
+    },
+    {
+      "ID": 276,
+      "name": "4.12 Filter expression in query",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories?$filter=Products/$filter(Age gt 3)/$count lt 10"
+    },
+    {
+      "ID": 277,
+      "name": "4.12 Filter expression in query",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=Addresses/$filter(endswith(Street,'St'))/$count lt 10"
+    },
+    {
+      "ID": 278,
+      "name": "4.12 $each Path Segment",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$filter(@foo)/$each"
+    },
+    {
+      "ID": 279,
+      "name": "4.12 $each Path Segment - with action",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$filter(@foo)/$each/Special.Discount?@foo=Age gt 3"
+    },
+    {
+      "ID": 280,
+      "name": "4.14 Addressing a Media Resource",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/$value"
+    },
+    {
+      "ID": 281,
+      "name": "4.15 - Cross Join",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "$crossjoin(Customers,Countries)?$expand=Customers($select=Name),Countries($select=Name)&$filter=Customers/CountryCode eq Countries/CountryCode and Countries/Name eq 'USA'"
+    },
+    {
+      "ID": 282,
+      "name": "4.16 Addressing All Entities in a Service",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "$all?$search=red"
+    },
+    {
+      "ID": 283,
+      "name": "4.16 Addressing All Entities in a Service - with type cast",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "$all/Model.Customer?$filter=contains(Name,'red')"
+    },
+    {
+      "ID": 284,
+      "name": "4.17 Passing Query Options in the Request Body - entity set",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "People/$query"
+    },
+    {
+      "ID": 285,
+      "name": "4.17 Passing Query Options in the Request Body - entity",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "People(42)/$query"
+    },
+    {
+      "ID": 286,
+      "name": "4.17 Passing Query Options in the Request Body - collection of complex",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "People(42)/Addresses/$query"
+    },
+    {
+      "ID": 287,
+      "name": "4.17 Passing Query Options in the Request Body - complex",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "People(42)/Address/$query"
+    },
+    {
+      "ID": 288,
+      "name": "4.17 Passing Query Options in the Request Body - collection of primitive",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "People(42)/EmailAddresses/$query"
+    },
+    {
+      "ID": 289,
+      "name": "4.17 Passing Query Options in the Request Body - primitive",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "People(42)/FirstName/$query"
+    },
+    {
+      "ID": 290,
+      "name": "4.17 Passing Query Options in the Request Body - bound function call",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Model.ProductsByColor(color=@c)/$query"
+    },
+    {
+      "ID": 291,
+      "name": "4.17 Passing Query Options in the Request Body - bound function call with implicit parameter aliases",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Model.ProductsByColor/$query"
+    },
+    {
+      "ID": 292,
+      "name": "4.17 Passing Query Options in the Request Body - function import with parameter",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByComplex(complex=@c)/$query"
+    },
+    {
+      "ID": 293,
+      "name": "4.17 Passing Query Options in the Request Body - function import - implicit parameter aliases",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "TheBestProduct/$query"
+    },
+    {
+      "ID": 294,
+      "name": "4.17 Passing Query Options in the Request Body - Cross Join",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "$crossjoin(Customers,Countries)/$query"
+    },
+    {
+      "ID": 295,
+      "name": "5.1.1 Filter",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=true"
+    },
+    {
+      "ID": 296,
+      "name": "5.1.1 $ is optional",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "filter=true"
+    },
+    {
+      "ID": 299,
+      "name": "5.1.1 Filter",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=Completed"
+    },
+    {
+      "ID": 300,
+      "name": "5.1.1 Filter - member expressions",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Product"
+    },
+    {
+      "ID": 301,
+      "name": "5.1.1 Filter - member expressions - single navigation",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Product/Supplier"
+    },
+    {
+      "ID": 302,
+      "name": "5.1.1 Filter - member expressions - single-complex",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Product/Supplier/Address"
+    },
+    {
+      "ID": 303,
+      "name": "5.1.1 Filter - member expressions - single-complex-primitive",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Product/Supplier/Address/Street"
+    },
+    {
+      "ID": 304,
+      "name": "5.1.1 Filter - member expressions - single-complex-single",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Product/Supplier/Address/Country"
+    },
+    {
+      "ID": 305,
+      "name": "5.1.1 Filter - member expressions - single-complex-collection",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Product/Supplier/Address/Products"
+    },
+    {
+      "ID": 306,
+      "name": "5.1.1 Filter - member expressions - stream",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Product/Thumbnail"
+    },
+    {
+      "ID": 307,
+      "name": "5.1.1 Filter - member expressions - stream",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Address/Thumbnail"
+    },
+    {
+      "ID": 308,
+      "name": "5.1.1 Filter - member expressions - stream",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Thumbnail/Model.Available()"
+    },
+    {
+      "ID": 309,
+      "name": "5.1.1 Filter - member expressions - single-colComplex",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Product/Supplier/Addresses"
+    },
+    {
+      "ID": 310,
+      "name": "5.1.1 Filter - member expressions - single-primitive",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Product/Supplier/CompanyName"
+    },
+    {
+      "ID": 311,
+      "name": "5.1.1 Filter - member expressions - single-colPrimitive",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Product/Supplier/EmailAddresses"
+    },
+    {
+      "ID": 312,
+      "name": "5.1.1 Filter - member expressions - collection navigation",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Supplier/Products"
+    },
+    {
+      "ID": 313,
+      "name": "5.1.1 Filter - member expressions - collection navigation",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Products"
+    },
+    {
+      "ID": 314,
+      "name": "5.1.1 Filter - member expressions - collection navigation - count",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Products/$count"
+    },
+    {
+      "ID": 315,
+      "name": "5.1.1.1.1 Equals",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "true eq false"
+    },
+    {
+      "ID": 318,
+      "name": "5.1.1.1.1 Equals - Property",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Size"
+    },
+    {
+      "ID": 319,
+      "name": "5.1.1.1.1 Equals",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Size eq true"
+    },
+    {
+      "ID": 320,
+      "name": "5.1.1.1.1 Equals - Literal",
+      "rule": "primitiveLiteral",
+      "ruleId": 281,
+      "input": "4.0"
+    },
+    {
+      "ID": 321,
+      "name": "5.1.1.1.1 Equals - Literal",
+      "rule": "primitiveLiteral",
+      "ruleId": 281,
+      "input": "'Huge'"
+    },
+    {
+      "ID": 322,
+      "name": "5.1.1.1.1 Equals",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Size eq 4.0"
+    },
+    {
+      "ID": 323,
+      "name": "5.1.1.1.1 Equals",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Street eq 'Hugo'"
+    },
+    {
+      "ID": 324,
+      "name": "5.1.1.1.1 Equals - property path argument",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Address/Street"
+    },
+    {
+      "ID": 325,
+      "name": "5.1.1.1.1 Equals - property path argument",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "Address/Model.AddressWithLocation/Location"
+    },
+    {
+      "ID": 326,
+      "name": "5.1.1.1.1 Equals",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Address/Street eq 'Hugo'"
+    },
+    {
+      "ID": 327,
+      "name": "5.1.1.1.1 comparing complex types",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=Address eq {\"Street\":\"NE 40th\",\"City\":\"Redmond\",\"State\":\"WA\",\"ZipCode\":\"98052\"}"
+    },
+    {
+      "ID": 328,
+      "name": "5.1.1.1.2 Not Equals",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Name ne 'Milk'"
+    },
+    {
+      "ID": 329,
+      "name": "5.1.1.1.2 Not Equals",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "true ne false"
+    },
+    {
+      "ID": 330,
+      "name": "5.1.1.1.3 Greater Than",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Name gt 'Milk'"
+    },
+    {
+      "ID": 331,
+      "name": "5.1.1.1.4 Greater Than or Equal",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Name ge 'Milk'"
+    },
+    {
+      "ID": 332,
+      "name": "5.1.1.1.5 Less Than",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Name lt 'Milk'"
+    },
+    {
+      "ID": 333,
+      "name": "5.1.1.1.6 Less Than or Equal",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Name le 'Milk'"
+    },
+    {
+      "ID": 334,
+      "name": "5.1.1.1.7 Logical And",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "true and false"
+    },
+    {
+      "ID": 335,
+      "name": "5.1.1.1.8 Logical Or",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "true or false"
+    },
+    {
+      "ID": 336,
+      "name": "5.1.1.1.9 Logical Negation",
+      "rule": "notExpr",
+      "ruleId": 211,
+      "input": "not false"
+    },
+    {
+      "ID": 337,
+      "name": "5.1.1.1.12 Logical Operator Examples",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Name eq 'Milk'"
+    },
+    {
+      "ID": 338,
+      "name": "5.1.1.1.12 Logical Operator Examples",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Supplier/Name eq 'Milk'"
+    },
+    {
+      "ID": 339,
+      "name": "5.1.1.1.12 Logical Operator Examples",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Name EQ 'Milk' AND Price LT 2.55"
+    },
+    {
+      "ID": 340,
+      "name": "5.1.1.1.12 Logical Operator Examples",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Name Eq 'Milk' OR Price Lt 2.55"
+    },
+    {
+      "ID": 341,
+      "name": "5.1.1.1.12 Logical Operator Examples",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "not endswith(Name,'ilk')"
+    },
+    {
+      "ID": 342,
+      "name": "5.1.1.1.12 Logical Operator Examples",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "style has Sales.Pattern'Yellow'"
+    },
+    {
+      "ID": 343,
+      "name": "5.1.1.1.12 Logical Operator Examples",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Name in ('Milk', 'Cheese')"
+    },
+    {
+      "ID": 344,
+      "name": "5.1.1.1.12 Logical Operator Examples",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Name in [\"Milk\", \"Cheese\"]"
+    },
+    {
+      "ID": 345,
+      "name": "5.1.1.2.1 Addition",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Price add 2.45"
+    },
+    {
+      "ID": 346,
+      "name": "5.1.1.2.1 Addition",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "(Price add 2.45) mod 2"
+    },
+    {
+      "ID": 347,
+      "name": "5.1.1.2.2 Subtraction",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Price sub 0.55"
+    },
+    {
+      "ID": 348,
+      "name": "5.1.1.2.3 Negate",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "-Price"
+    },
+    {
+      "ID": 349,
+      "name": "5.1.1.2.4 Multiplication",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Price mul 2"
+    },
+    {
+      "ID": 350,
+      "name": "5.1.1.2.5 Division",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Price div 2"
+    },
+    {
+      "ID": 351,
+      "name": "5.1.1.2.5 Division",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Price divby 2"
+    },
+    {
+      "ID": 352,
+      "name": "5.1.1.2.6 Modulo",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Price mod 5"
+    },
+    {
+      "ID": 353,
+      "name": "5.1.1.2.7 Arithmetic Operator Examples",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Price add 2.45 eq 5.00"
+    },
+    {
+      "ID": 354,
+      "name": "5.1.1.2.7 Arithmetic Operator Examples",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Price sub 0.55 eq 2.00"
+    },
+    {
+      "ID": 355,
+      "name": "5.1.1.2.7 Arithmetic Operator Examples",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Price mul 2.0 eq 5.10"
+    },
+    {
+      "ID": 356,
+      "name": "5.1.1.2.7 Arithmetic Operator Examples",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Price div 2.55 eq 1"
+    },
+    {
+      "ID": 357,
+      "name": "5.1.1.2.7 Arithmetic Operator Examples",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Rating divby 2 eq 2.5"
+    },
+    {
+      "ID": 358,
+      "name": "5.1.1.2.7 Arithmetic Operator Examples",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Rating mod 5 eq 0"
+    },
+    {
+      "ID": 359,
+      "name": "5.1.1.3 Parenthesis",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "(true)"
+    },
+    {
+      "ID": 360,
+      "name": "5.1.1.3 Parenthesis",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "( true )"
+    },
+    {
+      "ID": 361,
+      "name": "5.1.1.3 Parenthesis",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "(Name eq 'Milk')"
+    },
+    {
+      "ID": 362,
+      "name": "5.1.1.3 Parenthesis",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "(false)"
+    },
+    {
+      "ID": 363,
+      "name": "5.1.1.3 Parenthesis",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "(4 add 5) mod (4 sub 1)"
+    },
+    {
+      "ID": 364,
+      "name": "5.1.1.3 Parenthesis",
+      "rule": "boolcommonExpr",
+      "ruleId": 129,
+      "input": "(4 add 5) mod (4 sub 1) eq 0"
+    },
+    {
+      "ID": 365,
+      "name": "5.1.1.5.1 concat",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "concat(CompanyName, Name)"
+    },
+    {
+      "ID": 366,
+      "name": "5.1.1.5.1 concat",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "concat(concat(Street,'-'),City)"
+    },
+    {
+      "ID": 367,
+      "name": "5.1.1.5.2 contains",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "contains(CompanyName,'lfreds')"
+    },
+    {
+      "ID": 368,
+      "name": "5.1.1.5.2 contains",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "contains(Names,[\"Fred\",\"George\"])"
+    },
+    {
+      "ID": 369,
+      "name": "5.1.1.5.3 endswith",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "endswith(CompanyName,'Futterkiste')"
+    },
+    {
+      "ID": 370,
+      "name": "5.1.1.5.3 endswith",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "endswith([\"Fred\",\"George\",\"Ron\"],[\"George\",\"Ron\"])"
+    },
+    {
+      "ID": 371,
+      "name": "5.1.1.5.4 indexof",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "indexof([\"Fred\",\"George\",\"Ron\"],[\"George\",\"Ron\"]) eq 1"
+    },
+    {
+      "ID": 372,
+      "name": "5.1.1.5.5 length",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "length(CompanyName) eq 19"
+    },
+    {
+      "ID": 373,
+      "name": "5.1.1.5.5 length",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "length([\"Fred\",\"George\",\"Ron\"]) eq 3"
+    },
+    {
+      "ID": 374,
+      "name": "5.1.1.5.6 startswith",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "startswith(CompanyName,'Futterkiste')"
+    },
+    {
+      "ID": 375,
+      "name": "5.1.1.5.6 startswith",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "startswith(Supplier/Name,'Futterkiste')"
+    },
+    {
+      "ID": 376,
+      "name": "5.1.1.5.6 startswith",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "startswith([\"Fred\",\"George\",\"Ron\"],[\"Fred\",\"George\"])"
+    },
+    {
+      "ID": 377,
+      "name": "5.1.1.5.7 substring",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "substring(CompanyName, 5)"
+    },
+    {
+      "ID": 378,
+      "name": "5.1.1.5.7 substring with length",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "substring(CompanyName,5,2)"
+    },
+    {
+      "ID": 379,
+      "name": "5.1.1.6.1 hassubset",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "hassubset(Names,[\"Milk\", \"Cheese\"])"
+    },
+    {
+      "ID": 380,
+      "name": "5.1.1.6.1 hassubset",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "hassubset([\"Milk\", \"Cheese\"],Names)"
+    },
+    {
+      "ID": 381,
+      "name": "5.1.1.6.2 hassubsequence",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "hassubsequence([4,1,3],[4,3])"
+    },
+    {
+      "ID": 382,
+      "name": "5.1.1.7.1 matchesPattern ^A.*e$",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "matchesPattern(CompanyName,'%5EA.*e$')"
+    },
+    {
+      "ID": 383,
+      "name": "5.1.1.7.2 tolower",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "tolower(CompanyName)"
+    },
+    {
+      "ID": 384,
+      "name": "5.1.1.7.3 toupper",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "toupper(CompanyName)"
+    },
+    {
+      "ID": 385,
+      "name": "5.1.1.7.4 trim",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "trim(CompanyName)"
+    },
+    {
+      "ID": 386,
+      "name": "5.1.1.8.1",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "date(LifeTime)"
+    },
+    {
+      "ID": 387,
+      "name": "5.1.1.8.2",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "day(BirthDate)"
+    },
+    {
+      "ID": 388,
+      "name": "5.1.1.8.3",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "fractionalseconds(LifeTime)"
+    },
+    {
+      "ID": 389,
+      "name": "5.1.1.8.4",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "hour(BirthDate)"
+    },
+    {
+      "ID": 390,
+      "name": "5.1.1.8.5",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "maxdatetime()"
+    },
+    {
+      "ID": 391,
+      "name": "5.1.1.8.5 - non-canonical percent-encoding",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "maxdatetime%28%20%29"
+    },
+    {
+      "ID": 392,
+      "name": "5.1.1.8.6",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "mindatetime()"
+    },
+    {
+      "ID": 393,
+      "name": "5.1.1.8.6 - non-canonical percent-encoding",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "mindatetime%28%20%29"
+    },
+    {
+      "ID": 394,
+      "name": "5.1.1.8.7",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "minute(BirthDate)"
+    },
+    {
+      "ID": 395,
+      "name": "5.1.1.8.8",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "month(BirthDate)"
+    },
+    {
+      "ID": 396,
+      "name": "5.1.1.8.9",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "now()"
+    },
+    {
+      "ID": 397,
+      "name": "5.1.1.8.9 - non-canonical percent-encoding",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "now%28%20%29"
+    },
+    {
+      "ID": 398,
+      "name": "5.1.1.8.10",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "second(BirthDate)"
+    },
+    {
+      "ID": 399,
+      "name": "5.1.1.8.11",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "time(ReleaseDate)"
+    },
+    {
+      "ID": 400,
+      "name": "5.1.1.8.12 - totaloffsetminutes",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "totaloffsetminutes(ReleaseDate)"
+    },
+    {
+      "ID": 401,
+      "name": "5.1.1.8.13",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "totalseconds(LifeTime)"
+    },
+    {
+      "ID": 402,
+      "name": "5.1.1.8.14 year",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "year(BirthDate)"
+    },
+    {
+      "ID": 403,
+      "name": "5.1.1.9.1",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "ceiling(Price)"
+    },
+    {
+      "ID": 404,
+      "name": "5.1.1.9.2",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "floor(Price)"
+    },
+    {
+      "ID": 405,
+      "name": "5.1.1.9.3",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "round(Price)"
+    },
+    {
+      "ID": 406,
+      "name": "5.1.1.10.1 cast(1)",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "cast(Model.Customer)"
+    },
+    {
+      "ID": 407,
+      "name": "5.1.1.10.1 cast(1), no nanmespace",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "cast(Customer)"
+    },
+    {
+      "ID": 408,
+      "name": "5.1.1.10.1 cast(2)",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "cast(Category,Model.Customer)"
+    },
+    {
+      "ID": 409,
+      "name": "5.1.1.10.1 cast(2), no namespace",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "cast(Category,Customer)"
+    },
+    {
+      "ID": 410,
+      "name": "5.1.1.10.1 cast(3)",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "cast(Category,Edm.Boolean)"
+    },
+    {
+      "ID": 411,
+      "name": "5.1.1.10.2 isof(1)",
+      "rule": "isofExpr",
+      "ruleId": 212,
+      "input": "isof(Model.Customer)"
+    },
+    {
+      "ID": 412,
+      "name": "5.1.1.10.2 isof(1), no namespace",
+      "rule": "isofExpr",
+      "ruleId": 212,
+      "input": "isof(Customer)"
+    },
+    {
+      "ID": 413,
+      "name": "5.1.1.10.2 isof(2)",
+      "rule": "isofExpr",
+      "ruleId": 212,
+      "input": "isof(Category,Model.Customer)"
+    },
+    {
+      "ID": 414,
+      "name": "5.1.1.10.2 isof(2), no namespace",
+      "rule": "isofExpr",
+      "ruleId": 212,
+      "input": "isof(Category,Customer)"
+    },
+    {
+      "ID": 415,
+      "name": "5.1.1.10.2 isof(2)",
+      "rule": "isofExpr",
+      "ruleId": 212,
+      "input": "isof(Location,Edm.GeographyPoint)"
+    },
+    {
+      "ID": 416,
+      "name": "5.1.1.11.1 geo.distance",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "geo.distance(Supplier/Location,Product/Location)"
+    },
+    {
+      "ID": 417,
+      "name": "5.1.1.11.3 geo.intersects",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "geo.intersects(Supplier/SalesArea,Product/Location)"
+    },
+    {
+      "ID": 418,
+      "name": "5.1.1.11.3 geo.length",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "geo.length(Line)"
+    },
+    {
+      "ID": 419,
+      "name": "5.1.1.11.3 geo.length",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "geo.length(geography'SRID=0;LineString(142.1 64.1,3.14 2.78)')"
+    },
+    {
+      "ID": 420,
+      "name": "5.1.1.12 case",
+      "rule": "compute",
+      "ruleId": 64,
+      "input": "$compute=case(X gt 0:1,X lt 0:-1,true:0) as SignumX"
+    },
+    {
+      "ID": 421,
+      "name": "5.1.1.12 case - lots of unnecessary whitespace",
+      "rule": "compute",
+      "ruleId": 64,
+      "input": "$compute=case( X gt 0 : 1 , X lt 0 : -1 , true : 0) as SignumX"
+    },
+    {
+      "ID": 422,
+      "name": "5.1.1.13 Lambda Operators",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "lambda/Completed"
+    },
+    {
+      "ID": 423,
+      "name": "5.1.1.13 Lambda Operators",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "lambda/Name eq $it/Name"
+    },
+    {
+      "ID": 424,
+      "name": "5.1.1.13.1 any()",
+      "rule": "anyExpr",
+      "ruleId": 153,
+      "input": "any()"
+    },
+    {
+      "ID": 425,
+      "name": "5.1.1.13.1 any()",
+      "rule": "anyExpr",
+      "ruleId": 153,
+      "input": "any( )"
+    },
+    {
+      "ID": 426,
+      "name": "5.1.1.13.1 any()",
+      "rule": "anyExpr",
+      "ruleId": 153,
+      "input": "any(lambda:true)"
+    },
+    {
+      "ID": 427,
+      "name": "5.1.1.13.1 any()",
+      "rule": "anyExpr",
+      "ruleId": 153,
+      "input": "any( lambda : true )"
+    },
+    {
+      "ID": 428,
+      "name": "5.1.1.13.1 any()",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/any(lambda:true)"
+    },
+    {
+      "ID": 430,
+      "name": "5.1.1.13.1 any()",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Supplier/Products/any(lambda:true)"
+    },
+    {
+      "ID": 431,
+      "name": "5.1.1.13.1 any()",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/any(lambda:lambda/Completed)"
+    },
+    {
+      "ID": 432,
+      "name": "5.1.1.13.1 any()",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/any(lambda:$it/Completed)"
+    },
+    {
+      "ID": 433,
+      "name": "5.1.1.13.2 all()",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Products/all(lambda:true)"
+    },
+    {
+      "ID": 436,
+      "name": "5.1.1.13.2 all()",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/all(lambda:true)"
+    },
+    {
+      "ID": 437,
+      "name": "5.1.1.13.2 all()",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "EmailAddresses/all(lambda:true)"
+    },
+    {
+      "ID": 438,
+      "name": "5.1.1.14.1 primitive literal",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=ReleaseDate gt 2013-05-24"
+    },
+    {
+      "ID": 439,
+      "name": "5.1.1.14.2 simple array",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "FirstName in [\"Miller\",\"Smith\"]"
+    },
+    {
+      "ID": 440,
+      "name": "5.1.1.14.2 array with single-quoted OData strings",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "FirstName in [\"Miller\",'Smith']"
+    },
+    {
+      "ID": 441,
+      "name": "5.1.1.14.2 empty array",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "FirstName in []"
+    },
+    {
+      "ID": 442,
+      "name": "5.1.1.14.2 array in array of arrays",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "[\"Joe\",\"Smith\"] in [[\"John\",\"Doe\"],[\"Jane\",\"Smith\"]]"
+    },
+    {
+      "ID": 443,
+      "name": "5.1.1.14.2 array of properties in array of arrays",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "[FirstName,LastName] in [[\"John\",\"Doe\"],[\"Jane\",\"Smith\"]]"
+    },
+    {
+      "ID": 444,
+      "name": "5.1.1.14.2 comparing arrays",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "[\"Milk\", \"Cheese\"] eq [\"Oranges\", \"Carrots\", \"Ginger\"]"
+    },
+    {
+      "ID": 445,
+      "name": "5.1.1.14.2 mixed array",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "[\"Hello\",42,true,false,null,'World']"
+    },
+    {
+      "ID": 446,
+      "name": "5.1.1.14.2 array of property names",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "[FirstName,LastName]"
+    },
+    {
+      "ID": 447,
+      "name": "5.1.1.14.2 empty object",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "{}"
+    },
+    {
+      "ID": 448,
+      "name": "5.1.1.14.2 object with concrete values",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "{\"FirstName\":\"John\",\"LastName\":\"Doe\",\"Sizes\":[\"Large\",\"Small\"]}"
+    },
+    {
+      "ID": 449,
+      "name": "5.1.1.14.2 object with expression values",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "{\"FirstName\":Customer/FirstName,\"LastName\":Manager/LastName,\"Sizes\":[1, 2 add 3]}"
+    },
+    {
+      "ID": 450,
+      "name": "5.1.1.14.2 array with 'untyped' values",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "[[],{},true,false,null,42,{\"no property name\":\"value\",\"@something\":true}]"
+    },
+    {
+      "ID": 451,
+      "name": "5.1.1.14.4 $it",
+      "rule": "firstMemberExpr",
+      "ruleId": 131,
+      "input": "$it/Completed"
+    },
+    {
+      "ID": 452,
+      "name": "5.1.1.14.4 $it",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=endswith($it,'.com')"
+    },
+    {
+      "ID": 453,
+      "name": "5.1.1.14.4 $it with alias for entity reference",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$filter=$it eq @ref&@ref={\"@odata.id\":\"http://host/service/ZqV5t\"}"
+    },
+    {
+      "ID": 454,
+      "name": "5.1.1.14.4 $it with entity reference",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$filter=$it eq {\"@odata.id\":\"http://host/service/ZqV5t\"}"
+    },
+    {
+      "ID": 455,
+      "name": "5.1.1.14.5 $root",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Employees?$filter=LastName eq $root/Employees('A1245')/LastName"
+    },
+    {
+      "ID": 456,
+      "name": "5.1.1.14.5 $root",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsOrderedBy(Customers=@c)?@c=[$root/Customers('ALFKI'),$root/Customers('BLAUS')]"
+    },
+    {
+      "ID": 457,
+      "name": "5.1.1.14.6 $this",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "$this eq 'Hugo'"
+    },
+    {
+      "ID": 458,
+      "name": "5.1.1.14.6 $this",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=endswith($this,'.com')"
+    },
+    {
+      "ID": 459,
+      "name": "5.1.1.14.6 $this",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers?$select=EmailAddresses($filter=endswith($this,'.com'))"
+    },
+    {
+      "ID": 460,
+      "name": "5.1.1.14.6 $this",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers?$select=Addresses($filter=endswith($this/Street,'gasse'))"
+    },
+    {
+      "ID": 461,
+      "name": "5.1.1.14.6 $this",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers?$select=Addresses(@a=$this;$filter=endswith(@a/Street,'gasse'))"
+    },
+    {
+      "ID": 462,
+      "name": "5.1.1.15 Path expressions",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Items"
+    },
+    {
+      "ID": 463,
+      "name": "5.1.1.15 Path expressions - key access after set navigation",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Items(1)"
+    },
+    {
+      "ID": 464,
+      "name": "5.1.1.16 Annotation Values",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=Price/@Measures.Currency eq 'EUR'"
+    },
+    {
+      "ID": 465,
+      "name": "5.1.1.16 Annotation Values, no namespace",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=Price/@Currency eq 'EUR'"
+    },
+    {
+      "ID": 466,
+      "name": "5.1.1.16 Annotation Values",
+      "rule": "orderBy",
+      "ruleId": 75,
+      "input": "$orderby=Price/@Measures.Currency"
+    },
+    {
+      "ID": 467,
+      "name": "5.1.1.16 Annotation Values with qualifier",
+      "rule": "orderBy",
+      "ruleId": 75,
+      "input": "$orderby=Price/@Measures.Currency%23Reporting"
+    },
+    {
+      "ID": 468,
+      "name": "5.1.1.16 Annotation Values with qualifier, no namespace",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=Price/@Currency%23Reporting eq 'EUR'"
+    },
+    {
+      "ID": 469,
+      "name": "5.1.1.16 Annotation Values",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=@Core.Messages/any(m:m/severity eq 'error')"
+    },
+    {
+      "ID": 470,
+      "name": "5.1.1.16 Annotation Values",
+      "rule": "compute",
+      "ruleId": 64,
+      "input": "$compute=@Core.Messages as CoreMessages"
+    },
+    {
+      "ID": 471,
+      "name": "5.1.1.16 Annotation Values",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$compute=@Core.Messages as _at_Core_dot_Messages&$select=_at_Core_dot_Messages($top=5)"
+    },
+    {
+      "ID": 472,
+      "name": "5.1.1.16 Annotation Values",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=@Messages/any(m:m/severity eq 'error')"
+    },
+    {
+      "ID": 473,
+      "name": "5.1.2 Expand - single navigation property",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Items"
+    },
+    {
+      "ID": 474,
+      "name": "5.1.2 Expand - $ is optional",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "expand=Items"
+    },
+    {
+      "ID": 475,
+      "name": "5.1.2 Expand - single navigation property",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Items/$ref"
+    },
+    {
+      "ID": 476,
+      "name": "5.1.2 Expand - multiple navigation properties",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Customer,Items"
+    },
+    {
+      "ID": 477,
+      "name": "5.1.2 Expand - multiple navigation properties",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Customer/$ref,Items"
+    },
+    {
+      "ID": 478,
+      "name": "5.1.2 Expand - multiple navigation properties, nested",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Customer,Items($expand=Product)"
+    },
+    {
+      "ID": 479,
+      "name": "5.1.2 Expand - multiple navigation properties, nested - no $ prefix",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "expand=Customer,Items(expand=Product)"
+    },
+    {
+      "ID": 480,
+      "name": "5.1.2 Expand - recursive expansion",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Customer($levels=4)"
+    },
+    {
+      "ID": 481,
+      "name": "5.1.2 Expand - recursive expansion - no $ prefix",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "expand=Customer(levels=4)"
+    },
+    {
+      "ID": 482,
+      "name": "5.1.2 Expand - multiple navigation properties, nested",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Customer,Items($expand=Product/$ref)"
+    },
+    {
+      "ID": 486,
+      "name": "5.1.2 Expand - $count",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Items($count=true)"
+    },
+    {
+      "ID": 487,
+      "name": "5.1.2 Expand - $count",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Items/$count"
+    },
+    {
+      "ID": 488,
+      "name": "5.1.2 Expand - $count",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Items/$count($filter=Name eq 'Hugo')"
+    },
+    {
+      "ID": 489,
+      "name": "5.1.2 Expand - $count - no $ prefix for query options, still required for path segment",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "expand=Items/$count(filter=Name eq 'Hugo')"
+    },
+    {
+      "ID": 490,
+      "name": "5.1.2 Expand - $count",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Items/$count($search=Hugo)"
+    },
+    {
+      "ID": 491,
+      "name": "5.1.2 Expand - $count",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "expand=Items/$count(search=Hugo)"
+    },
+    {
+      "ID": 493,
+      "name": "5.1.2 Expand - multiple nested options",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Items($select=Quantity;$expand=Product($select=Name,Price);@c=15)"
+    },
+    {
+      "ID": 494,
+      "name": "5.1.2 Expand - navigation property in complex type",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Address/Country"
+    },
+    {
+      "ID": 495,
+      "name": "5.1.2 Expand - navigation property in collection of complex type",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Addresses/Country"
+    },
+    {
+      "ID": 496,
+      "name": "5.1.2 Expand - levels",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Category($levels=4),Category($levels=max)"
+    },
+    {
+      "ID": 498,
+      "name": "5.1.2 Expand - star",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=*,*/$ref,*($levels=2),Category"
+    },
+    {
+      "ID": 499,
+      "name": "5.1.2 Expand - star on complex path",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Address/*,Address/Address/*,Addresses/*,Address/Model.AddressWithLocation/*,Model.VipCustomer/Address/*"
+    },
+    {
+      "ID": 500,
+      "name": "5.1.2 Expand - star on complex path with $ref and $levels",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Address/*/$ref,Address/*($levels=max)"
+    },
+    {
+      "ID": 501,
+      "name": "5.1.2 Expand - stream property",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=$value,Thumbnail"
+    },
+    {
+      "ID": 502,
+      "name": "5.1.2 Expand - annotation",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=@Namespace.EntityTerm"
+    },
+    {
+      "ID": 503,
+      "name": "5.1.2 Expand - annotation with nested query options",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=@Namespace.EntityTerm($top=2)"
+    },
+    {
+      "ID": 504,
+      "name": "5.1.2 Expand - annotation with navigation property",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=@Namespace.SomeTerm/Products($top=2)"
+    },
+    {
+      "ID": 505,
+      "name": "5.1.3 Select - simple",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=Rating,ReleaseDate"
+    },
+    {
+      "ID": 506,
+      "name": "5.1.3 Select - $ is optional",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "select=Rating,ReleaseDate"
+    },
+    {
+      "ID": 507,
+      "name": "5.1.3 Select - with star",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=*"
+    },
+    {
+      "ID": 508,
+      "name": "5.1.3 Select - with property of complex property",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=Address/Street"
+    },
+    {
+      "ID": 509,
+      "name": "5.1.3 Select - with property of complex property",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=Address/Country"
+    },
+    {
+      "ID": 510,
+      "name": "5.1.3 Select - with cast",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=Address/Model.AddressWithLocation"
+    },
+    {
+      "ID": 511,
+      "name": "5.1.3 Select - with cast and property of complex property",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=Address/Model.AddressWithLocation/Location"
+    },
+    {
+      "ID": 512,
+      "name": "5.1.3 Select - with cast and property of complex property, no namespace",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=Address/AddressWithLocation/Location"
+    },
+    {
+      "ID": 513,
+      "name": "5.1.3 Select on complex resource - with cast and property of sub-type",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=Model.AddressWithLocation/Location"
+    },
+    {
+      "ID": 514,
+      "name": "5.1.3 Select on complex resource - with cast and property of sub-type, no namespace",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=AddressWithLocation/Location"
+    },
+    {
+      "ID": 515,
+      "name": "5.1.3 Select - with expand",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$expand=Category($select=Name)"
+    },
+    {
+      "ID": 516,
+      "name": "5.1.3 Select - qualifiedEntityTypeName",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=Model.PreferredSupplier/Name"
+    },
+    {
+      "ID": 517,
+      "name": "5.1.3 Select - actions by namespace",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=Model.ActionName,Model.MostPopularName,Model.*"
+    },
+    {
+      "ID": 518,
+      "name": "5.1.3 Select - actions and functions with signature",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=Model.ActionName,Model.MostPopularName(Location,Kind)"
+    },
+    {
+      "ID": 519,
+      "name": "5.1.3 Select - actions and functions with signature, no  namespace",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=ActionName,MostPopularName(Location,Kind)"
+    },
+    {
+      "ID": 520,
+      "name": "5.1.3 Select - tricky",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=Namespace.PreferredSupplier/AccountRepresentative,Address/Street,Address/Namespace.AddressWithLocation/Location"
+    },
+    {
+      "ID": 521,
+      "name": "5.1.3 Select - tricky, no namespace",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=PreferredSupplier/AccountRepresentative,Address/Street,Address/AddressWithLocation/Location"
+    },
+    {
+      "ID": 522,
+      "name": "5.1.3 Select - nested select",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=Address($select=Street,City,Namespace.AddressWithLocation/Location)"
+    },
+    {
+      "ID": 523,
+      "name": "5.1.3 Select - nested filter etc.",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$select=Addresses($filter=startswith(City,'H');$top=5;$skip=0;$count=true;$orderby=$it;$search=blue;@c=15)&$expand=Addresses/Country"
+    },
+    {
+      "ID": 524,
+      "name": "5.1.3 Select - annotations",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=@Core.Messages($top=5)"
+    },
+    {
+      "ID": 525,
+      "name": "5.1.3 Select - annotations",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=Address/@Core.Messages($top=5)"
+    },
+    {
+      "ID": 526,
+      "name": "5.1.3 Select - annotations",
+      "rule": "select",
+      "ruleId": 93,
+      "input": "$select=@Measures.Currency,@Core.MayImplement($top=2)"
+    },
+    {
+      "ID": 527,
+      "name": "5.1.4 OrderBy",
+      "rule": "orderby",
+      "ruleId": 75,
+      "input": "$orderby=Name"
+    },
+    {
+      "ID": 528,
+      "name": "5.1.4 OrderBy - case-insensitive",
+      "rule": "orderby",
+      "ruleId": 75,
+      "input": "$OrderBy=Name"
+    },
+    {
+      "ID": 529,
+      "name": "5.1.4 OrderBy - $ is optional",
+      "rule": "orderby",
+      "ruleId": 75,
+      "input": "OrderBy=Name"
+    },
+    {
+      "ID": 530,
+      "name": "5.1.4 OrderBy asc",
+      "rule": "orderby",
+      "ruleId": 75,
+      "input": "$orderby=Name\u0009asc"
+    },
+    {
+      "ID": 531,
+      "name": "5.1.4 OrderBy mixed",
+      "rule": "orderby",
+      "ruleId": 75,
+      "input": "$orderby=Name asc,Rating,ReleaseDate desc"
+    },
+    {
+      "ID": 532,
+      "name": "5.1.4 OrderBy expression",
+      "rule": "orderby",
+      "ruleId": 75,
+      "input": "$orderby=Cost ge Revenue asc"
+    },
+    {
+      "ID": 533,
+      "name": "5.1.5 Top and Skip",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$top=5&$skip=10"
+    },
+    {
+      "ID": 534,
+      "name": "5.1.5 Top and Skip - $ is optional",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "top=5&skip=10"
+    },
+    {
+      "ID": 535,
+      "name": "5.1.6 Inlinecount",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$count=true"
+    },
+    {
+      "ID": 536,
+      "name": "5.1.6 Inlinecount - $ is optional",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "count=true"
+    },
+    {
+      "ID": 537,
+      "name": "5.1.6 Inlinecount",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$count=false"
+    },
+    {
+      "ID": 539,
+      "name": "5.1.7 Search - simple term",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=blue"
+    },
+    {
+      "ID": 540,
+      "name": "5.1.7 Search - simple term",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=1984"
+    },
+    {
+      "ID": 541,
+      "name": "5.1.7 Search - simple term",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=2x4"
+    },
+    {
+      "ID": 542,
+      "name": "5.1.7 Search - simple term with dot",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=3.14"
+    },
+    {
+      "ID": 543,
+      "name": "5.1.7 Search - simple term with comma",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=9,81"
+    },
+    {
+      "ID": 544,
+      "name": "5.1.7 Search - simple term with dash",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=brand-new"
+    },
+    {
+      "ID": 545,
+      "name": "5.1.7 Search - simple term with quote",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=Daniel's"
+    },
+    {
+      "ID": 546,
+      "name": "5.1.7 Search - simple term with underscore",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=__FILE__"
+    },
+    {
+      "ID": 547,
+      "name": "5.1.7 Search - simple term with dollar",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=$search"
+    },
+    {
+      "ID": 548,
+      "name": "5.1.7 Search - simple term with slash",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=08/15"
+    },
+    {
+      "ID": 550,
+      "name": "5.1.7 Search - simple term with percent-encoded hash (#)",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=%231"
+    },
+    {
+      "ID": 552,
+      "name": "5.1.7 Search - simple term with percent-encoded ampersand",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=more%26more"
+    },
+    {
+      "ID": 554,
+      "name": "5.1.7 Search - simple term with percent-encoded semicolon",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=a%3Bb"
+    },
+    {
+      "ID": 555,
+      "name": "5.1.7 Search - AND is a word here, not an operator",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=AND"
+    },
+    {
+      "ID": 556,
+      "name": "5.1.7 Search - OR is a word here, not an operator",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=OR"
+    },
+    {
+      "ID": 557,
+      "name": "5.1.7 Search - NOT is a word here, not an operator",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=NOT"
+    },
+    {
+      "ID": 558,
+      "name": "5.1.7 Search - NOT is an operator here, search for items that do not match blue",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=NOT blue"
+    },
+    {
+      "ID": 559,
+      "name": "5.1.7 Search - NOT is an operator here, search for items that do not match blue",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=NOT (blue green)"
+    },
+    {
+      "ID": 560,
+      "name": "5.1.7 Search - the first NOT is an operator, the second a word, search for items that do not match NOT",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=NOT NOT"
+    },
+    {
+      "ID": 561,
+      "name": "5.1.7 Search - AND and OR are words here, search for items that match both AND and OR",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=AND OR"
+    },
+    {
+      "ID": 562,
+      "name": "5.1.7 Search - AND and OR are words here, search for items that match both AND and OR",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=OR AND"
+    },
+    {
+      "ID": 563,
+      "name": "5.1.7 Search - AND and NOT are words here, search for items that match AND or NOT",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=AND OR NOT"
+    },
+    {
+      "ID": 564,
+      "name": "5.1.7 Search - $ is optional",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "search=blue"
+    },
+    {
+      "ID": 565,
+      "name": "5.1.7 Search - simple phrase",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=\"blue%20green\""
+    },
+    {
+      "ID": 566,
+      "name": "5.1.7 Search - simple phrase",
+      "rule": "search",
+      "ruleId": 83,
+      "input": "$search=\"blue green\""
+    },
+    {
+      "ID": 567,
+      "name": "5.1.7 Search - phrase with unbalanced double-quotes",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search='\"blue'"
+    },
+    {
+      "ID": 570,
+      "name": "5.1.7 Search - phrase with unbalanced double-quotes - still ok",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search='\"blue\" \"green'"
+    },
+    {
+      "ID": 572,
+      "name": "5.1.7 Search - implicit AND",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=blue green"
+    },
+    {
+      "ID": 573,
+      "name": "5.1.7 Search - implicit AND, encoded",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=blue%20green"
+    },
+    {
+      "ID": 574,
+      "name": "5.1.7 Search - AND",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=blue AND green"
+    },
+    {
+      "ID": 575,
+      "name": "5.1.7 Search - OR",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=blue OR green"
+    },
+    {
+      "ID": 576,
+      "name": "5.1.7 Search - NOT",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=blue NOT green"
+    },
+    {
+      "ID": 577,
+      "name": "5.1.7 Search - only NOT",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=NOT blue"
+    },
+    {
+      "ID": 578,
+      "name": "5.1.7 Search - multiple",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=foo AND bar OR foo AND baz OR that AND bar OR that AND baz"
+    },
+    {
+      "ID": 579,
+      "name": "5.1.7 Search - multiple",
+      "rule": "searchExpr",
+      "ruleId": 84,
+      "input": "(foo OR that) AND (bar OR baz) AND NOT quux"
+    },
+    {
+      "ID": 580,
+      "name": "5.1.7 Search - grouping",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=foo AND (bar OR baz)"
+    },
+    {
+      "ID": 581,
+      "name": "5.1.7 Search - grouping",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=(foo AND bar) OR baz"
+    },
+    {
+      "ID": 582,
+      "name": "5.1.7 Search - grouping",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=(NOT foo) OR baz"
+    },
+    {
+      "ID": 583,
+      "name": "5.1.7 Search - grouping",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=(NOT foo)"
+    },
+    {
+      "ID": 584,
+      "name": "5.1.7 Search - UTF-8 characters: Greek Capital Letter Delta (Δ)",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=%CE%94"
+    },
+    {
+      "ID": 585,
+      "name": "5.1.7 Search - incomplete expressions",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search='\"'"
+    },
+    {
+      "ID": 586,
+      "name": "5.1.7 Search - incomplete expressions",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search='\"bl'"
+    },
+    {
+      "ID": 587,
+      "name": "5.1.7 Search - incomplete expressions",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search='\"blue%20p'"
+    },
+    {
+      "ID": 588,
+      "name": "5.1.7 Search - incomplete expressions",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search='('"
+    },
+    {
+      "ID": 589,
+      "name": "5.1.7 Search - nested $search may contain balanced parentheses",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$expand=Manager($search=(green))"
+    },
+    {
+      "ID": 591,
+      "name": "5.1.7 Search - nested $search must not contain unbalanced parentheses unless single-quoted",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$expand=Manager($search='gr(een')"
+    },
+    {
+      "ID": 592,
+      "name": "5.1.7 Search - nested $search simple term with percent-encoded semicolon",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$expand=Manager($search=a%3Bb)"
+    },
+    {
+      "ID": 593,
+      "name": "5.1.7 Search - nested $search simple term with percent-encoded semicolon",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$expand=Manager($search='a%3Bb')"
+    },
+    {
+      "ID": 594,
+      "name": "5.1.7 Search - on entity set",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://serviceRoot/Products?$search=blue"
+    },
+    {
+      "ID": 595,
+      "name": "5.1.7 Search - on entity container",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://serviceRoot/Model.Container/$all?$search=blue"
+    },
+    {
+      "ID": 596,
+      "name": "5.1.7 Search - on service",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://serviceRoot/$all?$search=blue"
+    },
+    {
+      "ID": 597,
+      "name": "5.1.8 Format",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$format=json&$Format=atom&$format=xml&$format=text/html"
+    },
+    {
+      "ID": 598,
+      "name": "5.1.8 Format - $ is optional",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "format=json"
+    },
+    {
+      "ID": 599,
+      "name": "5.1.8 Format - value is case-insensitive",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$format=JSON&$format=Atom&$format=XML&$format=text/html"
+    },
+    {
+      "ID": 600,
+      "name": "5.1.8 Format - media type",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$format=text/html"
+    },
+    {
+      "ID": 601,
+      "name": "5.1.9 Index",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$index=42"
+    },
+    {
+      "ID": 602,
+      "name": "5.1.9 Index - $ is optional",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "index=42"
+    },
+    {
+      "ID": 603,
+      "name": "5.1.9 Index - negative indexes allowed with V4.01",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "index=-42"
+    },
+    {
+      "ID": 605,
+      "name": "5.1.10 Compute",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$compute=Amount mul Product/TaxRate as Tax"
+    },
+    {
+      "ID": 606,
+      "name": "5.1.10 Compute - $ is optional",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "compute=Amount mul Product/TaxRate as Tax"
+    },
+    {
+      "ID": 607,
+      "name": "5.1.10 Compute - many",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$compute=Amount mul Product/TaxRate as Tax,day(Time/Date) as WeekDay"
+    },
+    {
+      "ID": 608,
+      "name": "5.1.10 Compute - within $expand",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$expand=Sales($compute=Amount mul Product/TaxRate as Tax)"
+    },
+    {
+      "ID": 609,
+      "name": "Delta Link",
+      "rule": "deltatoken",
+      "ruleId": 103,
+      "input": "$deltatoken=A@Lot_Has:Changed?=Here!"
+    },
+    {
+      "ID": 610,
+      "name": "Next Link",
+      "rule": "skiptoken",
+      "ruleId": 104,
+      "input": "$skiptoken=Start@Next_Chunk:From?=Here!"
+    },
+    {
+      "ID": 612,
+      "name": "5.2 Custom Query Option",
+      "rule": "customQueryOption",
+      "ruleId": 108,
+      "input": "find=O%27Neil"
+    },
+    {
+      "ID": 613,
+      "name": "5.2 Custom Query Option",
+      "rule": "customQueryOption",
+      "ruleId": 108,
+      "input": "!deltatoken='201208210403'"
+    },
+    {
+      "ID": 614,
+      "name": "5.2 Custom Query Option",
+      "rule": "customQueryOption",
+      "ruleId": 108,
+      "input": "!special"
+    },
+    {
+      "ID": 615,
+      "name": "5.2 Custom Query Option",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "find=O%27Neil&!special"
+    },
+    {
+      "ID": 616,
+      "name": "5.2 Custom Query Option",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$orderby=Name&!deltatoken=0412312321"
+    },
+    {
+      "ID": 617,
+      "name": "5.3 Parameter Aliases",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$filter=contains(Title,@word)&@word='Black'"
+    },
+    {
+      "ID": 618,
+      "name": "5.3 Parameter Aliases",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$filter=Title eq @title&@title='Wizard%20of%20Oz'"
+    },
+    {
+      "ID": 619,
+      "name": "5.3 Parameter Aliases",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/Model.WithIngredients(Ingredients=@i)?@i=[\"Carrots\",\"Ginger\",\"Oranges\"]"
+    },
+    {
+      "ID": 620,
+      "name": "5.3 Parameter Aliases",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories?$expand=Products(@foo=$this;$filter=@foo/Price gt 3)"
+    },
+    {
+      "ID": 621,
+      "name": "5.3 Parameter Aliases",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Employees?$expand=Manager(@m=$this;$expand=DirectReports($filter=@m/FirstName eq FirstName))"
+    },
+    {
+      "ID": 622,
+      "name": "function with complex parameter - no properties",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByComplex(complex=@c)?@c={}"
+    },
+    {
+      "ID": 623,
+      "name": "function with complex parameter - one property",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByComplex(complex=@c)?@c={\"Name\":\"Value\"}"
+    },
+    {
+      "ID": 624,
+      "name": "function with complex parameter - one property",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByComplex(complex=@c)?@c={\"@odata.type\":\"Model.Customer\",\"Name\":\"Value\"}"
+    },
+    {
+      "ID": 625,
+      "name": "function with complex parameter - three properties",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByComplex(complex=@c)?@c={\"Name\":false,\"Price\":3.14e0,\"Rating\":null}"
+    },
+    {
+      "ID": 626,
+      "name": "function with collection of primitive - zero",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByColor(colors=@c)?@c=[]"
+    },
+    {
+      "ID": 627,
+      "name": "function with collection of primitive - one",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByColor(colors=@c)?@c=[\"red\"]"
+    },
+    {
+      "ID": 628,
+      "name": "function with collection of primitive - two",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByColor(colors=@c)?@c=[\"red\",\"green\"]"
+    },
+    {
+      "ID": 629,
+      "name": "function with complex parameter - complex and collection properties",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByComplex(complex=@c)?@c={\"Names\":[\"Fred\",\"George\"],\"Address\":{\"Street\":\"MyWay\"}}"
+    },
+    {
+      "ID": 630,
+      "name": "function with rootExpr",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByCustomer(customer=@c)?@c=$root/Customers(1)"
+    },
+    {
+      "ID": 631,
+      "name": "function with rootExpr - single navigation",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByCustomer(customer=@c)?@c=$root/Customers(1)/Model.VipCustomer/AccountRepresentative"
+    },
+    {
+      "ID": 632,
+      "name": "function with rootExpr - array",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByCustomer(customer=@c)?@c=[$root/Customers(1),$root/Customers(2)]"
+    },
+    {
+      "ID": 633,
+      "name": "function with rootExpr - complex with single navigation",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByCustomer(customer=@c)?@c={\"Country\":$root/Countries('DE')}"
+    },
+    {
+      "ID": 634,
+      "name": "function with rootExpr - complex with collection navigation",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "ProductsByCustomer(customer=@c)?@c={\"Orders\":[$root/Orders(1)]}"
+    },
+    {
+      "ID": 635,
+      "name": "Enumeration value in URI",
+      "rule": "enum",
+      "ruleId": 318,
+      "input": "Sales.Pattern'Yellow'"
+    },
+    {
+      "ID": 636,
+      "name": "Enumeration value in URI - without prefix",
+      "rule": "enum",
+      "ruleId": 318,
+      "input": "'Yellow'"
+    },
+    {
+      "ID": 637,
+      "name": "Enumeration value in URI - multiple flag values",
+      "rule": "enum",
+      "ruleId": 318,
+      "input": "Sales.Pattern'Solid,Yellow'"
+    },
+    {
+      "ID": 638,
+      "name": "Enumeration value in URI - multiple flag values without prefix",
+      "rule": "enum",
+      "ruleId": 318,
+      "input": "'Solid,Yellow'"
+    },
+    {
+      "ID": 639,
+      "name": "Enumeration value - in filter",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=style eq Sales.Pattern'Yellow'"
+    },
+    {
+      "ID": 640,
+      "name": "Enumeration value - in filter without prefix",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=style eq 'Yellow'"
+    },
+    {
+      "ID": 641,
+      "name": "Enumeration value - in filter with has",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=style has Sales.Pattern'Yellow'"
+    },
+    {
+      "ID": 642,
+      "name": "Enumeration value - undefined value as numeric constant",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=style has Sales.Pattern'32'"
+    },
+    {
+      "ID": 643,
+      "name": "Enumeration value - undefined value as numeric constant",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products?$filter=style eq Sales.Pattern'Yellow,32'"
+    },
+    {
+      "ID": 644,
+      "name": "Enumeration value - undefined value as numeric constant",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products?$filter=style eq cast(eyeColor,Sales.Pattern)"
+    },
+    {
+      "ID": 645,
+      "name": "GeographyCollection",
+      "rule": "geographyCollection",
+      "ruleId": 322,
+      "input": "geography'SRID=0;Collection(LineString(142.1 64.1,3.14 2.78))'"
+    },
+    {
+      "ID": 646,
+      "name": "GeographyLineString",
+      "rule": "geographyLineString",
+      "ruleId": 326,
+      "input": "geography'SRID=0;LineString(142.1 64.1,3.14 2.78)'"
+    },
+    {
+      "ID": 647,
+      "name": "GeographyMultiLineString",
+      "rule": "geographyMultiLineString",
+      "ruleId": 330,
+      "input": "geography'SRID=0;MultiLineString((142.1 64.1,3.14 2.78),(142.1 64.1,3.14 2.78))'"
+    },
+    {
+      "ID": 648,
+      "name": "GeographyMultiPoint",
+      "rule": "geographyMultiPoint",
+      "ruleId": 333,
+      "input": "geography'SRID=0;MultiPoint()'"
+    },
+    {
+      "ID": 649,
+      "name": "GeographyMultiPoint",
+      "rule": "geographyMultiPoint",
+      "ruleId": 333,
+      "input": "geography'SRID=0;MultiPoint((142.1 64.1),(1 2))'"
+    },
+    {
+      "ID": 650,
+      "name": "GeographyMultiPolygon",
+      "rule": "geographyMultiPolygon",
+      "ruleId": 336,
+      "input": "geography'SRID=0;MultiPolygon(((1 1,1 1),(1 1,2 2,3 3,1 1)))'"
+    },
+    {
+      "ID": 651,
+      "name": "GeographyPoint",
+      "rule": "geographyPoint",
+      "ruleId": 339,
+      "input": "geography'SRID=0;Point(142.1 64.1)'"
+    },
+    {
+      "ID": 652,
+      "name": "GeographyPoint with elevation",
+      "rule": "geographyPoint",
+      "ruleId": 339,
+      "input": "geography'SRID=0;Point(142.1 64.1 10.0)'"
+    },
+    {
+      "ID": 653,
+      "name": "GeographyPoint with elevation and measure",
+      "rule": "geographyPoint",
+      "ruleId": 339,
+      "input": "geography'SRID=0;Point(142.1 64.1 10.0 -3.14)'"
+    },
+    {
+      "ID": 654,
+      "name": "GeographyPolygon",
+      "rule": "geographyPolygon",
+      "ruleId": 345,
+      "input": "geography'SRID=0;Polygon((1 1,1 1),(1 1,2 2,3 3,1 1))'"
+    },
+    {
+      "ID": 655,
+      "name": "GeometryCollection",
+      "rule": "geometryCollection",
+      "ruleId": 350,
+      "input": "geometry'SRID=0;Collection(LineString(142.1 64.1,3.14 2.78))'"
+    },
+    {
+      "ID": 656,
+      "name": "GeometryLineString",
+      "rule": "geometryLineString",
+      "ruleId": 351,
+      "input": "geometry'SRID=0;LineString(142.1 64.1,3.14 2.78)'"
+    },
+    {
+      "ID": 657,
+      "name": "GeometryMultiLineString",
+      "rule": "geometryMultiLineString",
+      "ruleId": 352,
+      "input": "geometry'SRID=0;MultiLineString((142.1 64.1,3.14 2.78),(142.1 64.1,3.14 2.78))'"
+    },
+    {
+      "ID": 658,
+      "name": "GeometryMultiPoint",
+      "rule": "geometryMultiPoint",
+      "ruleId": 353,
+      "input": "geometry'SRID=0;MultiPoint()'"
+    },
+    {
+      "ID": 659,
+      "name": "GeometryMultiPoint",
+      "rule": "geometryMultiPoint",
+      "ruleId": 353,
+      "input": "geometry'SRID=0;MultiPoint((142.1 64.1),(1 2))'"
+    },
+    {
+      "ID": 660,
+      "name": "GeometryMultiPolygon",
+      "rule": "geometryMultiPolygon",
+      "ruleId": 354,
+      "input": "geometry'SRID=0;MultiPolygon(((1 1,1 1),(1 1,2 2,3 3,1 1)))'"
+    },
+    {
+      "ID": 661,
+      "name": "GeometryPoint",
+      "rule": "geometryPoint",
+      "ruleId": 355,
+      "input": "geometry'SRID=0;Point(142.1 64.1)'"
+    },
+    {
+      "ID": 662,
+      "name": "GeometryPolygon",
+      "rule": "geometryPolygon",
+      "ruleId": 356,
+      "input": "geometry'SRID=0;Polygon((1 1,1 1),(1 1,2 2,3 3,1 1))'"
+    },
+    {
+      "ID": 663,
+      "name": "$filter with geometry",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter=geo.intersects(geometry'SRID=0;Point(142.1 64.1)',geometry'SRID=0;Polygon((1 1,1 1),(1 1,2 2,3 3,1 1))')"
+    },
+    {
+      "ID": 664,
+      "name": "Functions in commonExpr",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Model.Available()"
+    },
+    {
+      "ID": 666,
+      "name": "Functions in commonExpr - directly call function",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Model.MostPopularName()"
+    },
+    {
+      "ID": 667,
+      "name": "Functions in commonExpr - after collection navigation",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.Available()"
+    },
+    {
+      "ID": 668,
+      "name": "Functions in commonExpr - composed functions",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.BestProduct()/Model.MostPopularName()"
+    },
+    {
+      "ID": 669,
+      "name": "Functions in commonExpr - composed functions, no namespace",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/BestProduct()/MostPopularName()"
+    },
+    {
+      "ID": 670,
+      "name": "Functions in commonExpr - singleNavigation",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.BestProduct()/Name"
+    },
+    {
+      "ID": 671,
+      "name": "Functions in commonExpr - singleNavigation",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.BestProduct()/Model.BestSellingProduct/Name"
+    },
+    {
+      "ID": 672,
+      "name": "Functions in commonExpr - singleNavigation",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.BestProduct()/Name/Model.Available()"
+    },
+    {
+      "ID": 673,
+      "name": "Functions in commonExpr - singleNavigation",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.BestProduct()/Address"
+    },
+    {
+      "ID": 674,
+      "name": "Functions in commonExpr - singleNavigation",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.BestProduct()/Address/Street"
+    },
+    {
+      "ID": 675,
+      "name": "Functions in commonExpr - singleNavigation",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.BestProduct()/Addresses"
+    },
+    {
+      "ID": 676,
+      "name": "Functions in commonExpr - singleNavigation",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.BestProduct()/Addresses/Model.MostPopularName()"
+    },
+    {
+      "ID": 677,
+      "name": "Functions in commonExpr - singleNavigation",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.BestProduct()/EmailAddresses"
+    },
+    {
+      "ID": 678,
+      "name": "Functions in commonExpr - stream property",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.BestProduct()/Thumbnail"
+    },
+    {
+      "ID": 679,
+      "name": "Functions in commonExpr - singleNavigation with any",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.BestProduct()/EmailAddresses/any()"
+    },
+    {
+      "ID": 680,
+      "name": "Functions in commonExpr - singleNavigation with all",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.BestProduct()/EmailAddresses/all(lambda:true)"
+    },
+    {
+      "ID": 681,
+      "name": "Functions in commonExpr - collectionNavigation",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.ProductsByColor(color='green')/Model.MostPopularName()"
+    },
+    {
+      "ID": 682,
+      "name": "Functions in commonExpr - collectionNavigation",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.ProductsByColor(color='green')/Model.BestSellingProduct/Model.MostPopularName()"
+    },
+    {
+      "ID": 683,
+      "name": "Functions in commonExpr - collectionNavigation",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.ProductsByColor(color=@color)/Model.BestSellingProduct/Model.MostPopularName()"
+    },
+    {
+      "ID": 684,
+      "name": "Functions in commonExpr - collectionNavigation with all",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.ProductsByColor()/all(lambda:true)"
+    },
+    {
+      "ID": 685,
+      "name": "Functions in commonExpr - complexPath",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Items/Model.MostPopularAddress()/Street"
+    },
+    {
+      "ID": 686,
+      "name": "Functions in commonExpr - complexPath",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Items/Model.MostPopularAddress()/Address"
+    },
+    {
+      "ID": 687,
+      "name": "Functions in commonExpr - complexPath",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Items/Model.MostPopularAddress()/Address/Model.Available()"
+    },
+    {
+      "ID": 688,
+      "name": "Functions in commonExpr - collectionPath",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Items/Model.MostPopularAddresses()/$count"
+    },
+    {
+      "ID": 689,
+      "name": "Functions in commonExpr - collectionPath",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Items/Model.MostPopularAddresses()/Model.MostPopularName()"
+    },
+    {
+      "ID": 690,
+      "name": "Functions in commonExpr - collectionPath",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Items/Model.MostPopularNames()/$count"
+    },
+    {
+      "ID": 691,
+      "name": "Functions in commonExpr - collectionPath",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Items/Model.MostPopularNames()/Model.MostPopularName()"
+    },
+    {
+      "ID": 692,
+      "name": "Functions in commonExpr - collectionPath, no namespace",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Items/MostPopularNames()/MostPopularName()"
+    },
+    {
+      "ID": 693,
+      "name": "Functions in commonExpr - singlePath",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Items/Model.MostPopularName()/Model.MostPopularName()"
+    },
+    {
+      "ID": 694,
+      "name": "Functions in commonExpr - singlePath, no namespace",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Items/MostPopularName()/MostPopularName()"
+    },
+    {
+      "ID": 695,
+      "name": "Functions in commonExpr - collection parameter in JSON",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.ProductsByColor(colors=[\"red\",\"green\",\"blue\"])"
+    },
+    {
+      "ID": 696,
+      "name": "Functions in commonExpr - collection parameter in JSON with whitespace",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.ProductsByColor(colors=[ \"red\", \"green\" , \"blue\" ])"
+    },
+    {
+      "ID": 697,
+      "name": "Functions in commonExpr - collection parameter in JSON with whitespace",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Products/Model.ProductsByColor(colors=%5B%20\"red\",%20\"green\"%20,\"blue\"%20%5D)"
+    },
+    {
+      "ID": 698,
+      "name": "Functions in commonExpr - complex JSON parameter",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Model.Available(complex={\"Name\":\"Value\"})"
+    },
+    {
+      "ID": 699,
+      "name": "Functions in commonExpr - complex JSON parameter with whitespace",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Model.Available(complex={ \"Name\" : \"double quote (\\\") in value\" })"
+    },
+    {
+      "ID": 700,
+      "name": "Functions in commonExpr - complex JSON parameter with whitespace",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Model.Available(complex=%7B %22Name%22 : \"double%20quote (%5C%22) in value\" %7D)"
+    },
+    {
+      "ID": 701,
+      "name": "Functions in commonExpr - property as parameter",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Model.PhoneticallySimilar(Word1=Name,Word2=Supplier/Name)"
+    },
+    {
+      "ID": 702,
+      "name": "Functions in commonExpr - property as parameter",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Model.PhoneticallySimilar(Word1=Name,Word2=Supplier/Name)"
+    },
+    {
+      "ID": 703,
+      "name": "in operator with list of primitives",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "FirstName in ('Miller','Smith')"
+    },
+    {
+      "ID": 705,
+      "name": "right operand is not a list, it's a complicated way of writing FirstName",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "FirstName in (FirstName)"
+    },
+    {
+      "ID": 707,
+      "name": "Functions in filter - alias as parameter",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$filter=Model.PhoneticallySimilar(Word=@expression)&@expression=5 add 3"
+    },
+    {
+      "ID": 708,
+      "name": "Functions in filter - expression as parameter",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$filter=Model.PhoneticallySimilar(Number=5 add 3)"
+    },
+    {
+      "ID": 709,
+      "name": "Functions in filter - $it as prefix",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$filter=$it/Model.PhoneticallySimilar(Number=5 add 3)"
+    },
+    {
+      "ID": 710,
+      "name": "Context URL - Entity set",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http://host/service/$metadata#Customers"
+    },
+    {
+      "ID": 711,
+      "name": "Context URL - Entity set with $select",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "$metadata#Customers(Address,Orders)"
+    },
+    {
+      "ID": 712,
+      "name": "Context URL - Entity set with $select",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers(Address/Street,Orders)"
+    },
+    {
+      "ID": 713,
+      "name": "Context URL - Entity set with $select",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers(Address/Country)"
+    },
+    {
+      "ID": 714,
+      "name": "Context URL - Entity set with $select and type-cast",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers(Address/Model.AddressWithLocation,Orders)"
+    },
+    {
+      "ID": 716,
+      "name": "Context URL - Entity set with $select",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers(Address/Name,Orders)"
+    },
+    {
+      "ID": 717,
+      "name": "Context URL - Entity set with $select",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers/Model.VipCustomer(Orders(ID))"
+    },
+    {
+      "ID": 718,
+      "name": "Context URL - Entity set with $select and type cast",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers(Name,Address/Country,Model.VipCustomer/Rating)"
+    },
+    {
+      "ID": 719,
+      "name": "Context URL - Entity set with $select and $expand",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers/Model.VipCustomer(Name,Address/Country,Model.*)"
+    },
+    {
+      "ID": 720,
+      "name": "Context URL - Entity set with $select and $expand with nested select",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers/Model.VipCustomer(Name,Address/Country(Code,Model.ActionName,Model.MostPopularAddress))"
+    },
+    {
+      "ID": 721,
+      "name": "Context URL - Entity set with $select and $expand",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers/Model.VipCustomer(Orders,Orders())"
+    },
+    {
+      "ID": 722,
+      "name": "Context URL - Entity set with $select and $expand with nested select",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers/Model.VipCustomer(Orders,Orders(ID,Items(Price)))"
+    },
+    {
+      "ID": 723,
+      "name": "Context URL - Entity with $select and $expand with nested select",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers/Model.VipCustomer(*,Orders(ID))/$entity"
+    },
+    {
+      "ID": 724,
+      "name": "Context URL - Entity set with cast, $select and recursive $expand",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Employees(Title,DirectReports+(FirstName,LastName))"
+    },
+    {
+      "ID": 725,
+      "name": "Context URL - Collection of structured type with $select and recursive $expand",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Collection(Model.Employee)(Title,DirectReports+(FirstName,LastName))"
+    },
+    {
+      "ID": 726,
+      "name": "Context URL - annotations in select",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Employees(@Core.Messages,Title,DirectReports+(@Core.Messages,FirstName,LastName))"
+    },
+    {
+      "ID": 727,
+      "name": "Context URL - annotations in select - cleartext #",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Employees(@Core.Messages/code,@Core.Messages/message,Title,DirectReports+(@Core.Messages#second,FirstName,LastName))"
+    },
+    {
+      "ID": 729,
+      "name": "Context URL - annotations in expand",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Employees(@Namespace.EntityTerm(FirstName,LastName))"
+    },
+    {
+      "ID": 730,
+      "name": "Context URL - Entity set with type cast",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers/Model.VipCustomer"
+    },
+    {
+      "ID": 731,
+      "name": "Context URL - Entity",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers/$entity"
+    },
+    {
+      "ID": 732,
+      "name": "Context URL - Singleton",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#SingletonEntity"
+    },
+    {
+      "ID": 733,
+      "name": "Context URL - Singleton with containment",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#SingletonEntity/Orders"
+    },
+    {
+      "ID": 734,
+      "name": "Context URL - Singleton with containment",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#SingletonEntity/Orders(3)/Items"
+    },
+    {
+      "ID": 735,
+      "name": "Context URL - collection with containment",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers('ALFKI')/Orders"
+    },
+    {
+      "ID": 736,
+      "name": "Context URL - containment",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers('ALFKI')/Orders/$entity"
+    },
+    {
+      "ID": 737,
+      "name": "Context URL - collection with containment - multi-level",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers('ALFKI')/Orders(1)/Items"
+    },
+    {
+      "ID": 738,
+      "name": "Context URL - containment - multi-level with $select",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers('ALFKI')/Orders(1)/Items(Product)/$entity"
+    },
+    {
+      "ID": 739,
+      "name": "Context URL - containment with type cast",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers('ALFKI')/Model.VipCustomer/Address/Orders"
+    },
+    {
+      "ID": 740,
+      "name": "Context URL - Singleton with $select",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#SingletonEntity(Address,Orders)"
+    },
+    {
+      "ID": 741,
+      "name": "Context URL - Entity with $select",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers(Address,Orders)/$entity"
+    },
+    {
+      "ID": 742,
+      "name": "Context URL - Entity with type cast",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers/Model.VipCustomer/$entity"
+    },
+    {
+      "ID": 743,
+      "name": "Context URL - Entity property value",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers(1)/Addresses"
+    },
+    {
+      "ID": 744,
+      "name": "Context URL - Entity property value with $select",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers(1)/Addresses(Country)"
+    },
+    {
+      "ID": 745,
+      "name": "Context URL - Individual value",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Model.MonetaryAmount"
+    },
+    {
+      "ID": 746,
+      "name": "Context URL - Individual collection value",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Collection(Edm.String)"
+    },
+    {
+      "ID": 747,
+      "name": "Context URL - Reference collection",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Collection($ref)"
+    },
+    {
+      "ID": 748,
+      "name": "Context URL - Reference",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#$ref"
+    },
+    {
+      "ID": 749,
+      "name": "Context URL - $all",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Collection(Edm.EntityType)"
+    },
+    {
+      "ID": 750,
+      "name": "Context URL - $crossjoin",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Collection(Edm.ComplexType)"
+    },
+    {
+      "ID": 751,
+      "name": "Context URL - Delta",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers/$delta"
+    },
+    {
+      "ID": 752,
+      "name": "Context URL - Delta - deleted context",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Orders/$deletedEntity"
+    },
+    {
+      "ID": 753,
+      "name": "Context URL - Delta - link",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers/$link"
+    },
+    {
+      "ID": 754,
+      "name": "Context URL - Delta - deleted link",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Orders/$deletedLink"
+    },
+    {
+      "ID": 755,
+      "name": "Header - content-id",
+      "rule": "header",
+      "ruleId": 359,
+      "input": "content-id: 1"
+    },
+    {
+      "ID": 756,
+      "name": "Batch Request - request identifier",
+      "rule": "request-id",
+      "ruleId": 362,
+      "input": "First-Insert~Customer_1.1"
+    },
+    {
+      "ID": 757,
+      "name": "Batch Request - request identifier",
+      "rule": "request-id",
+      "ruleId": 362,
+      "input": "group1"
+    },
+    {
+      "ID": 758,
+      "name": "Header - odata-entityid",
+      "rule": "header",
+      "ruleId": 359,
+      "input": "odata-entityid: ralf:handl"
+    },
+    {
+      "ID": 759,
+      "name": "Header - odata-entityid",
+      "rule": "header",
+      "ruleId": 359,
+      "input": "odata-entityID: empty-path:/"
+    },
+    {
+      "ID": 760,
+      "name": "Header - odata-entityid",
+      "rule": "header",
+      "ruleId": 359,
+      "input": "odata-entityId:strange:ÿ/"
+    },
+    {
+      "ID": 761,
+      "name": "Header - odata-error",
+      "rule": "header",
+      "ruleId": 359,
+      "input": "OData-error: {\"code\":\"err123\",\"message\":\"Unsupported functionality\",\"target\":\"query\",\"details\":[{\"code\":\"fourtytwo\",\"target\":\"$search\",\"message\":\"$search query option not supported\"}]}"
+    },
+    {
+      "ID": 762,
+      "name": "Header - odata-isolation",
+      "rule": "header",
+      "ruleId": 359,
+      "input": "odata-isolation:sNapShoT"
+    },
+    {
+      "ID": 763,
+      "name": "Header - isolation",
+      "rule": "header",
+      "ruleId": 359,
+      "input": "isolation:sNapShoT"
+    },
+    {
+      "ID": 764,
+      "name": "Header - odata-maxversion",
+      "rule": "header",
+      "ruleId": 359,
+      "input": "odata-maxversion: 4.0"
+    },
+    {
+      "ID": 765,
+      "name": "Header - odata-maxversion next",
+      "rule": "header",
+      "ruleId": 359,
+      "input": "odata-maxversion: 4.01"
+    },
+    {
+      "ID": 766,
+      "name": "Header - odata-maxversion",
+      "rule": "header",
+      "ruleId": 359,
+      "input": "odata-maxversion:06.2831852000"
+    },
+    {
+      "ID": 767,
+      "name": "Header - odata-version",
+      "rule": "header",
+      "ruleId": 359,
+      "input": "odata-version: 4.0"
+    },
+    {
+      "ID": 768,
+      "name": "Header - odata-version",
+      "rule": "header",
+      "ruleId": 359,
+      "input": "odata-version: 4.01"
+    },
+    {
+      "ID": 769,
+      "name": "Preferences - allow entity references and maximum page size",
+      "rule": "prefer",
+      "ruleId": 367,
+      "input": "Prefer: odata.allow-entityreferences,odata.maxpagesize=20"
+    },
+    {
+      "ID": 770,
+      "name": "Preferences - allow entity references and maximum page size - no prefix",
+      "rule": "prefer",
+      "ruleId": 367,
+      "input": "Prefer: allow-entityreferences,maxpagesize=20"
+    },
+    {
+      "ID": 771,
+      "name": "Preferences - callback",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.callback;url=\"please://call/me?back#here\""
+    },
+    {
+      "ID": 772,
+      "name": "Preferences - callback",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.callback;url=\"http://myserver/notfication/token/12345\""
+    },
+    {
+      "ID": 773,
+      "name": "Preferences - callback",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.callback;url=\"some:where\""
+    },
+    {
+      "ID": 774,
+      "name": "Preferences - callback",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.callback;url=\"some:/where\""
+    },
+    {
+      "ID": 775,
+      "name": "Preferences - without prefix",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "callback;url=\"some:/where\""
+    },
+    {
+      "ID": 776,
+      "name": "Preferences - continue on error",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.continue-on-error"
+    },
+    {
+      "ID": 777,
+      "name": "Preferences - continue on error - no prefix",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "continue-on-error"
+    },
+    {
+      "ID": 778,
+      "name": "Preferences - continue on error with value true",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.continue-on-error=true"
+    },
+    {
+      "ID": 779,
+      "name": "Preferences - continue on error with value true",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "continue-on-error=true"
+    },
+    {
+      "ID": 780,
+      "name": "Preferences - continue on error with value false",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.continue-on-error=false"
+    },
+    {
+      "ID": 781,
+      "name": "Preferences - continue on error with value false",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "continue-on-error=false"
+    },
+    {
+      "ID": 782,
+      "name": "Preferences - include annotations - all",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.include-annotations=\"*\""
+    },
+    {
+      "ID": 783,
+      "name": "Preferences - include annotations - all with a given qualifier",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.include-annotations=\"*#qualified\""
+    },
+    {
+      "ID": 784,
+      "name": "Preferences - include annotations - none",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.include-annotations=\"-*\""
+    },
+    {
+      "ID": 785,
+      "name": "Preferences - include annotations - none with a given qualifier",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.include-annotations=\"-*#qualified\""
+    },
+    {
+      "ID": 786,
+      "name": "Preferences - include annotations - all in namespace",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.include-annotations=\"Namespace.*\""
+    },
+    {
+      "ID": 787,
+      "name": "Preferences - include annotations - all in namespace with given qualifier",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.include-annotations=\"Namespace.*#quali\""
+    },
+    {
+      "ID": 790,
+      "name": "Preferences - include annotations - nothing from namespace",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.include-annotations=\"-Namespace.*\""
+    },
+    {
+      "ID": 791,
+      "name": "Preferences - include annotations - nothing from namespace",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.include-annotations=\"-Namespace.*#quali\""
+    },
+    {
+      "ID": 792,
+      "name": "Preferences - include annotations - only a special term",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.include-annotations=\"Namespace.SomeTerm\""
+    },
+    {
+      "ID": 793,
+      "name": "Preferences - include annotations - only a special term",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.include-annotations=\"Namespace.SomeTerm#qual\""
+    },
+    {
+      "ID": 794,
+      "name": "Preferences - include annotations - everything except a special term",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.include-annotations=\"-Namespace.SomeTerm\""
+    },
+    {
+      "ID": 795,
+      "name": "Preferences - include annotations - only a special term",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.include-annotations=\"-Namespace.SomeTerm#qual\""
+    },
+    {
+      "ID": 796,
+      "name": "Preferences - include annotations - several",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.include-annotations=\"Namespace.SomeTerm,Model.AnotherTerm,Namespace.*\""
+    },
+    {
+      "ID": 797,
+      "name": "Preferences - include annotations - no prefix",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "include-annotations=\"*\""
+    },
+    {
+      "ID": 798,
+      "name": "Preferences - maxpagesize - ok",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.maxpagesize=50"
+    },
+    {
+      "ID": 799,
+      "name": "Preferences - maxpagesize - no prefix",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "maxpagesize=50"
+    },
+    {
+      "ID": 802,
+      "name": "Preferences - omit-values - defaults",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "omit-values=defaults"
+    },
+    {
+      "ID": 803,
+      "name": "Preferences - omit-values - nulls",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "omit-values=nulls"
+    },
+    {
+      "ID": 804,
+      "name": "Preferences - return minimal",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "return=minimal"
+    },
+    {
+      "ID": 805,
+      "name": "Preferences - return representation",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "return=representation"
+    },
+    {
+      "ID": 806,
+      "name": "Preferences - respond async",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "respond-async"
+    },
+    {
+      "ID": 807,
+      "name": "Preferences - track changes",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "odata.track-changes"
+    },
+    {
+      "ID": 808,
+      "name": "Preferences - track changes - no prefix",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "track-changes"
+    },
+    {
+      "ID": 809,
+      "name": "Preferences - wait",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "wait=0"
+    },
+    {
+      "ID": 810,
+      "name": "Preferences - wait with bad whitespace",
+      "rule": "preference",
+      "ruleId": 368,
+      "input": "wait = 0"
+    },
+    {
+      "ID": 811,
+      "name": "Schema Version - numeric",
+      "rule": "systemQueryOption",
+      "ruleId": 63,
+      "input": "$schemaversion=0001"
+    },
+    {
+      "ID": 812,
+      "name": "Schema Version - alphanumeric",
+      "rule": "systemQueryOption",
+      "ruleId": 63,
+      "input": "schemaversion=second"
+    },
+    {
+      "ID": 813,
+      "name": "Schema Version - semantic",
+      "rule": "systemQueryOption",
+      "ruleId": 63,
+      "input": "schemaversion=1.42.2"
+    },
+    {
+      "ID": 814,
+      "name": "Schema Version - latest",
+      "rule": "systemQueryOption",
+      "ruleId": 63,
+      "input": "$schemaversion=*"
+    },
+    {
+      "ID": 815,
+      "name": "ODATA-633 hex pair bug",
+      "rule": "stringInUrl",
+      "ruleId": 226,
+      "input": "\"b%75g\""
+    }
+  ],
+  "invalid": [
+    {
+      "ID": 4,
+      "name": "URI without schema separator",
+      "rule": "odataUri",
+      "ruleId": 1,
+      "input": "http//My.Org/",
+      "failAt": 4
+    },
+    {
+      "ID": 5,
+      "name": "Binary with X",
+      "rule": "binary",
+      "ruleId": 284,
+      "input": "X'1a2B3c4D'",
+      "failAt": 0
+    },
+    {
+      "ID": 24,
+      "name": "Date: negative Infinity",
+      "rule": "dateValue",
+      "ruleId": 302,
+      "input": "-INF",
+      "failAt": 1
+    },
+    {
+      "ID": 25,
+      "name": "Date: positive Infinity",
+      "rule": "dateValue",
+      "ruleId": 302,
+      "input": "INF",
+      "failAt": 0
+    },
+    {
+      "ID": 32,
+      "name": "DateTimeOffset: Midnight this day",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "2011-12-31T24:00Z",
+      "failAt": 12
+    },
+    {
+      "ID": 33,
+      "name": "DateTimeOffset: Midnight this day with seconds",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "2011-12-31T24:00:00Z",
+      "failAt": 12
+    },
+    {
+      "ID": 36,
+      "name": "DateTimeOffset: 24:00",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "2012-09-03T24:00-03:00",
+      "failAt": 12
+    },
+    {
+      "ID": 37,
+      "name": "DateTimeOffset: negative infinitiy",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "-INF",
+      "failAt": 1
+    },
+    {
+      "ID": 38,
+      "name": "DateTimeOffset: positive infinitiy",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "INF",
+      "failAt": 0
+    },
+    {
+      "ID": 39,
+      "name": "DateTimeOffset: no percent-encoding in payloads",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "2012-09-03T23%3A59Z",
+      "failAt": 13
+    },
+    {
+      "ID": 40,
+      "name": "DateTimeOffset: no percent-encoding in payloads",
+      "rule": "dateTimeOffsetValue",
+      "ruleId": 303,
+      "input": "2012-09-03T23:59+01%3A00",
+      "failAt": 19
+    },
+    {
+      "ID": 49,
+      "name": "Duration in body: no years allowed",
+      "rule": "durationValue",
+      "ruleId": 306,
+      "input": "P1Y6DT23H59M59.9999S",
+      "failAt": 2
+    },
+    {
+      "ID": 50,
+      "name": "Duration in body: no months allowed",
+      "rule": "durationValue",
+      "ruleId": 306,
+      "input": "P1M6DT23H59M59.9999S",
+      "failAt": 2
+    },
+    {
+      "ID": 54,
+      "name": "Decimal: integer",
+      "rule": "decimalValue",
+      "ruleId": 290,
+      "input": "+42.",
+      "failAt": 4
+    },
+    {
+      "ID": 55,
+      "name": "Decimal: no digit before decimal point",
+      "rule": "decimalValue",
+      "ruleId": 290,
+      "input": ".1",
+      "failAt": 0
+    },
+    {
+      "ID": 59,
+      "name": "Double with at most one exponent",
+      "rule": "doubleValue",
+      "ruleId": 291,
+      "input": "-0.314e1e2",
+      "failAt": 8
+    },
+    {
+      "ID": 74,
+      "name": "String",
+      "rule": "string",
+      "ruleId": 300,
+      "input": "'O'Neil'",
+      "failAt": 3
+    },
+    {
+      "ID": 75,
+      "name": "String",
+      "rule": "string",
+      "ruleId": 300,
+      "input": "'O%27Neil'",
+      "failAt": 5
+    },
+    {
+      "ID": 82,
+      "name": "primitive value in request body - binary with line breaks and spaces",
+      "rule": "primitiveValue",
+      "ruleId": 282,
+      "input": "a1234567 89\u000Dab\u000A              cdefABA",
+      "failAt": 8
+    },
+    {
+      "ID": 89,
+      "name": "Guid with wrong character",
+      "rule": "guidValue",
+      "ruleId": 294,
+      "input": "01234g67-89ab-cdef-0123-456789abcdef",
+      "failAt": 5
+    },
+    {
+      "ID": 90,
+      "name": "Guid with less than 32 digits",
+      "rule": "guidValue",
+      "ruleId": 294,
+      "input": "01234567-89ab-cdef-456789abcdef",
+      "failAt": 23
+    },
+    {
+      "ID": 93,
+      "name": "TimeOfDay - no percent-encoding in payloads",
+      "rule": "timeOfDayValue",
+      "ruleId": 307,
+      "input": "11%3A22%3a33",
+      "failAt": 2
+    },
+    {
+      "ID": 96,
+      "name": "TimeOfDay: 24:00",
+      "rule": "timeOfDayValue",
+      "ruleId": 307,
+      "input": "24:00:00",
+      "failAt": 1
+    },
+    {
+      "ID": 99,
+      "name": "Identifier: no starting digit",
+      "rule": "odataIdentifier",
+      "ruleId": 250,
+      "input": "0time",
+      "failAt": 0
+    },
+    {
+      "ID": 100,
+      "name": "Identifier: no dots within",
+      "rule": "odataIdentifier",
+      "ruleId": 250,
+      "input": "No.Dot",
+      "failAt": 2
+    },
+    {
+      "ID": 117,
+      "name": "2 URL Components - unquoted single quotes",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Customers('O%27Neil')",
+      "failAt": 15
+    },
+    {
+      "ID": 120,
+      "name": "2 URL Components - unencoded forward slash",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories('Smartphone/Tablet')",
+      "failAt": 22
+    },
+    {
+      "ID": 132,
+      "name": "4.3 Addressing entities - no trailing dot",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products.('foo')",
+      "failAt": 8
+    },
+    {
+      "ID": 133,
+      "name": "4.3 Addressing entities - no leading dot",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": ".Products('foo')",
+      "failAt": 0
+    },
+    {
+      "ID": 151,
+      "name": "4.3 Addressing entities - single entity (wrong)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories('Tablet/Slate')",
+      "failAt": 18
+    },
+    {
+      "ID": 159,
+      "name": "4.3 Addressing entities - single entity (wrong)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "Categories(ID=wrong)",
+      "failAt": 19
+    },
+    {
+      "ID": 161,
+      "name": "4.3 Addressing entities - single entity (wrong multi-part key)",
+      "rule": "resourcePath",
+      "ruleId": 4,
+      "input": "OrderItems(OrderID=1;ItemID='a')",
+      "failAt": 20
+    },
+    {
+      "ID": 176,
+      "name": "4.3.4 $entity with OData URL, $select and $expand fails without type-cast",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "$entity?$id=http://myservice/Customers('ALFKI')&$select=CompanyName,ContactName&$expand=Orders",
+      "failAt": 48
+    },
+    {
+      "ID": 178,
+      "name": "4.3.4 $entity without $id fails",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "$entity?$format=json",
+      "failAt": 20
+    },
+    {
+      "ID": 190,
+      "name": "4.4 Addressing Links between Entities - count",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Products/$ref/$count",
+      "failAt": 27
+    },
+    {
+      "ID": 192,
+      "name": "4.4 Addressing Links between Entities",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Products(2)/$ref/$count",
+      "failAt": 30
+    },
+    {
+      "ID": 197,
+      "name": "4.5.1 Call action at service root",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Model.Rejection",
+      "failAt": 5
+    },
+    {
+      "ID": 201,
+      "name": "4.5.2 Call function import - only at service root",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories/TheBestProduct()",
+      "failAt": 27
+    },
+    {
+      "ID": 228,
+      "name": "4.7 Addressing a Property Value - illegal suffix",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/ID/$value/foo",
+      "failAt": 23
+    },
+    {
+      "ID": 229,
+      "name": "4.7 Addressing a Property Value - complex",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Address/$value",
+      "failAt": 22
+    },
+    {
+      "ID": 231,
+      "name": "4.7 Named Stream Property - $value does not make sense here",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Categories(1)/Thumbnail/$value",
+      "failAt": 24
+    },
+    {
+      "ID": 234,
+      "name": "4.8 Addressing entities - $count not last segment",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products/$count/foo",
+      "failAt": 15
+    },
+    {
+      "ID": 251,
+      "name": "4.11 Inheritance - key access, then cast to subtype - only once",
+      "rule": "odataRelativeUri",
+      "ruleId": 3,
+      "input": "Products(1)/Model.BestSellingProduct/Model.BestSellingProduct",
+      "failAt": 61
+    },
+    {
+      "ID": 297,
+      "name": "5.1.1 Filter: no spaces",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter =true",
+      "failAt": 7
+    },
+    {
+      "ID": 298,
+      "name": "5.1.1 Filter: no spaces",
+      "rule": "filter",
+      "ruleId": 74,
+      "input": "$filter= true",
+      "failAt": 9
+    },
+    {
+      "ID": 316,
+      "name": "5.1.1.1.1 boolean - only true and false",
+      "rule": "booleanValue",
+      "ruleId": 289,
+      "input": "0",
+      "failAt": 0
+    },
+    {
+      "ID": 317,
+      "name": "5.1.1.1.1 boolean - only true and false",
+      "rule": "booleanValue",
+      "ruleId": 289,
+      "input": "1",
+      "failAt": 0
+    },
+    {
+      "ID": 429,
+      "name": "5.1.1.13.1 any() - requires a path prefix",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "any()",
+      "failAt": 3
+    },
+    {
+      "ID": 434,
+      "name": "5.1.1.13.2 all() - requires path prefix",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "all(lambda:true)",
+      "failAt": 3
+    },
+    {
+      "ID": 435,
+      "name": "5.1.1.13.2 all() - must contain a lambda expression",
+      "rule": "boolCommonExpr",
+      "ruleId": 129,
+      "input": "Products/all()",
+      "failAt": 14
+    },
+    {
+      "ID": 483,
+      "name": "5.1.2 Expand - no $level after $ref",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Customer/$ref($levels=4)",
+      "failAt": 22
+    },
+    {
+      "ID": 484,
+      "name": "5.1.2 Expand - no $select after $ref",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Customer/$ref($select=Name)",
+      "failAt": 22
+    },
+    {
+      "ID": 485,
+      "name": "5.1.2 Expand - no $expand after $ref",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Customer,Items/$ref($expand=Product)",
+      "failAt": 28
+    },
+    {
+      "ID": 492,
+      "name": "5.1.2 Expand - no $count after $count",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Items/$count($count=true)",
+      "failAt": 21
+    },
+    {
+      "ID": 497,
+      "name": "5.1.2 Expand - levels without leading zeroes",
+      "rule": "expand",
+      "ruleId": 67,
+      "input": "$expand=Category($levels=04)",
+      "failAt": 25
+    },
+    {
+      "ID": 538,
+      "name": "5.1.6 Inlinecount",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$count",
+      "failAt": 6
+    },
+    {
+      "ID": 549,
+      "name": "5.1.7 Search - simple term with unencoded hash",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=#1",
+      "failAt": 8
+    },
+    {
+      "ID": 551,
+      "name": "5.1.7 Search - simple term with unencoded ampersand",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=more&more",
+      "failAt": 17
+    },
+    {
+      "ID": 553,
+      "name": "5.1.7 Search - simple term with unencoded semicolon",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$search=a;b",
+      "failAt": 9
+    },
+    {
+      "ID": 568,
+      "name": "5.1.7 Search - phrase with unbalanced double-quotes",
+      "rule": "search",
+      "ruleId": 83,
+      "input": "$search=\"blue",
+      "failAt": 13
+    },
+    {
+      "ID": 569,
+      "name": "5.1.7 Search - phrase with unbalanced double-quotes",
+      "rule": "search",
+      "ruleId": 83,
+      "input": "$search=%22blue",
+      "failAt": 15
+    },
+    {
+      "ID": 571,
+      "name": "5.1.7 Search - phrase with double-quote without whitespace",
+      "rule": "searchExpr",
+      "ruleId": 84,
+      "input": "\"blue%22green",
+      "failAt": 8
+    },
+    {
+      "ID": 590,
+      "name": "5.1.7 Search - nested $search must not contain unbalanced parentheses",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$expand=Manager($search=gr(een)",
+      "failAt": 26
+    },
+    {
+      "ID": 604,
+      "name": "5.1.9 Index",
+      "rule": "queryOptions",
+      "ruleId": 52,
+      "input": "$index=fortytwo",
+      "failAt": 7
+    },
+    {
+      "ID": 611,
+      "name": "Next Link: no Ampersand",
+      "rule": "skiptoken",
+      "ruleId": 104,
+      "input": "$skiptoken=Not&this",
+      "failAt": 14
+    },
+    {
+      "ID": 665,
+      "name": "Functions in commonExpr",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "Model.Available",
+      "failAt": 15
+    },
+    {
+      "ID": 704,
+      "name": "lists can only contain primitive literals",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "FirstName in (FirstName,LastName)",
+      "failAt": 23
+    },
+    {
+      "ID": 706,
+      "name": "lists only allowed right of in operator",
+      "rule": "commonExpr",
+      "ruleId": 128,
+      "input": "EmailAddresses eq ('Miller','Smith')",
+      "failAt": 27
+    },
+    {
+      "ID": 715,
+      "name": "Context URL - Entity set with $select and type-cast, qualifier is required",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Customers(Address/AddressWithLocation,Orders)",
+      "failAt": 38
+    },
+    {
+      "ID": 728,
+      "name": "Context URL - annotations in select - # must be cleartext, not percent-encoded",
+      "rule": "context",
+      "ruleId": 115,
+      "input": "#Employees(@Core.Messages/code,@Core.Messages/message,Title,DirectReports+(@Core.Messages%23second,FirstName,LastName))",
+      "failAt": 89
+    },
+    {
+      "ID": 788,
+      "name": "Preferences - include annotations - namespace must be suffixed with .*",
+      "rule": "includeAnnotationsPreference",
+      "ruleId": 372,
+      "input": "odata.include-annotations=\"Namespace\"",
+      "failAt": 36
+    },
+    {
+      "ID": 789,
+      "name": "Preferences - include annotations - namespace must be suffixed with .*",
+      "rule": "includeAnnotationsPreference",
+      "ruleId": 372,
+      "input": "odata.include-annotations=\"Namespace.\"",
+      "failAt": 37
+    },
+    {
+      "ID": 800,
+      "name": "Preferences - maxpagesize - not zero",
+      "rule": "maxpagesizePreference",
+      "ruleId": 376,
+      "input": "odata.maxpagesize=0",
+      "failAt": 18
+    },
+    {
+      "ID": 801,
+      "name": "Preferences - maxpagesize - not negative",
+      "rule": "maxpagesizePreference",
+      "ruleId": 376,
+      "input": "odata.maxpagesize=-1",
+      "failAt": 18
+    }
+  ]
+}

@@ -17,10 +17,12 @@ module.exports = function main(args) {
   desc += '"apg-js-examples/src/udt/main.js", to study the example.\n';
   let help = '';
   help += 'Usage: npm run udt [-- arg]\n';
-  help += '  arg: help    (or no arg) to display this help screen.\n';
-  help += '       minimal minimal procedures for setting up a parser for a grammar with UDTs\n';
-  help += '       stats   minimal with statistics generated\n';
-  help += '       trace   minimal with trace generated\n';
+  help += '  arg: help      (or no arg) to display this help screen.\n';
+  help += '       minimal   minimal procedures for setting up a parser for a grammar with UDTs\n';
+  help += '       stats     minimal with statistics generated\n';
+  help += '       trace     minimal with trace generated\n';
+  help += '       parent    parent-mode back referencing of UDT\n';
+  help += '       universal universal-mode back referencing of UDT\n';
   if (!args[0]) {
     /* display the help screen and exit */
     console.log(desc);
@@ -39,6 +41,12 @@ module.exports = function main(args) {
       break;
     case 'trace':
       require('./trace');
+      break;
+    case 'parent':
+      require('./parent')();
+      break;
+    case 'universal':
+      require('./universal')();
       break;
     default:
       console.log(`unrecognized argument: ${args[0]}`);
