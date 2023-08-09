@@ -5,7 +5,7 @@
  *   ********************************************************************************* */
 // This module provides a suite of function to demonstrate the use of `apg-conv-api`.
 module.exports = function main(args) {
-  // let thisFileName = "suite.js: ";
+  const { Buffer } = require('node:buffer');
   const assert = require('assert');
   const apgJs = require('apg-js');
   const { apgConvApi } = apgJs;
@@ -204,11 +204,30 @@ module.exports = function main(args) {
   }
   // This test demonstrates the `ESCAPED` format for a wide range of integer values.
   function escaped() {
-    const chars = [0x00, 0xff, 0x100, 0xd8ff, 0xffff, 0x10000, 0xffffffff];
+    console.log('demonstrate the ESCAPED format for a wide range of integers');
+    const chars = [0x00, 32, 97, 98, 99, 32, 0xff, 32, 0x100, 32, 0xd8ff, 32, 0xffff, 32, 0x10000, 32, 0xffffffff];
+    console.log('input integers:');
+    console.log(chars.toString('ascii'));
+    console.log();
     const buf = converter.encode('ESCAPED', chars);
     const str = buf.toString('ascii');
+    console.log(`integers in ESCAPED format:`);
     console.log(`escaped: ${str}`);
-    console.log('apg-conv-api: test suite: escaped: OK');
+  }
+  // This test demonstrates the `STRING` format with an emoji character.
+  function string() {
+    const instr = 'abc \xe1 \xe9 \xfa \u{1f60d}';
+    console.log('JavasScript string with Latin 1 and emoji characters:');
+    console.log(`input JavaScript string: ${instr}`);
+    console.log();
+    const buf = converter.decode('STRING', instr);
+    const bufstr = buf.toString('ascii');
+    const outstr = converter.encode('STRING', buf);
+    console.log(`string decoded to UTF+32 characters codes:`);
+    console.log(`${bufstr}`);
+    console.log();
+    console.log(`encoded characters - returns original JavaScript string:`);
+    console.log(`${outstr}`);
   }
   // This is the example driver.
   /* match the test function with the name */
@@ -224,6 +243,7 @@ module.exports = function main(args) {
   help += '       utf16   to run a UTF-16 conversion example\n';
   help += '       base64  to run a base64 conversion example\n';
   help += '       escaped to run an escaped format conversion example\n';
+  help += '       string  to run a JavaScript string format conversion example\n';
   try {
     switch (args[0]) {
       case 'utf8':
@@ -237,6 +257,9 @@ module.exports = function main(args) {
         break;
       case 'escaped':
         escaped();
+        break;
+      case 'string':
+        string();
         break;
       default:
         console.log(help);
