@@ -20,9 +20,14 @@ module.exports = function main(args) {
   help += '       branch-fail back-reference not matched (see the trace output)\n';
   help += '       parent      demonstrate parent-mode back reference to match HTML tags\n';
   help += '       universal   a very simple demonstration of universal-mode back referencing\n';
+  help += '       all         all demonstrations\n';
   if (!args[0]) {
     /* display the help screen and exit */
     console.log(desc);
+    console.log(help);
+    return;
+  }
+  if (args[0] === 'help') {
     console.log(help);
     return;
   }
@@ -30,38 +35,54 @@ module.exports = function main(args) {
   let grammar;
   let displayname;
   let doTrace;
-  let setup = require('./setup');
+  const setup = require('./setup');
+  console.log();
+  console.log('Demonstration of using back referencing.');
+  console.log();
+  const fnFail = function fnFail() {
+    input = 'ayaa';
+    grammar = new (require('./branch-fail-grammar'))();
+    displayname = 'branch-fail';
+    doTrace = true;
+    setup(input, grammar, displayname, doTrace);
+  };
+  const fnParent = function fnParent() {
+    input = '<ROOT><next><ToP>...</ToP></next></ROOT>';
+    grammar = new (require('./parent-mode-grammar'))();
+    displayname = 'parent-mode matched';
+    doTrace = true;
+    setup(input, grammar, displayname, doTrace);
+    input = '<root><next><top>...</top></next></notroot>';
+    displayname = 'parent-mode not matched';
+    setup(input, grammar, displayname, doTrace);
+  };
+  const fnUniversal = function fnUniversal() {
+    input = 'xXXx';
+    grammar = new (require('./universal-mode-grammar'))();
+    displayname = 'universal-mode';
+    doTrace = true;
+    setup(input, grammar, displayname, doTrace);
+  };
   switch (args[0]) {
-    case 'help':
-      console.log(help);
-      return;
     case 'branch-fail':
-      input = 'ayaa';
-      grammar = new (require('./branch-fail-grammar'))();
-      displayname = 'branch-fail';
-      doTrace = true;
+      fnFail();
       break;
     case 'parent':
-      setup = require('./setup');
-      input = '<ROOT><next><ToP>...</ToP></next></ROOT>';
-      grammar = new (require('./parent-mode-grammar'))();
-      displayname = 'parent-mode matched';
-      doTrace = true;
-      setup(input, grammar, displayname, doTrace);
-      input = '<root><next><top>...</top></next></notroot>';
-      displayname = 'parent-mode not matched';
+      fnParent();
       break;
     case 'universal':
-      input = 'xXXx';
-      grammar = new (require('./universal-mode-grammar'))();
-      displayname = 'universal-mode';
-      doTrace = true;
+      fnUniversal();
+      break;
+    case 'all':
+      fnFail();
+      fnParent();
+      fnUniversal();
       break;
     default:
       console.log(`unrecognized argument: ${args[0]}`);
       console.log(help);
-      return;
+    // return;
   }
 
-  setup(input, grammar, displayname, doTrace);
+  // setup(input, grammar, displayname, doTrace);
 };

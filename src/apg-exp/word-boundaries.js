@@ -33,6 +33,8 @@
     const flags = 'g';
     const exp = new ApgExp(grammar, flags);
     console.log();
+    console.log('Demonstrate defining and using word boundaries.');
+    console.log();
     console.log('SABNF grammar:');
     console.log(exp.sourceToText());
     str = '';

@@ -11,7 +11,7 @@
 // This demonstrates how "error productions" can be used to ignore and/or report bad data.
 // See, for example, `BadSectionLine`, `BadValueLine`, `BadBlankLine`.
 (function badInput() {
-  const fs = require('fs');
+  const fs = require('node:fs');
   const setup = require('./setup');
   try {
     const inputStr = fs.readFileSync('./src/ini-file/bad.txt', 'utf8');

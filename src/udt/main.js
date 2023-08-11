@@ -23,6 +23,7 @@ module.exports = function main(args) {
   help += '       trace     minimal with trace generated\n';
   help += '       parent    parent-mode back referencing of UDT\n';
   help += '       universal universal-mode back referencing of UDT\n';
+  help += '       all       run all demonstrations\n';
   if (!args[0]) {
     /* display the help screen and exit */
     console.log(desc);
@@ -34,18 +35,35 @@ module.exports = function main(args) {
       console.log(help);
       return;
     case 'minimal':
+      console.log('\nDemonstrate: minimal procedures for setting up a parser for a grammar with UDTs');
       require('./minimal');
       break;
     case 'stats':
+      console.log('\nDemonstrate: minimal with statistics generated');
       require('./stats');
       break;
     case 'trace':
+      console.log('\nDemonstrate: inimal with trace generated');
       require('./trace');
       break;
     case 'parent':
+      console.log('\nDemonstrate: arent-mode back referencing of UDT');
       require('./parent')();
       break;
     case 'universal':
+      console.log('\nDemonstrate: universal-mode back referencing of UDT');
+      require('./universal')();
+      break;
+    case 'all':
+      console.log('\nDemonstrate: minimal procedures for setting up a parser for a grammar with UDTs');
+      require('./minimal');
+      console.log('\nDemonstrate: minimal with statistics generated');
+      require('./stats');
+      console.log('\nDemonstrate: inimal with trace generated');
+      require('./trace');
+      console.log('\nDemonstrate: parent-mode back referencing of UDT');
+      require('./parent')();
+      console.log('\nDemonstrate: universal-mode back referencing of UDT');
       require('./universal')();
       break;
     default:

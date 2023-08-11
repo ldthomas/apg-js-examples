@@ -29,10 +29,11 @@ module.exports = function main(args) {
   let help = '';
   help += 'Usage: npm run odata [-- args]\n';
   help += '  args: help     (or no arg) to display this help screen.\n';
-  help += '        valid    run all of the valid test cases\n';
-  help += '        invalid  run all of the test cases expected to fail\n';
-  help += '        all      run all of the test cases\n';
-  help += '        trace n  parse and trace the nth test case where n is an index from the list\n';
+  help += '        valid     run all of the valid test cases\n';
+  help += '        invalid   run all of the test cases expected to fail\n';
+  help += '        all-cases run all of the test cases\n';
+  help += '        trace n   parse and trace the nth test case where n is an index from the list\n';
+  help += '        all       run all demonstrations\n';
   if (!args[0]) {
     /* display the help screen and exit */
     console.log(desc);
@@ -46,15 +47,19 @@ module.exports = function main(args) {
       console.log(help);
       return;
     case 'valid':
+      console.log('\nDemonstrate: run all of the valid test cases');
       require('./run')('valid');
       break;
     case 'invalid':
+      console.log('\nDemonstrate: run all of the test cases expected to fail');
       require('./run')('invalid');
       break;
-    case 'all':
+    case 'all-cases':
+      console.log('\nDemonstrate: run all of the test cases');
       require('./run')('all');
       break;
     case 'trace':
+      console.log('\nDemonstrate: parse and trace the nth test case where n is an index from the list');
       if (args[1] === undefined) {
         console.log('trace requires and integer index argument');
         console.log();
@@ -62,6 +67,23 @@ module.exports = function main(args) {
         break;
       }
       index = parseInt(args[1], 10);
+      if (Number.isNaN(index)) {
+        console.log(`index argument = ${args[1]} but must be a number`);
+        console.log();
+        console.log(help);
+        break;
+      }
+      require('./run')('trace', index);
+      break;
+    case 'all':
+      console.log('\nDemonstrate: run all of the valid test cases');
+      require('./run')('valid');
+      console.log('\nDemonstrate: run all of the test cases expected to fail');
+      require('./run')('invalid');
+      console.log('\nDemonstrate: run all of the test cases');
+      require('./run')('all');
+      console.log('\nDemonstrate: parse and trace the 10th test case where 10 is an index from the list');
+      index = 10;
       if (Number.isNaN(index)) {
         console.log(`index argument = ${args[1]} but must be a number`);
         console.log();

@@ -16,7 +16,7 @@
 // </li>
 // </ul>
 module.exports = function writeHtml(html, name) {
-  const fs = require('fs');
+  const fs = require('node:fs');
   const dir = `${process.cwd()}/output`;
   const htmlName = `${dir}/${name}.html`;
   try {

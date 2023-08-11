@@ -27,7 +27,7 @@
 // of how the parser actually performed. For the basics of setting up and executing the parser
 // see `setup.js`.
 (function colorsApp() {
-  const nodeUtil = require('util');
+  const nodeUtil = require('node:util');
   const inspectOptions = {
     showHidden: true,
     depth: null,

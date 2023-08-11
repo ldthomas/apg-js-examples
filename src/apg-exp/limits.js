@@ -32,6 +32,8 @@
     // Let's watch the tree depth and node hits grow as the string of "a"s gets longer.
     exp = new apgExp(grammar, flags);
     console.log();
+    console.log('Demonstrate limiting the parse tree depth and the number of parse tree node');
+    console.log();
     console.log('SABNF grammar:');
     console.log(exp.sourceToText());
     str = 'aaaaa';

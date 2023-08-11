@@ -8,6 +8,9 @@
 // and parse a given input string.
 module.exports = function main(args) {
   /* display the program arguments */
+  console.log();
+  console.log('Demonstrate the bare minimum to set up a parser and parse an input string.');
+  console.log();
   console.log('apg-lib args');
   console.dir(args);
 
@@ -43,8 +46,8 @@ module.exports = function main(args) {
     return;
   }
 
-  const nodeUtil = require('util');
-  const fs = require('fs');
+  const nodeUtil = require('node:util');
+  const fs = require('node:fs');
   const inspectOptions = {
     showHidden: true,
     depth: null,

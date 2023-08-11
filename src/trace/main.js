@@ -21,10 +21,11 @@ module.exports = function main(args) {
   help += 'Usage: npm run trace [-- arg]\n';
   help += '  arg: help             (or no arg) to display this help screen.\n';
   help += '       default          by default all rule names and no other operators are traced\n';
-  help += '       all              demonstrate tracing ALL operators\n';
+  help += '       all-ops          demonstrate tracing ALL operators\n';
   help += '       limited-lines    demonstrate how to limit the number of lines in the trace\n';
   help += '       select-rules     demonstrate how to trace only a selected set of rule names\n';
   help += '       select-operators demonstrate how to trace only a selected set of non-rule operators\n';
+  help += '       all              run all demonstrations\n';
   if (!args[0]) {
     /* display the help screen and exit */
     console.log(desc);
@@ -36,18 +37,35 @@ module.exports = function main(args) {
       console.log(help);
       return;
     case 'default':
+      console.log('\nDemonstrate: by default all rule names and no other operators are traced');
       require('./default');
       break;
-    case 'all':
+    case 'all-ops':
+      console.log('\nDemonstrate: demonstrate tracing ALL operators');
       require('./all-operators');
       break;
     case 'limited-lines':
+      console.log('\nDemonstrate: demonstrate how to limit the number of lines in the trace');
       require('./limited-lines');
       break;
     case 'select-rules':
+      console.log('\nDemonstrate: demonstrate how to trace only a selected set of rule names');
       require('./select-rules');
       break;
     case 'select-operators':
+      console.log('\nDemonstrate: demonstrate how to trace only a selected set of non-rule operators');
+      require('./select-operators');
+      break;
+    case 'all':
+      console.log('\nDemonstrate: by default all rule names and no other operators are traced');
+      require('./default');
+      console.log('\nDemonstrate: demonstrate tracing ALL operators');
+      require('./all-operators');
+      console.log('\nDemonstrate: demonstrate how to limit the number of lines in the trace');
+      require('./limited-lines');
+      console.log('\nDemonstrate: demonstrate how to trace only a selected set of rule names');
+      require('./select-rules');
+      console.log('\nDemonstrate: demonstrate how to trace only a selected set of non-rule operators');
       require('./select-operators');
       break;
     default:

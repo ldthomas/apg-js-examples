@@ -83,6 +83,8 @@
     let str;
     let html;
     const grammar = new Float();
+    console.log();
+    console.log('AST demonstration');
     str = '';
     str += '|||123|||123.|||.123|||-1.23|||+.123|||123.e2|||+.123E+1|||-123.123456789e-10|||';
     str += '123e0|||+1.23e-0|||-.123e-001|||123e-000|||';

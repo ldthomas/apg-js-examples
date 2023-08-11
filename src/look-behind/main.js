@@ -30,15 +30,37 @@ module.exports = function main(args) {
       console.log(help);
       return;
     case 'boundaries':
+      console.log();
+      console.log('Demonstrate: using look-behind to define word and line boundaries');
       require('./boundaries');
       break;
     case 'comment':
+      console.log();
+      console.log('Demonstrate: a cautionary example of using rules in look behind');
       require('./comment');
       break;
     case 'negative':
+      console.log();
+      console.log('Demonstrate: a simple example of using !!');
       require('./negative');
       break;
     case 'positive':
+      console.log();
+      console.log('Demonstrate: a simple example of using &&');
+      require('./positive');
+      break;
+    case 'all':
+      console.log();
+      console.log('Demonstrate: using look-behind to define word and line boundaries');
+      require('./boundaries');
+      console.log();
+      console.log('Demonstrate: a cautionary example of using rules in look behind');
+      require('./comment');
+      console.log();
+      console.log('Demonstrate: a simple example of using !!');
+      require('./negative');
+      console.log();
+      console.log('Demonstrate: a simple example of using &&');
       require('./positive');
       break;
     default:

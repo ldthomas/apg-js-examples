@@ -11,7 +11,7 @@
 //  - the universal callback function is assigned to every rule
 module.exports = function setup() {
   /* get all the "require"d modules */
-  const fs = require('fs');
+  const fs = require('node:fs');
   const { apgLib } = require('apg-js');
   const GrammarCtor = require('./odata-grammar');
   const { parser: ParserCtor, ids, utils, trace: TraceCtor } = apgLib;

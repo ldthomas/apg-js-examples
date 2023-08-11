@@ -21,6 +21,8 @@
     // eslint-disable-next-line new-cap
     const exp = new apgExp(grammar, '');
     console.log();
+    console.log('Demonstrate true recursion - matching paired parentheses and more.');
+    console.log();
     const str = 'find the matched parentheses (down 1(down 2(down 3(the middle)up 3)up 2)up 1)';
     console.log('grammar:');
     console.log(exp.source);

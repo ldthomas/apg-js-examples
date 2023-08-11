@@ -8,7 +8,7 @@
 // (See the initial discussion for `colors-app.js` for the motivation
 // and cautionary tales of doing this kind of craziness.)
 module.exports = function moreSetup(udtcallback, title) {
-  const nodeUtil = require('util');
+  const nodeUtil = require('node:util');
   const inspectOptions = {
     showHidden: true,
     depth: null,

@@ -83,6 +83,10 @@
     txt = exp.sourceToText();
 
     /* source */
+    // There are text and HTML display options for each of the objects `result`, `exp` and `exp.source`.
+    console.log();
+    console.log('Display demonstration:');
+    console.log('There are text and HTML display options for each of the objects `result`, `exp` and `exp.source`');
     console.log();
     console.log('source:');
     console.log(txt);

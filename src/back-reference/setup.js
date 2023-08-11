@@ -5,7 +5,7 @@
  *   ********************************************************************************* */
 // This is the general set up for the back reference examples.
 module.exports = function setup(input, grammar, name, doTrace) {
-  const nodeUtil = require('util');
+  const nodeUtil = require('node:util');
   const inspectOptions = {
     showHidden: true,
     depth: null,

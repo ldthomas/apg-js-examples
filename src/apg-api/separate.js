@@ -92,7 +92,7 @@ module.exports = function separate() {
       msg += `${e.name}: ${e.message}`;
     } else {
       msg += '\n';
-      msg += require('util').inspect(e, {
+      msg += require('node:util').inspect(e, {
         showHidden: true,
         depth: null,
         colors: true,

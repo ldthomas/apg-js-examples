@@ -25,11 +25,20 @@ module.exports = function main(args) {
   help += '  arg: help      (or no arg) to display this help screen.\n';
   help += '       separate  to generate a parser in separate steps.\n';
   help += '       single    to generate a parser in a single step.\n';
+  help += '       all       run all options.\n';
   switch (args[0]) {
     case 'separate':
+      console.log('\nDemonstrate: generating a parser in separate steps');
       separate();
       break;
     case 'single':
+      console.log('\nDemonstrate: generating a parser in a single');
+      single();
+      break;
+    case 'all':
+      console.log('\nDemonstrate: generating a parser in separate steps');
+      separate();
+      console.log('\nDemonstrate: generating a parser in a single');
       single();
       break;
     default:

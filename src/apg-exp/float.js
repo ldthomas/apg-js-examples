@@ -69,6 +69,8 @@
     const exp = new apgExp(grammar, flags);
     exp.exclude(['decimal', 'dot']);
     console.log();
+    console.log('Compare apg-exp with RegExp for a floating point number.');
+    console.log();
     console.log('RegExp grammar:');
     console.log('/[-+]?[0-9]+[.]?[0-9]*([eE][-+]?[0-9]+)?/g');
     // Maybe it's my familiarity with ABNF,

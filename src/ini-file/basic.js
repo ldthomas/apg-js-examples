@@ -7,7 +7,7 @@
 // It will collect the key values in each section found and then display the found data
 // alphabetizing the section names and the key names within each section.
 (function basic() {
-  const fs = require('fs');
+  const fs = require('node:fs');
   const setup = require('./setup');
   try {
     const inputStr = fs.readFileSync('./src/ini-file/basic.txt', 'utf8');

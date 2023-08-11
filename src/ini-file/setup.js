@@ -24,7 +24,7 @@ module.exports = function setup(input, traceArg, statsArg) {
   let trace = traceArg;
   let stats = statsArg;
   const thisFileName = 'setup.js: ';
-  const nodeUtil = require('util');
+  const nodeUtil = require('node:util');
   const writeHtml = require('../writeHtml');
   const inspectOptions = {
     showHidden: true,

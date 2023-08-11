@@ -28,6 +28,8 @@
     str = '';
     str += '|||123.0e-10|||';
     console.log();
+    console.log('Demonstrate tracing with the "d" flag.');
+    console.log();
     console.log('input string:');
     console.log(str);
     const flags = 'd';

@@ -5,7 +5,7 @@
  *   ********************************************************************************* */
 // General execution module for the substring examples.
 module.exports = function setup(input, grammar, name) {
-  const nodeUtil = require('util');
+  const nodeUtil = require('node:util');
   const opts = {
     showHidden: true,
     depth: null,

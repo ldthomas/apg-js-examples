@@ -113,6 +113,9 @@
     // The user must write the `UDT` *and* tell the `apg-exp` object about it.
     exp.defineUdt('u_phrase', udtPhrase);
     console.log();
+    console.log('Demonstrate the use of User-Defined Terminals (UDTs).');
+    console.log('Handwritten code snippets for matching phrases.');
+    console.log();
     console.log('grammar:');
     console.log(exp.source);
     result = exp.exec(str);

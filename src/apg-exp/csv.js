@@ -29,6 +29,8 @@
     let rstr;
     let result;
     let value;
+    console.log();
+    console.log('Comma Separated Values (CSV) demonstration');
     const str = 'Ten Thousand,10000, 2710 ,,"10,000","It\'s ""10 Grand"", baby",10K';
     exp = new apgExp(grammar1, 'g');
     console.log();

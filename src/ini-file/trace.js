@@ -6,7 +6,7 @@
 // Same as the `bad-input.js` example, except that
 // the parse is trace is displayed on a web page.
 (function traceFun() {
-  const fs = require('fs');
+  const fs = require('node:fs');
   const setup = require('./setup');
   const { apgLib } = require('apg-js');
   const trace = new apgLib.trace();

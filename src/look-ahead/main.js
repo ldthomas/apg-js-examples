@@ -19,6 +19,7 @@ module.exports = function main(args) {
   help += '       and      demonstrate the & operator\n';
   help += '       not      demonstrate the ! operator\n';
   help += '       compound demonstrate nested look ahead operators\n';
+  help += '       all      run all demonstrations\n';
   if (!args[0]) {
     /* display the help screen and exit */
     console.log(desc);
@@ -36,6 +37,11 @@ module.exports = function main(args) {
       require('./not');
       break;
     case 'compound':
+      require('./compound');
+      break;
+    case 'all':
+      require('./and');
+      require('./not');
       require('./compound');
       break;
     default:

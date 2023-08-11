@@ -7,7 +7,7 @@
 // This is the general set up for demonstrating both
 // the translation and `XML` display of the `AST`.
 module.exports = function setup() {
-  const nodeUtil = require('util');
+  const nodeUtil = require('node:util');
   const grammar = new (require('./phone-number'))();
 
   const inspectOptions = {

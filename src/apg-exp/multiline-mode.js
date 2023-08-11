@@ -38,6 +38,8 @@
     const flags = 'g';
     const exp = new apgExp(grammar, flags);
     console.log();
+    console.log('Demonstrate mimicing multi-line mode in RegExp.');
+    console.log();
     console.log('SABNF grammar:');
     console.log(exp.sourceToText());
     str = '';

@@ -20,7 +20,8 @@
     "odata": "src/odata/main.sh",
     "substrings": "src/substrings/main.sh",
     "trace": "src/trace/main.sh",
-    "udt": "src/udt/main.sh"
+    "udt": "src/udt/main.sh",
+    "all": "src/all.sh"
   },
   "files": [
     "src",

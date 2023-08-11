@@ -4,8 +4,10 @@
  *   copyright: Copyright (c) 2021 Lowell D. Thomas, all rights reserved
  *     license: BSD-2-Clause (https://opensource.org/licenses/BSD-2-Clause)
  *   ********************************************************************************* */
-// This is a demonstration of the bare minimum needed to set up a parser
-// and parse a given input string.
+// This is a demonstration of using the parser to generate an Abstract Syntax Tree (AST).
+// The AST is used to translate an input string.
+// The AST can be converted to XML format.
+/* Note: This function is organized embarassingly poorly. But at this point it is what it is. */
 module.exports = function main(args) {
   /* display the program arguments */
   console.log('example ast: args');
@@ -21,6 +23,7 @@ module.exports = function main(args) {
   help += '  arg: help      (or no arg) to display this help screen.\n';
   help += '       translate translate the input string with the AST.\n';
   help += '       xml       convert the AST to XML format.\n';
+  help += '       all       run all tests.\n';
   if (!args[0]) {
     /* display the help screen and exit */
     console.log(desc);
@@ -32,10 +35,8 @@ module.exports = function main(args) {
       console.log(help);
       return;
     case 'translate':
-      console.log(help);
-      break;
     case 'xml':
-      console.log(help);
+    case 'all':
       break;
     default:
       console.log(`unrecognized argument: ${args[0]}`);
@@ -43,8 +44,12 @@ module.exports = function main(args) {
       return;
   }
 
-  const nodeUtil = require('util');
-  //   const fs = require('fs');
+  console.log();
+  console.log('Demonstrate generating an AST and converting it to XML format.');
+  console.log();
+
+  const nodeUtil = require('node:util');
+  //   const fs = require('node:fs');
   const inspectOptions = {
     showHidden: true,
     depth: null,
@@ -124,7 +129,7 @@ module.exports = function main(args) {
       throw new Error(`input string: '${inputString}' : parse failed`);
     }
     // Return the `AST` object for further processing.
-    if (args[0] === 'translate') {
+    const fnTranslate = function () {
       const phoneParts = [];
       parser.ast.translate(phoneParts);
       console.log();
@@ -133,11 +138,30 @@ module.exports = function main(args) {
       console.log(`   area-code: ${phoneParts['area-code']}`);
       console.log(`      office: ${phoneParts.office}`);
       console.log(`  subscriber: ${phoneParts.subscriber}`);
-    } else if (args[0] === 'xml') {
+    };
+    const fnXml = function () {
       const xml = parser.ast.toXml();
       console.log();
       console.log('test: display AST in XML');
       console.log(xml);
+    };
+    switch (args[0]) {
+      case 'translate':
+        fnTranslate();
+        break;
+      case 'xml':
+        fnXml();
+        break;
+      case 'all':
+        fnTranslate();
+        fnXml();
+        break;
+      default:
+        break;
+    }
+    if (args[0] === 'translate' || args[0] === 'all') {
+      fnTranslate();
+    } else if (args[0] === 'xml' || args[0] === 'all') {
     }
   } catch (e) {
     let msg = '\nEXCEPTION THROWN: \n';

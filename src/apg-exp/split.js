@@ -33,6 +33,12 @@
     exp = new ApgExp(grammar, flags);
     console.log();
     str = 'abcxyz';
+    // This module demonstrates the `split()` function.
+    // It is roughly equivalent to the JavaScript string `String.split(regex[, limit])` function
+    console.log();
+    console.log('Demonstrate the `split()` function.');
+    console.log('It is roughly equivalent to the JavaScript string `String.split(regex[, limit])` function.');
+    console.log();
     console.log(` grammar: ${exp.source}`);
     restr = exp.split(str);
     console.log('        : split into characters');

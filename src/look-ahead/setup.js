@@ -17,7 +17,7 @@
 // This example demonstrates that the parser correctly suppresses `AST` node collection
 // within syntactic predicate phrases.
 module.exports = function setup(grammar, callbacks, input) {
-  const nodeUtil = require('util');
+  const nodeUtil = require('node:util');
   const inspectOptions = {
     showHidden: true,
     depth: null,

@@ -6,7 +6,7 @@
 // This module provides a suite of function to demonstrate the use of `apg-conv-api`.
 module.exports = function main(args) {
   const { Buffer } = require('node:buffer');
-  const assert = require('assert');
+  const assert = require('node:assert');
   const apgJs = require('apg-js');
   const { apgConvApi } = apgJs;
   const { converter } = apgConvApi;
@@ -92,46 +92,57 @@ module.exports = function main(args) {
   // The disallowed ranges are [0xD800-0xDFFF] and [0x110000-Infinity].
   function utf16() {
     let buf;
-    // let bom;
     let ch;
+    console.log();
+    console.log('UTF16 test');
     const chars = [0x3b1, 0x3b2, 0xd7f0, 0xd7fb, 0x1f0a1, 0x1f0a2];
     const utf16be = Buffer.from([
       0x03, 0xb1, 0x03, 0xb2, 0xd7, 0xf0, 0xd7, 0xfb, 0xd8, 0x3c, 0xdc, 0xa1, 0xd8, 0x3c, 0xdc, 0xa2,
     ]);
+    console.log(`utf16be chars:${utf16be.toString('hex')}`);
     const utf16le = Buffer.from([
       0xb1, 0x03, 0xb2, 0x03, 0xf0, 0xd7, 0xfb, 0xd7, 0x3c, 0xd8, 0xa1, 0xdc, 0x3c, 0xd8, 0xa2, 0xdc,
     ]);
+    console.log(`utf16le chars:${utf16le.toString('hex')}`);
     const bombe = Buffer.from([0xfe, 0xff]);
     const bomle = Buffer.from([0xff, 0xfe]);
 
     /* UTF16 (BE) */
     buf = converter.encode('UTF16', chars);
     assert(arraysEqual(buf, utf16be), 'encode: UTF16 (BE) arrays not equal');
+    console.log('encode utf16 OK');
 
     /* UTF16BE */
     buf = converter.encode('UTF16BE', chars);
     assert(arraysEqual(buf, utf16be), 'encode: UTF16BE arrays not equal');
+    console.log('encode utf16be OK');
 
     /* UTF16LE */
     buf = converter.encode('UTF16LE', chars);
     assert(arraysEqual(buf, utf16le), 'encode: UTF16BE arrays not equal');
+    console.log('encode utf16le OK');
 
     /* decode UTF16 */
     ch = converter.decode('UTF16', utf16be);
     assert(arraysEqual(ch, chars), 'decode: UTF16 arrays not equal');
+    console.log('decode utf16 OK');
 
     /* decode UTF16 w/BOM */
     ch = converter.decode('UTF16', Buffer.concat([bombe, utf16be]));
     assert(arraysEqual(ch, chars), 'decode: UTF16 w/BOM arrays not equal');
+    console.log('decode utf16 w/BOM OK');
 
     /* decode UTF16LE */
     ch = converter.decode('UTF16LE', utf16le);
     assert(arraysEqual(ch, chars), 'decode: UTF16LE arrays not equal');
+    console.log('decode utf16le OK');
 
     /* decode UTF16LE w/BOM */
     ch = converter.decode('UTF16', Buffer.concat([bomle, utf16le]));
     assert(arraysEqual(ch, chars), 'decode: UTF16LE w/BOM arrays not equal');
+    console.log('decode utf16le w/BOM OK');
 
+    console.log('\nUTF16 errors');
     /* decode UTF16LE wrong BOM */
     try {
       ch = converter.decode('UTF16LE', Buffer.concat([bombe, utf16be]));
@@ -150,8 +161,6 @@ module.exports = function main(args) {
     } catch (e) {
       console.log(`encode EXCEPTION: ${e.message}`);
     }
-    const str = utf16le.toString('utf16le');
-    console.log(`apg-conv-api: test suite: utf16: OK: ${str}`);
   }
   // This base64 test will demonstrate using the low-level `transformers` functions directly.
   //
@@ -162,6 +171,7 @@ module.exports = function main(args) {
   // against the result from an alternate encoder, `base64-js` which can be installed with `npm install base64-js`.
   function base64() {
     /* all byte length variations */
+    console.log();
     const str = ['', 'f', 'fo', 'foo', 'foob', 'fooba', 'foobar'];
     const str64 = ['', 'Zg==', 'Zm8=', 'Zm9v', 'Zm9vYg==', 'Zm9vYmE=', 'Zm9vYmFy'];
 
@@ -199,8 +209,6 @@ module.exports = function main(args) {
     /* display the base64 of the binary digits with line breaks */
     console.log('base64 of the binary digits with line breaks:');
     console.log(toString(Buffer.from(binarystr)));
-
-    console.log('apg-conv-api: test suite: base64: OK');
   }
   // This test demonstrates the `ESCAPED` format for a wide range of integer values.
   function escaped() {
@@ -216,6 +224,7 @@ module.exports = function main(args) {
   }
   // This test demonstrates the `STRING` format with an emoji character.
   function string() {
+    console.log();
     const instr = 'abc \xe1 \xe9 \xfa \u{1f60d}';
     console.log('JavasScript string with Latin 1 and emoji characters:');
     console.log(`input JavaScript string: ${instr}`);
@@ -244,6 +253,7 @@ module.exports = function main(args) {
   help += '       base64  to run a base64 conversion example\n';
   help += '       escaped to run an escaped format conversion example\n';
   help += '       string  to run a JavaScript string format conversion example\n';
+  help += '       all     run all options\n';
   try {
     switch (args[0]) {
       case 'utf8':
@@ -259,6 +269,13 @@ module.exports = function main(args) {
         escaped();
         break;
       case 'string':
+        string();
+        break;
+      case 'all':
+        utf8();
+        utf16();
+        base64();
+        escaped();
         string();
         break;
       default:

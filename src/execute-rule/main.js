@@ -18,20 +18,30 @@ module.exports = function main(args) {
   help += '  arg: help (or no arg) to display this help screen.\n';
   help += '       rule demonstrates executing a rule (RNM operator) from a UDT call back function\n';
   help += '       udt  demonstrates executing a UDT operator from a rule callback function\n';
+  help += '       all  all demonstrations\n';
   if (!args[0]) {
     /* display the help screen and exit */
     console.log(desc);
     console.log(help);
     return;
   }
+  if (args[0] === 'help') {
+    console.log(help);
+    return;
+  }
+  console.log();
+  console.log('Demonstrate calling a rule or UDT from a call back function.');
+  console.log();
+
   switch (args[0]) {
-    case 'help':
-      console.log(help);
-      return;
     case 'rule':
       require('./more-app');
       break;
     case 'udt':
+      require('./colors-app');
+      break;
+    case 'all':
+      require('./more-app');
       require('./colors-app');
       break;
     default:

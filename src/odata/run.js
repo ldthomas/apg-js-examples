@@ -102,7 +102,7 @@ module.exports = function valid(testToDo, testIdToTrace) {
         }
         odataParser.parse(odataGrammar, startRule, inputCharacterCodes, { map, rulesTouched, trace: true });
         const html = odataTrace.toHtml('ascii', 'OData', 'OData');
-        const fs = require('fs');
+        const fs = require('node:fs');
         fs.writeFileSync(outputFile, html);
         console.log(`TRACE OUTPUT: ${outputFile}`);
         break;

@@ -19,7 +19,8 @@ module.exports = function main(args) {
   help += '  arg: help      (or no arg) to display this help screen.\n';
   help += '       bad-input demonstration with a poorly-formed ini file\n';
   help += '       basic     demonstration of a basic parsing of an ini file\n';
-  help += '       trace     \n';
+  help += '       trace     demonstrate the tracing of the parse tree while parsing and ini file\n';
+  help += '       all       run all demonstrations\n';
   if (!args[0]) {
     /* display the help screen and exit */
     console.log(desc);
@@ -31,12 +32,29 @@ module.exports = function main(args) {
       console.log(help);
       return;
     case 'bad-input':
+      console.log();
+      console.log('Demonstrate parsing an INI file with bad input.');
       require('./bad-input');
       break;
     case 'basic':
+      console.log();
+      console.log('Demonstrate the basic parsing parsing of an INI file.');
       require('./basic');
       break;
     case 'trace':
+      console.log();
+      console.log('Demonstrate tracing the parsing of an INI file.');
+      require('./trace');
+      break;
+    case 'all':
+      console.log();
+      console.log('Demonstrate parsing an INI file with bad input.');
+      require('./bad-input');
+      console.log();
+      console.log('Demonstrate the basic parsing parsing of an INI file.');
+      require('./basic');
+      console.log();
+      console.log('Demonstrate tracing the parsing of an INI file.');
       require('./trace');
       break;
     default:

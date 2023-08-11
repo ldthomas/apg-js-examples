@@ -14,7 +14,7 @@
 module.exports = function setup(trace, phoneNumber, nameArg) {
   let name = nameArg;
   const thisFileName = 'setup.js: ';
-  const nodeUtil = require('util');
+  const nodeUtil = require('node:util');
   const inspectOptions = {
     showHidden: true,
     depth: null,

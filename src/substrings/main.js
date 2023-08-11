@@ -18,6 +18,7 @@ module.exports = function main(args) {
   help += '  arg: help       (or no arg) to display this help screen.\n';
   help += '       lookaround demonstrates setting the substring to allow look around operations\n';
   help += '       simple     demonstrates simply parsing a phrase that is in the middle of a string\n';
+  help += '       all        run all demonstrations\n';
   if (!args[0]) {
     /* display the help screen and exit */
     console.log(desc);
@@ -29,9 +30,17 @@ module.exports = function main(args) {
       console.log(help);
       return;
     case 'lookaround':
+      console.log('\nDemonstrate: setting the substring to allow look around operations');
       require('./lookaround');
       break;
     case 'simple':
+      console.log('\nDemonstrate: simply parsing a phrase that is in the middle of a string');
+      require('./simple');
+      break;
+    case 'all':
+      console.log('\nDemonstrate: setting the substring to allow look around operations');
+      require('./lookaround');
+      console.log('\nDemonstrate: simply parsing a phrase that is in the middle of a string');
       require('./simple');
       break;
     default:

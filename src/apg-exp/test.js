@@ -19,6 +19,8 @@
     grammar += 'rule = "abc"\n';
     exp = new ApgExp(grammar, flags);
     console.log();
+    console.log('Demonstrate the test function.');
+    console.log();
     console.log(`grammar: ${exp.source}`);
     str = 'abc';
     result = exp.test(str);

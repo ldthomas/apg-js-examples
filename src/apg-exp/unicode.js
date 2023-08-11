@@ -26,6 +26,8 @@
     const flags = 'ug';
     const exp = new ApgExp(grammar, flags);
     console.log();
+    console.log('Demonstrate Unicode mode with the "u" flag.');
+    console.log();
     console.log('SABNF grammar:');
     console.log(exp.sourceToText());
     str = '';

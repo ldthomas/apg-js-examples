@@ -58,6 +58,8 @@
     flags = '';
     exp = new apgExp(grammar, flags);
     console.log();
+    console.log('Demonstrate replacing matched phrases.');
+    console.log();
     console.log(`  grammar: ${exp.source}`);
     str = '---abc---xyz---ABC---';
     console.log('        : simple replacement of a single match');

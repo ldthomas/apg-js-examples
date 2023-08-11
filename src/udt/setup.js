@@ -6,7 +6,7 @@
  *   ********************************************************************************* */
 // This is the driver program for all examples.
 module.exports = function setup(doStats, doTrace) {
-  const nodeUtil = require('util');
+  const nodeUtil = require('node:util');
   let html;
   const inspectOptions = {
     showHidden: true,

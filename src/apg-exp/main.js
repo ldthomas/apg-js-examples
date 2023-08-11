@@ -30,6 +30,7 @@ module.exports = function main(args) {
   help += '       udt             demonstration of using UDTs for hand-written phrase matching\n';
   help += '       unicode         demonstration of using unicode mode for finding Greek words\n';
   help += '       word-boundaries demonstration of defining and using word boundaries\n';
+  help += '       all             run all demonstrations\n';
   try {
     if (!args[0]) {
       console.log(desc);
@@ -86,6 +87,26 @@ module.exports = function main(args) {
         require('./unicode');
         break;
       case 'word-boundaries':
+        require('./word-boundaries');
+        break;
+      case 'all':
+        require('./ast');
+        require('./csv');
+        require('./dangling-else');
+        require('./display');
+        require('./flags');
+        require('./float');
+        require('./limits');
+        require('./multiline-mode');
+        require('./recursive');
+        require('./replace');
+        require('./rules');
+        require('./split');
+        require('./test');
+        require('./trace');
+        require('./udt');
+        require('./unicode');
+        require('./trace');
         require('./word-boundaries');
         break;
       case 'help':

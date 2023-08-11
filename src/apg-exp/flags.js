@@ -67,6 +67,8 @@
     let str;
     // With no flags, `lastIndex` remains at 0 after a successful match and repeated calls simply find the same match.
     console.log();
+    console.log('The flags demonstration');
+    console.log();
     console.log(`  grammar: ${grammar}`);
     flags = '';
     exp = new ApgExp(grammar, flags);
