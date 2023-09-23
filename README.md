@@ -1,5 +1,11 @@
 # apg-js-examples
 
+## Note on version 4.2.1
+
+`apg-js` version 4.2.1 made a minor change to the parser and hence the parser generator.
+All of the grammars for all of the examples have been re-generated with `apg-js` 4.2.1.
+All of the updated examples run as expected.
+
 ## Note on version 4.2.0
 
 This version has been tested for compliance with `apg-js` version 4.2.0.
