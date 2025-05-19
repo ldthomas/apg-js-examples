@@ -9,33 +9,41 @@ module.exports = function main(args) {
   console.dir(args);
 
   /* the help screen */
-  const example = 'https://user@example.com:123/one/two?q1=a1#body'
-  let desc = '';
-  desc += 'The URI example features a complete and well-tested URI (RFC 3986) parser.\n';
-  desc += 'With this test any URI can be parsed into its components:\n';
-  desc += '  scheme\n';
-  desc += '  userinfo\n';
-  desc += '  host\n';
-  desc += '  port\n';
-  desc += '  path\n';
-  desc += '  query\n';
-  desc += '  fragment\n';
-  desc +=
-    'Examine or run a debugger on this module, "apg-js-examples/src/uri/main.js" to study the example.\n';
-  let help = '';
-  help += 'Usage: npm run uri [-- arg]\n';
-  help += '  arg: help      (or no arg) to display this help screen.\n';
-  help += '       [uri]     the URI string to parse\n';
-  help += '       all       to verify that all is well, parses the specific URI:\n';
-  help += `                 ${example}\n`;
+  const example = 'http://user@example.com:123/abs/path?q1=a1#body';
+  const desc = [
+    '',
+    'Description: The URI example features a complete and well-tested URI (RFC 3986) parser.',
+    'With this test any URI can be parsed into its components:',
+    '  scheme',
+    '  userinfo',
+    '  host',
+    '  port',
+    '  path',
+    '  query',
+    '  fragment',
+    'Examine or run a debugger on the module, "apg-js-examples/src/uri/parser.js" to study the example.',
+  ].join('\n');
+
+  const help = [
+    '',
+    'Usage: npm run uri [-- arg]',
+    '  arg: <none>    (no arg) displays example description and help screen.',
+    '       --help    display help screen.',
+    '       -h        display help screen.',
+    '       help      display help screen.',
+    '       URI       the URI string to parse, e.g. http://user@example.com:123/path?query#fragment',
+    '       all       to verify that all is well, parses the specific URI:',
+    `                 ${example}`,
+  ].join('\n');
   if (!args[0]) {
-    /* display the help screen and exit */
     console.log(desc);
     console.log(help);
     return;
   }
   switch (args[0]) {
     case 'help':
+    case '--help':
+    case '-h':
       console.log(help);
       return;
     case 'all':

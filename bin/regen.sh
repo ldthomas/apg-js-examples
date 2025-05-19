@@ -52,6 +52,8 @@ iin="src/udt/universal-u.bnf";
 apg([`--in=${iin}`, `--out=${iin}`]);
 iin="src/udt/phone-number.bnf";
 apg([`--in=${iin}`, `--out=${iin}`]);
+iin="src/uri/grammar.bnf";
+apg([`--in=${iin}`, `--out=${iin}`]);
 iin="src/back-reference/parent-mode-grammar.bnf";
 apg([`--in=${iin}`, `--out=${iin}`]);
 iin="src/back-reference/branch-fail-grammar.bnf";

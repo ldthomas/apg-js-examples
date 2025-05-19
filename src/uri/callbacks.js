@@ -1,217 +1,183 @@
+/*  *************************************************************************************
+ *   copyright: Copyright (c) 2025 Lowell D. Thomas, all rights reserved
+ *     license: BSD-2-Clause (https://opensource.org/licenses/BSD-2-Clause)
+ *   ********************************************************************************* */
 // no reporting of specific errors
 // force parsing failure on semantic errors
 // user will need to trace(debug) the parse tree to find parsing errors
+
 const { apgLib } = require('apg-js');
-const id = apgLib.ids;
+const ids = apgLib.ids;
 const utils = apgLib.utils;
+
+function setUriElement(data, key, value) {
+  if (data && data.uriElements) {
+    data.uriElements[key] = value;
+  }
+}
+
 const cb = {
-  // handle the URI
-  URI: function URI(result, chars, phraseIndex, data) {
-    switch (result.state) {
-      case id.ACTIVE:
-        break;
-      case id.MATCH:
-        data.uri = utils.charsToString(chars, phraseIndex, result.phraseLength);
-        break;
-      case id.EMPTY:
-        result.state = id.NOMATCH;
-        result.phraseLength = 0;
-        break;
+  URI(result, chars, phraseIndex, data) {
+    if (result.state === ids.MATCH) {
+      data.uri = utils.charsToString(chars, phraseIndex, result.phraseLength);
+    } else if (result.state === ids.EMPTY) {
+      result.state = ids.NOMATCH;
+      result.phraseLength = 0;
     }
   },
-  scheme: function scheme(result, chars, phraseIndex, data) {
-    switch (result.state) {
-      case id.MATCH:
-        data.uriElements.scheme = utils.charsToString(chars, phraseIndex, result.phraseLength);
-        break;
+
+  scheme(result, chars, phraseIndex, data) {
+    if (result.state === ids.MATCH) {
+      setUriElement(data, 'scheme', utils.charsToString(chars, phraseIndex, result.phraseLength));
     }
   },
-  userinfoAt: function userinfo(result, chars, phraseIndex, data) {
-    switch (result.state) {
-      case id.MATCH:
-        data.uriElements.userinfo = utils.charsToString(chars, phraseIndex, result.phraseLength - 1);
-        break;
+
+  userinfoAt(result, chars, phraseIndex, data) {
+    if (result.state === ids.MATCH) {
+      setUriElement(data, 'userinfo', utils.charsToString(chars, phraseIndex, result.phraseLength - 1));
     }
   },
-  host: function host(result, chars, phraseIndex, data) {
-    switch (result.state) {
-      case id.ACTIVE:
-        data.iplit = false;
-        break;
-      case id.MATCH:
-        if (data.iplit) {
-          // strip leading "[" and trailing "]" brackets
-          data.uriElements.host = utils.charsToString(chars, phraseIndex + 1, result.phraseLength - 2);
-        } else {
-          data.uriElements.host = utils.charsToString(chars, phraseIndex, result.phraseLength);
-        }
-        break;
-      case id.EMPTY:
-        data.uriElements.host = '';
-        break;
+
+  host(result, chars, phraseIndex, data) {
+    if (result.state === ids.ACTIVE) {
+      data.iplit = false;
+    } else if (result.state === ids.MATCH) {
+      if (data.iplit) {
+        setUriElement(data, 'host', utils.charsToString(chars, phraseIndex + 1, result.phraseLength - 2));
+      } else {
+        setUriElement(data, 'host', utils.charsToString(chars, phraseIndex, result.phraseLength));
+      }
+    } else if (result.state === ids.EMPTY) {
+      setUriElement(data, 'host', '');
     }
   },
-  ipLiteral: function ipLiteral(result, chars, phraseIndex, data) {
-    if (result.state === id.MATCH) {
+
+  ipLiteral(result, chars, phraseIndex, data) {
+    if (result.state === ids.MATCH) {
       data.iplit = true;
     }
   },
-  port: function port(result, chars, phraseIndex, data) {
-    let parsed = 0;
-    let port = '';
-    switch (result.state) {
-      case id.MATCH:
-        port = utils.charsToString(chars, phraseIndex, result.phraseLength);
-        parsed = parseInt(port);
-        if (Number.isNaN(parsed)) {
-          result.state = id.NOMATCH;
-          result.phraseLength = 0;
-        } else {
-          data.uriElements.port = parsed;
-        }
-        break;
-      case id.EMPTY:
-        data.uriElements.port = '';
-        break;
-    }
-  },
-  pathAbempty: function pathAbempty(result, chars, phraseIndex, data) {
-    switch (result.state) {
-      case id.MATCH:
-        data.uriElements.path = utils.charsToString(chars, phraseIndex, result.phraseLength);
-        break;
-      case id.EMPTY:
-        data.uriElements.path = '';
-        break;
-    }
-  },
-  pathAbsolute: function pathAbsolute(result, chars, phraseIndex, data) {
-    switch (result.state) {
-      case id.MATCH:
-        data.uriElements.path = utils.charsToString(chars, phraseIndex, result.phraseLength);
-        break;
-    }
-  },
-  pathRootless: function pathRootless(result, chars, phraseIndex, data) {
-    switch (result.state) {
-      case id.MATCH:
-        data.uriElements.path = utils.charsToString(chars, phraseIndex, result.phraseLength);
-        break;
-    }
-  },
-  pathEmpty: function pathEmpty(result, chars, phraseIndex, data) {
-    switch (result.state) {
-      case id.MATCH:
-      case id.NOMATCH:
-        result.state = id.NOMATCH;
+
+  port(result, chars, phraseIndex, data) {
+    if (result.state === ids.MATCH) {
+      const portStr = utils.charsToString(chars, phraseIndex, result.phraseLength);
+      const parsed = parseInt(portStr, 10);
+      if (Number.isNaN(parsed)) {
+        result.state = ids.NOMATCH;
         result.phraseLength = 0;
-      case id.EMPTY:
-        data.uriElements.path = '';
-        break;
+      } else {
+        setUriElement(data, 'port', parsed);
+      }
+    } else if (result.state === ids.EMPTY) {
+      setUriElement(data, 'port', '');
     }
   },
-  query: function query(result, chars, phraseIndex, data) {
-    switch (result.state) {
-      case id.MATCH:
-        data.uriElements.query = utils.charsToString(chars, phraseIndex, result.phraseLength);
-        break;
-      case id.EMPTY:
-        data.uriElements.query = '';
-        break;
+
+  pathAbempty(result, chars, phraseIndex, data) {
+    if (result.state === ids.MATCH) {
+      setUriElement(data, 'path', utils.charsToString(chars, phraseIndex, result.phraseLength));
+    } else if (result.state === ids.EMPTY) {
+      setUriElement(data, 'path', '');
     }
   },
-  fragment: function fragment(result, chars, phraseIndex, data) {
-    switch (result.state) {
-      case id.MATCH:
-        data.uriElements.fragment = utils.charsToString(chars, phraseIndex, result.phraseLength);
-        break;
-      case id.EMPTY:
-        data.uriElements.fragment = '';
-        break;
+
+  pathAbsolute(result, chars, phraseIndex, data) {
+    if (result.state === ids.MATCH) {
+      setUriElement(data, 'path', utils.charsToString(chars, phraseIndex, result.phraseLength));
     }
   },
-  ipv4: function ipv4(result, chars, phraseIndex, data) {
-    if (result.state === id.MATCH) {
+
+  pathRootless(result, chars, phraseIndex, data) {
+    if (result.state === ids.MATCH) {
+      setUriElement(data, 'path', utils.charsToString(chars, phraseIndex, result.phraseLength));
+    }
+  },
+
+  pathEmpty(result, chars, phraseIndex, data) {
+    if (result.state === ids.MATCH || result.state === ids.NOMATCH) {
+      result.state = ids.NOMATCH;
+      result.phraseLength = 0;
+    }
+    if (result.state === ids.EMPTY) {
+      setUriElement(data, 'path', '');
+    }
+  },
+
+  query(result, chars, phraseIndex, data) {
+    if (result.state === ids.MATCH) {
+      setUriElement(data, 'query', utils.charsToString(chars, phraseIndex, result.phraseLength));
+    } else if (result.state === ids.EMPTY) {
+      setUriElement(data, 'query', '');
+    }
+  },
+
+  fragment(result, chars, phraseIndex, data) {
+    if (result.state === ids.MATCH) {
+      setUriElement(data, 'fragment', utils.charsToString(chars, phraseIndex, result.phraseLength));
+    } else if (result.state === ids.EMPTY) {
+      setUriElement(data, 'fragment', '');
+    }
+  },
+
+  ipv4(result, chars, phraseIndex, data) {
+    if (result.state === ids.MATCH) {
       data.ipv4 = true;
     }
   },
-  h16: function h16(result, chars, phraseIndex, data) {
-    if (result.state === id.MATCH) {
+
+  h16(result, chars, phraseIndex, data) {
+    if (result.state === ids.MATCH) {
       data.h16count += 1;
     }
   },
-  nodcolon: function nodcolon(result, chars, phraseIndex, data) {
-    switch (result.state) {
-      case id.ACTIVE:
-        data.h16count = 0;
-        data.ipv4 = false;
-        break;
-      case id.MATCH:
-        // semantically validate the number of 16-bit digits
-        if (data.ipv4) {
-          if (data.h16count === 6) {
-            result.state = id.MATCH;
-          } else {
-            result.state = id.NOMATCH;
-            result.phraseLength = 0;
-          }
-        } else {
-          if (data.h16count === 8) {
-            result.state = id.MATCH;
-          } else {
-            result.state = id.NOMATCH;
-            result.phraseLength = 0;
-          }
-        }
-        break;
+
+  nodcolon(result, chars, phraseIndex, data) {
+    if (result.state === ids.ACTIVE) {
+      data.h16count = 0;
+      data.ipv4 = false;
+    } else if (result.state === ids.MATCH) {
+      // semantically validate the number of 16-bit digits
+      if (data.ipv4 ? data.h16count === 6 : data.h16count === 8) {
+        result.state = ids.MATCH;
+      } else {
+        result.state = ids.NOMATCH;
+        result.phraseLength = 0;
+      }
     }
   },
-  dcolon: function dcolon(result, chars, phraseIndex, data) {
-    switch (result.state) {
-      case id.ACTIVE:
-        data.h16count = 0;
-        data.ipv4 = false;
-        break;
-      case id.MATCH:
-        // semantically validate the number of 16-bit digits
-        if (data.ipv4) {
-          if (data.h16count < 6) {
-            result.state = id.MATCH;
-          } else {
-            result.state = id.NOMATCH;
-            result.phraseLength = 0;
-          }
-        } else {
-          if (data.h16count < 8) {
-            result.state = id.MATCH;
-          } else {
-            result.state = id.NOMATCH;
-            result.phraseLength = 0;
-          }
-        }
-        break;
+
+  dcolon(result, chars, phraseIndex, data) {
+    if (result.state === ids.ACTIVE) {
+      data.h16count = 0;
+      data.ipv4 = false;
+    } else if (result.state === ids.MATCH) {
+      // semantically validate the number of 16-bit digits
+      if (data.ipv4 ? data.h16count < 6 : data.h16count < 8) {
+        result.state = ids.MATCH;
+      } else {
+        result.state = ids.NOMATCH;
+        result.phraseLength = 0;
+      }
     }
   },
-  decOctet: function decOctet(result, chars, phraseIndex, data) {
-    switch (result.state) {
-      case id.ACTIVE:
-        data.octet = 0;
-        break;
-      case id.MATCH:
-        // semantically validate the octet
-        if (data.octet > 255) {
-          result.state = id.NOMATCH;
-          result.phraseLength = 0;
-        }
-        break;
+
+  decOctet(result, chars, phraseIndex, data) {
+    if (result.state === ids.ACTIVE) {
+      data.octet = 0;
+    } else if (result.state === ids.MATCH) {
+      // semantically validate the octet
+      if (data.octet > 255) {
+        result.state = ids.NOMATCH;
+        result.phraseLength = 0;
+      }
     }
   },
-  decDigit: function decDigit(result, chars, phraseIndex, data) {
-    switch (result.state) {
-      case id.MATCH:
-        data.octet = 10 * data.octet + chars[phraseIndex] - 48;
-        break;
+
+  decDigit(result, chars, phraseIndex, data) {
+    if (result.state === ids.MATCH) {
+      data.octet = 10 * data.octet + chars[phraseIndex] - 48;
     }
   },
 };
+
 module.exports = cb;
