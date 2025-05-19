@@ -21,6 +21,7 @@
     "substrings": "src/substrings/main.sh",
     "trace": "src/trace/main.sh",
     "udt": "src/udt/main.sh",
+    "uri": "src/uri/main.sh",
     "all": "src/all.sh",
     "regen": "bin/regen.sh",
     "docco": "./bin/docco-gen.sh"
