@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cat ./dist/desc.txt",
+    "jest": "jest",
     "apg": "bin/apg.sh",
     "apg-conv": "bin/apg-conv.sh",
     "apg-conv-api": "src/apg-conv-api/main.sh",
@@ -62,6 +63,7 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^29.7.0",
     "prettier": "^2.3.0"
   }
 }

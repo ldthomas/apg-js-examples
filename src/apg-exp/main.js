@@ -75,7 +75,7 @@ module.exports = function main(args) {
         require('./split');
         break;
       case 'test':
-        require('./test');
+        require('./testonly');
         break;
       case 'trace':
         require('./trace');
@@ -102,7 +102,7 @@ module.exports = function main(args) {
         require('./replace');
         require('./rules');
         require('./split');
-        require('./test');
+        require('./testonly');
         require('./trace');
         require('./udt');
         require('./unicode');

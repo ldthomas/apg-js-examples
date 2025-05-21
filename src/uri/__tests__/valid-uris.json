@@ -1,0 +1,26 @@
+{
+  "uri-js scheme: uri:": {
+    "msg": "uri:",
+    "uri": {
+      "scheme": "uri",
+      "userinfo": null,
+      "host": null,
+      "port": null,
+      "path": "",
+      "query": null,
+      "fragment": null
+    }
+  },
+  "uri-js userinfo: uri://@": {
+    "msg": "uri://@",
+    "uri": {
+      "scheme": "uri",
+      "userinfo": "",
+      "host": "",
+      "port": null,
+      "path": "",
+      "query": null,
+      "fragment": null
+    }
+  }
+}
