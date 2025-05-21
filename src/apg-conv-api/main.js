@@ -242,7 +242,8 @@ module.exports = function main(args) {
   /* match the test function with the name */
   let help = '';
   help += 'This is a demonstration of the data conversion API, apg-conv-api.\n';
-  help += 'Examine or run a debugger on this module, "apg-examples/src/apg-conv-api/main.js" to study the example.\n';
+  help +=
+    'Examine or run a debugger on this module, "apg-js-examples/src/apg-conv-api/main.js" to study the example.\n';
   help += 'Note that for web page usage, the generated grammar function needs to be renamed\n';
   help += 'as the node.js name "module.exports" is not allowed.\n';
   help += '\n';

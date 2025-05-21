@@ -14,5 +14,6 @@ docco -l classic index.md README.md LICENSE.md \
  ./src/odata/*.js \
  ./src/substrings/*.js \
  ./src/trace/*.js \
- ./src/udt/*.js
+ ./src/udt/*.js \
+ ./src/uri/*.js
 exit 0 

@@ -21,7 +21,6 @@ module.exports = function main(args) {
     '  path',
     '  query',
     '  fragment',
-    'Examine or run a debugger on the module, "apg-js-examples/src/uri/parser.js" to study the example.',
   ].join('\n');
 
   const help = [

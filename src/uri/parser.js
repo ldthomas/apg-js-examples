@@ -8,17 +8,11 @@
 // This module illustrates a complete and well-tested URI parser.
 //
 
-const { devNull } = require('node:os');
-
 module.exports = function parser(input) {
   /* if trace or statisctis are needed they must be enabled here */
   const TRACE_ENABLED = false;
   const STATS_ENABLED = false;
   const THIS_FILE = 'parser.js: ';
-  const inspectOptions = {
-    showHidden: true,
-    depth: devNull,
-  };
 
   // Initialize parser and grammar
   const { apgLib } = require('apg-js');
@@ -61,14 +55,14 @@ module.exports = function parser(input) {
 
   if (!result.success) {
     console.log('\nparse failed');
-    console.dir(result, inspectOptions);
+    console.dir(result);
     throw new Error(`${THIS_FILE}parse failed`);
   }
 
   console.log();
   console.log(`URI ${data.uri}`);
   console.log('URI elements');
-  console.dir(data.uriElements, inspectOptions);
+  console.dir(data.uriElements);
 
   if (parser.stats) {
     const writeHtml = require('../writeHtml');

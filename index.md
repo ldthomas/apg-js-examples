@@ -132,5 +132,10 @@ _JavaScript APG, examples of use_
   [stats.js](./src/udt/stats.html)<br>
   [trace.js](./src/udt/trace.html)<br>
 
+- A complete and well tested URI (RFC 3986) parser.<br>
+  [main.js](./src/uri/main.html)<br>
+  [parser.js](./src/uri/parser.html)<br>
+  [callbacks.js](./src/uri/callbacks.html)<br>
+
 - A utility for writing an HTML page.<br>
   [writeHtml.js](./src/writeHtml.html)<br>
