@@ -442,7 +442,7 @@ module.exports = function grammar(){
     str += "                ; negative look-ahead required to prevent IPv4address from being recognized as first part of reg-name\r\n";
     str += "                ; same fix as https://github.com/garycourt/uri-js/issues/4\r\n";
     str += "IP-literal    = \"[\" ( IPv6address / IPvFuture  ) \"]\"\r\n";
-    str += "IPvFuture     = \"v\" 1*HEXDIG \".\" 1*( %d97-122 / %d65-90 / %d48-57 / %d33 / %d36 /%d38-46 / %d58-59 /%d61 /%d95 / %d126 )\r\n";
+    str += "IPvFuture     = \"v\" 1*HEXDIG \".\" 1*( %d97-122 / %d65-90 / %d48-57 / %d33 / %d36 /%d38-46 / %d58-59 / %d61 /%d95 / %d126 )\r\n";
     str += "IPv6address   = nodcolon / dcolon\r\n";
     str += "nodcolon      = (h16n *h16cn) [%d58 IPv4address]\r\n";
     str += "dcolon        = [h16 *h16c] %d58.58 (((h16n *h16cn) [%d58 IPv4address]) / [IPv4address])\r\n";
@@ -462,7 +462,7 @@ module.exports = function grammar(){
     str += "\r\n";
     str += "segment       = *pchar\r\n";
     str += "segment-nz    = 1*pchar\r\n";
-    str += "pchar         = (%d97-122 / %d65-90 / %d48-57 / pct-encoded / %d33 / %d36 / %d38-46 /%d58-59 / %d61 / %d64 / %d95 / %d126)\r\n";
+    str += "pchar         = %d97-122 / %d65-90 / %d48-57 / pct-encoded / %d33 / %d36 / %d38-46 /%d58-59 / %d61 / %d64 / %d95 / %d126\r\n";
     str += "pct-encoded   = %d37 HEXDIG HEXDIG\r\n";
     str += "\r\n";
     str += "; no longer needed - expanded for all usage for fewer branches in the parse there\r\n";

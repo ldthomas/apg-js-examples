@@ -1,47 +1,44 @@
-// const { cwd } = require('node:process');
-// console.log(`Current directory: ${cwd()}`);
-const { apgLib } = require('apg-js');
-const parser = new apgLib.parser();
-const grammar = new (require('../grammar'))();
 const fs = require('node:fs');
-const cb = require('../callbacks');
-Object.assign(parser.callbacks, {
-  URI: cb.URI,
-  scheme: cb.scheme,
-  'userinfo-at': cb.userinfoAt,
-  host: cb.host,
-  'IP-literal': cb.ipLiteral,
-  port: cb.port,
-  'path-abempty': cb.pathAbempty,
-  'path-absolute': cb.pathAbsolute,
-  'path-rootless': cb.pathRootless,
-  'path-empty': cb.pathEmpty,
-  query: cb.query,
-  fragment: cb.fragment,
-  h16: cb.h16,
-  nodcolon: cb.nodcolon,
-  dcolon: cb.dcolon,
-  'dec-octet': cb.decOctet,
-  'dec-digit': cb.decDigit,
-});
+const parser = require('../parser');
+const path = require('node:path');
+const { apgLib } = require('apg-js');
+const uriParser = new apgLib.parser();
+const grammar = new (require('../grammar'))();
 
-const validUris = JSON.parse(fs.readFileSync('./src/uri/__tests__/valid-uris.json', 'utf-8'));
+let urisPath = path.resolve(__dirname, 'valid-uris.json');
+const validUris = JSON.parse(fs.readFileSync(urisPath, 'utf-8'));
+urisPath = path.resolve(__dirname, 'invalid-uris.json');
+const invalidUris = JSON.parse(fs.readFileSync(urisPath, 'utf-8'));
+urisPath = path.resolve(__dirname, 'valid-chars.json');
+const validChars = JSON.parse(fs.readFileSync(urisPath, 'utf-8'));
+urisPath = path.resolve(__dirname, 'invalid-chars.json');
+const invalidChars = JSON.parse(fs.readFileSync(urisPath, 'utf-8'));
 
-const parseUri = function (input) {
-  const inputCharacterCodes = apgLib.utils.stringToChars(input);
-  const data = { uriElements: {} };
-  const result = parser.parse(grammar, 0, inputCharacterCodes, data);
-  if (!result.success) {
+function parseUri(input) {
+  try {
+    return parser(input);
+  } catch {
     return null;
   }
-  return data.uriElements;
-};
+}
+
+describe('Valid character tests - rules with characters expanded to primatives.', () => {
+  test.concurrent.each(Object.entries(validChars))('Rule: %s', (test_name, test) => {
+    result = uriParser.parse(grammar, test.rule, test.input);
+    expect(result.success).toBe(test.answer);
+  });
+});
+describe('Invalid character tests - rules with characters expanded to primatives.', () => {
+  test.concurrent.each(Object.entries(invalidChars))('Rule + invalid character: %s', (test_name, test) => {
+    result = uriParser.parse(grammar, test.rule, test.input);
+    expect(result.success).toBe(test.answer);
+  });
+});
 describe('Valid URIs', () => {
   test.concurrent.each(Object.entries(validUris))('%s', (test_name, test) => {
     const elements = parseUri(test.msg);
-    if (elements === null) {
-      expect(true).toBe(false); // force test to fail
-    } else {
+    expect(elements).not.toBeNull();
+    if (elements) {
       for (const [field, value] of Object.entries(test.uri)) {
         if (value === null) {
           expect(elements[field]).toBeUndefined();
@@ -52,8 +49,9 @@ describe('Valid URIs', () => {
     }
   });
 });
-// describe('Invalid URIs', () => {
-//   test.concurrent.each(Object.entries(invalidUris))('%s', (test_name, test) => {
-//     expect(() => new ParsedMessage(test)).toThrow();
-//   });
-// });
+
+describe('Invalid URIs', () => {
+  test.concurrent.each(Object.entries(invalidUris))('%s', (test_name, uri) => {
+    expect(parseUri(uri)).toBeNull();
+  });
+});

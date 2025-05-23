@@ -122,6 +122,7 @@ const cb = {
   ipv4(result, chars, phraseIndex, data) {
     if (result.state === ids.MATCH) {
       data.ipv4 = true;
+      console.log('ipv4: match');
     }
   },
 

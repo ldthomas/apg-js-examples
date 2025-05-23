@@ -39,7 +39,7 @@ host          = IP-literal / (IPv4address !reg-name-char) / reg-name
                 ; negative look-ahead required to prevent IPv4address from being recognized as first part of reg-name
                 ; same fix as https://github.com/garycourt/uri-js/issues/4
 IP-literal    = "[" ( IPv6address / IPvFuture  ) "]"
-IPvFuture     = "v" 1*HEXDIG "." 1*( %d97-122 / %d65-90 / %d48-57 / %d33 / %d36 /%d38-46 / %d58-59 /%d61 /%d95 / %d126 )
+IPvFuture     = "v" 1*HEXDIG "." 1*( %d97-122 / %d65-90 / %d48-57 / %d33 / %d36 /%d38-46 / %d58-59 / %d61 /%d95 / %d126 )
 IPv6address   = nodcolon / dcolon
 nodcolon      = (h16n *h16cn) [%d58 IPv4address]
 dcolon        = [h16 *h16c] %d58.58 (((h16n *h16cn) [%d58 IPv4address]) / [IPv4address])
@@ -59,7 +59,7 @@ fragment      = *(pchar / %d47 / %d63)
 
 segment       = *pchar
 segment-nz    = 1*pchar
-pchar         = (%d97-122 / %d65-90 / %d48-57 / pct-encoded / %d33 / %d36 / %d38-46 /%d58-59 / %d61 / %d64 / %d95 / %d126)
+pchar         = %d97-122 / %d65-90 / %d48-57 / pct-encoded / %d33 / %d36 / %d38-46 /%d58-59 / %d61 / %d64 / %d95 / %d126
 pct-encoded   = %d37 HEXDIG HEXDIG
 
 ; no longer needed - expanded for all usage for fewer branches in the parse there

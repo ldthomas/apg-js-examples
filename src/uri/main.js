@@ -46,9 +46,9 @@ module.exports = function main(args) {
       console.log(help);
       return;
     case 'all':
-      require('./parser')(example);
+      console.dir(require('./parser')(example));
       break;
     default:
-      require('./parser')(args[0]);
+      console.dir(require('./parser')(args[0]));
   }
 };

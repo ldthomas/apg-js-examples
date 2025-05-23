@@ -9,7 +9,7 @@
 //
 
 module.exports = function parser(input) {
-  /* if trace or statisctis are needed they must be enabled here */
+  /* if trace or statistis are needed they must be enabled here manually */
   const TRACE_ENABLED = false;
   const STATS_ENABLED = false;
   const THIS_FILE = 'parser.js: ';
@@ -19,7 +19,10 @@ module.exports = function parser(input) {
   const parser = new apgLib.parser();
   const grammar = new (require('./grammar'))();
 
-  if (TRACE_ENABLED) parser.trace = new apgLib.trace();
+  if (TRACE_ENABLED) {
+    parser.trace = new apgLib.trace();
+    parser.trace.filter.operators['<ALL>'] = true;
+  }
   if (STATS_ENABLED) parser.stats = new apgLib.stats();
 
   // Register callbacks
@@ -37,32 +40,22 @@ module.exports = function parser(input) {
     'path-empty': cb.pathEmpty,
     query: cb.query,
     fragment: cb.fragment,
+    IPv4address: cb.ipv4,
     h16: cb.h16,
+    h16c: cb.h16,
+    h16n: cb.h16,
+    h16cn: cb.h16,
     nodcolon: cb.nodcolon,
     dcolon: cb.dcolon,
     'dec-octet': cb.decOctet,
     'dec-digit': cb.decDigit,
   });
 
-  // Convert input to character codes
-  const inputCharacterCodes = apgLib.utils.stringToChars(input);
-
   // Data object for parse state and results
   const data = { uriElements: {} };
 
   // Parse input
-  const result = parser.parse(grammar, 0, inputCharacterCodes, data);
-
-  if (!result.success) {
-    console.log('\nparse failed');
-    console.dir(result);
-    throw new Error(`${THIS_FILE}parse failed`);
-  }
-
-  console.log();
-  console.log(`URI ${data.uri}`);
-  console.log('URI elements');
-  console.dir(data.uriElements);
+  const result = parser.parse(grammar, 0, input, data);
 
   if (parser.stats) {
     const writeHtml = require('../writeHtml');
@@ -74,4 +67,14 @@ module.exports = function parser(input) {
     const html = parser.trace.toHtmlPage('ascii', 'IniFile Trace', 'URI parser Trace');
     writeHtml(html, 'uri-trace');
   }
+
+  if (!result.success) {
+    throw new Error(`${THIS_FILE}parse failed: ${JSON.stringify(result)}`);
+  }
+
+  // console.log();
+  // console.log(`URI ${data.uri}`);
+  // console.log('URI elements');
+  // console.dir(data.uriElements);
+  return data.uriElements;
 };
