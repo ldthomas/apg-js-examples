@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+// a script to run all the examples.
+// a sort of unit test for the examples.
 require("./apg-api/main.js")(['all']);
 require("./apg-conv-api/main.js")(['all']);
 require("./apg-exp/main.js")(['all']);
@@ -13,3 +15,4 @@ require("./odata/main.js")(['all']);
 require("./substrings/main.js")(['all']);
 require("./trace/main.js")(['all']);
 require("./udt/main.js")(['all']);
+require("./uri/main.js")(['all']);

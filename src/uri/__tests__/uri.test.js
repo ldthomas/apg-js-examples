@@ -1,8 +1,8 @@
 const fs = require('node:fs');
-const parser = require('../parser');
+const uriParser = require('../parser');
 const path = require('node:path');
 const { apgLib } = require('apg-js');
-const uriParser = new apgLib.parser();
+const apgParser = new apgLib.parser();
 const grammar = new (require('../grammar'))();
 
 let urisPath = path.resolve(__dirname, 'valid-uris.json');
@@ -14,9 +14,9 @@ const validChars = JSON.parse(fs.readFileSync(urisPath, 'utf-8'));
 urisPath = path.resolve(__dirname, 'invalid-chars.json');
 const invalidChars = JSON.parse(fs.readFileSync(urisPath, 'utf-8'));
 
-function parseUri(input) {
+function testParser(input) {
   try {
-    return parser(input);
+    return uriParser(input);
   } catch {
     return null;
   }
@@ -24,19 +24,19 @@ function parseUri(input) {
 
 describe('Valid character tests - rules with characters expanded to primatives.', () => {
   test.concurrent.each(Object.entries(validChars))('Rule: %s', (test_name, test) => {
-    result = uriParser.parse(grammar, test.rule, test.input);
+    result = apgParser.parse(grammar, test.rule, test.input);
     expect(result.success).toBe(test.answer);
   });
 });
 describe('Invalid character tests - rules with characters expanded to primatives.', () => {
   test.concurrent.each(Object.entries(invalidChars))('Rule + invalid character: %s', (test_name, test) => {
-    result = uriParser.parse(grammar, test.rule, test.input);
+    result = apgParser.parse(grammar, test.rule, test.input);
     expect(result.success).toBe(test.answer);
   });
 });
 describe('Valid URIs', () => {
   test.concurrent.each(Object.entries(validUris))('%s', (test_name, test) => {
-    const elements = parseUri(test.msg);
+    const elements = testParser(test.msg);
     expect(elements).not.toBeNull();
     if (elements) {
       for (const [field, value] of Object.entries(test.uri)) {
@@ -49,9 +49,8 @@ describe('Valid URIs', () => {
     }
   });
 });
-
 describe('Invalid URIs', () => {
   test.concurrent.each(Object.entries(invalidUris))('%s', (test_name, uri) => {
-    expect(parseUri(uri)).toBeNull();
+    expect(testParser(uri)).toBeNull();
   });
 });

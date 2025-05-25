@@ -6,15 +6,14 @@
  *     license: BSD-2-Clause (https://opensource.org/licenses/BSD-2-Clause)
  *   ********************************************************************************* */
 // This module illustrates a complete and well-tested URI parser.
-//
-
 module.exports = function parser(input) {
-  /* if trace or statistis are needed they must be enabled here manually */
+  // If trace or statistics are needed they are available
+  // but must be enabled here manually.
   const TRACE_ENABLED = false;
   const STATS_ENABLED = false;
   const THIS_FILE = 'parser.js: ';
 
-  // Initialize parser and grammar
+  // Initialize parser and grammar.
   const { apgLib } = require('apg-js');
   const parser = new apgLib.parser();
   const grammar = new (require('./grammar'))();
@@ -25,7 +24,7 @@ module.exports = function parser(input) {
   }
   if (STATS_ENABLED) parser.stats = new apgLib.stats();
 
-  // Register callbacks
+  // Register callbacks.
   const cb = require('./callbacks');
   Object.assign(parser.callbacks, {
     URI: cb.URI,
@@ -51,10 +50,10 @@ module.exports = function parser(input) {
     'dec-digit': cb.decDigit,
   });
 
-  // Data object for parse state and results
+  // Data object for parse state and URI elements.
   const data = { uriElements: {} };
 
-  // Parse input
+  // Parse the input URI string.
   const result = parser.parse(grammar, 0, input, data);
 
   if (parser.stats) {
@@ -72,9 +71,6 @@ module.exports = function parser(input) {
     throw new Error(`${THIS_FILE}parse failed: ${JSON.stringify(result)}`);
   }
 
-  // console.log();
-  // console.log(`URI ${data.uri}`);
-  // console.log('URI elements');
-  // console.dir(data.uriElements);
+  // Return the parsed URI elements as an object.
   return data.uriElements;
 };

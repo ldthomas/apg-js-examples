@@ -483,7 +483,7 @@ module.exports = function grammar(){
     str += "; Must have the longest (3-digit) numbers first.\r\n";
     str += "; Even so, this form does not accept leading zeros.\r\n";
     str += "; There does not seem to be a clear standard for this (https://en.wikipedia.org/wiki/Dot-decimal_notation)\r\n";
-    str += "; however and early RFC 790 did show leading-zero padding of the three digits.\r\n";
+    str += "; however an early RFC 790 did show leading-zero padding of the three digits.\r\n";
     str += ";dec-octet     = DIGIT                 ; 0-9\r\n";
     str += ";                 / %x31-39 DIGIT         ; 10-99\r\n";
     str += ";                 / \"1\" 2DIGIT            ; 100-199\r\n";

@@ -1,5 +1,21 @@
 # apg-js-examples
 
+## Note on version 4.2.3
+
+`apg-js-examples` version 4.2.3 adds a new example. Previously existing examples are unchanged.
+The new example is a complete and well-tested URI ([RFC 3986](https://www.rfc-editor.org/rfc/rfc3986)) parser.
+
+> npm run uri
+
+will display a brief description and the help screen.
+Any URI can be parsed with, for example:
+
+> npm run uri -- http://user@example.com
+
+To execute a large number of unit tests covering many aspects of URI specifics, use:
+
+> npm run jest
+
 ## Note on version 4.2.1
 
 `apg-js` version 4.2.1 made a minor change to the parser and hence the parser generator.
