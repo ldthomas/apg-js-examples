@@ -127,7 +127,6 @@ const cb = {
   ipv4(sys, chars, phraseIndex, data) {
     if (sys.state === ids.MATCH) {
       data.ipv4 = true;
-      console.log('ipv4: match');
     }
   },
   // Count the number of 16-bit hex digits.
