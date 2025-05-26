@@ -38,12 +38,11 @@ module.exports = function main(args) {
     console.log(desc);
     console.log(help);
   } else if (args[0] === '--help' || args[0] === '-h') {
-    // If --help or -h, display the help screen only.
-    console.log(desc);
+    // If `--help` or `-h`, display the help screen only.
     console.log(help);
   } else if (args[0] === 'all') {
-    // If 'all', parse a fixed example.
-    // Note: the "all" option is used by the script "src/all.sh".
+    // If `all`, parse a fixed example.
+    // Note: the `all` option is used by the script `src/all.sh`.
     // It runs all the examples in the src directory as a sort of unit test.
     // This is a bit of a hack, but it works.
     console.log(`Parsing example URI: ${example}`);

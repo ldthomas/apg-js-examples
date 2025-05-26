@@ -62,7 +62,7 @@ const cb = {
   },
   // Collect the port number.
   // If it is a number, convert the string to a number.
-  // If it is empty, set the port to ''.
+  // If it is empty, set the port to the empty string `''`.
   port(sys, chars, phraseIndex, data) {
     if (sys.state === ids.MATCH) {
       const portStr = utils.charsToString(chars, phraseIndex, sys.phraseLength);

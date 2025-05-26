@@ -296,7 +296,7 @@ module.exports = function grammar(){
 
   /* dec-octet */
   this.rules[21].opcodes = [];
-  this.rules[21].opcodes[0] = { type: 3, min: 0, max: 3 };// REP
+  this.rules[21].opcodes[0] = { type: 3, min: 1, max: 3 };// REP
   this.rules[21].opcodes[1] = { type: 4, index: 22 };// RNM(dec-digit)
 
   /* dec-digit */
@@ -452,7 +452,7 @@ module.exports = function grammar(){
     str += "h16cn         = %d58 1*4HEXDIG !%d46\r\n";
     str += "IPv4address   = dec-octet \".\" dec-octet \".\" dec-octet \".\" dec-octet\r\n";
     str += "; Here we will will use callback functions to evaluate and validate the (possibly zero-padded) dec-octet.\r\n";
-    str += "dec-octet     =  *3dec-digit\r\n";
+    str += "dec-octet     =  1*3dec-digit\r\n";
     str += "dec-digit     = %d48-57\r\n";
     str += "reg-name      = *reg-name-char\r\n";
     str += "reg-name-char = %d97-122 / %d65-90 / %d48-57 / pct-encoded / %d33 / %d36 / %d38-46 / %d59 / %d61 /%d95 / %d126\r\n";
